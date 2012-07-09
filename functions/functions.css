@@ -1,0 +1,104 @@
+/*
+SoloFolio
+Admin Interface Styles
+*/
+
+	
+
+#solo-admin-gallery-wrap, #solo-admin-gallery-options {
+	width: 500px;
+}
+	
+#solo-photoshelter textarea {
+	height: 300px;
+	width: 440px;
+}
+
+#de-wrap {
+	width: 900px;
+	}
+		
+#de-options {
+	width: 550px;
+	}
+	
+#de-entry {
+	float: left;
+	width: 350px;
+	}
+
+input {
+	background-color: #FFFFFF;
+	}
+	
+.left {
+	float: left;
+	}
+	
+.right {
+	float: right;
+	}
+	
+.clear {
+	clear: both;
+	}
+
+	
+/* New interface */
+
+#options-wrapper {
+	width: 675px;
+}
+
+	#options-wrapper h2 {
+		margin: 10px 0 5px 16px;
+	}
+	
+.options-section {
+	border: 5px solid #e5e5e5;
+	background-color: #f2f2f2;
+	padding: 10px;
+	margin-bottom: 5px;
+}
+
+.options-text {
+	display: block;
+	float: left;
+	margin: 0 15px 8px 0;
+}
+	
+	.options-text img {
+		margin: 0 0 -3px 3px;
+	}
+
+.options-label, .suffix {
+	color: #acacac;
+	font-size: 11px;
+	padding-left: 3px;
+}
+
+.suffix {
+	padding: 0;
+}
+
+/*.options-select {
+	width: 144px;
+}*/
+
+.options-text-short input {
+	width: 75px;
+}
+
+.options-select, .options-textarea, .options-color, .options-text-short {
+	margin: 0 15px 5px 0;
+	
+}
+
+	.options-textarea textarea {
+		height: 200px;
+		width: 300px;
+	}
+
+.options-color {
+	margin: 0 15px 5px 0;
+}
