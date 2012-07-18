@@ -57,14 +57,6 @@ if (get_option('sl_maintenance_mode') == 'true') {
 	
 	<link rel="stylesheet" type="text/css" media="all" href="<?php bloginfo( 'stylesheet_url' ); ?>" />
 	
-	<?php if (get_option('sl_sidebar_layout') == 'no') { ?>
-	<link rel="stylesheet" href="<?php echo (bloginfo('template_url').'/styles/navigation.css'); ?>" type="text/css" media="screen" />
-	<?php } ?>
-	
-	<?php if (get_option('sl_sidebar_layout') == 'yes') { ?>
-	<link rel="stylesheet" href="<?php echo (bloginfo('template_url').'/styles/sidebar.css'); ?>" type="text/css" media="screen" />
-	<?php } ?>
-	
 	<link rel="stylesheet" href="<?php echo (bloginfo('template_url').'/styles.php'); ?>" type="text/css" media="screen" />
 	
 	<script type="text/javascript"> 

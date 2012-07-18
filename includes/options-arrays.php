@@ -177,7 +177,7 @@ array( "name" => "Advanced",
 		"id" => $shortname."_sidebar_layout",
 		"type" => "select",
 		"options" => array("no", "yes"),
-		"std" => "no"),
+		"std" => "yes"),
 		
 	array( "name" => "Header in wrapper",
 		"desc" => "",
@@ -218,29 +218,6 @@ $options_design = array (
  
 array( "name" => $themename." Design Options",
 	"type" => "title"),
-	
-/*array( "name" => "Basic", "type" => "section"),
-	
-	array( "name" => "Color Scheme",
-		"id" => $shortname."_styleset",
-		"type" => "select",
-		"options" => array("Dark", "Light", "Custom"),
-		"std" => "Dark"),
-		
-	array( "name" => "Accent Color",
-		"id" => $shortname."_accent_color",
-		"type" => "color",
-		"std" => "FFFFFF"),
-		
-	array( "name" => "Font",
-		"id" => $shortname."_simple_font",
-		"type" => "select",
-		"options" => array("sans", "serif"),
-		"std" => "sans"),
-		
-	array( "type" => "clear"),
-		
-array( "type" => "close"),*/
 	
 array(  "name" => "General", "type" => "section"),
 	

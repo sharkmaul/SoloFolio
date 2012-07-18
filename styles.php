@@ -18,53 +18,7 @@ foreach ($options_gallery as $value) {
 	else { $value['id'] = get_option( $value['id'] ); }
 	}
 	
-/*
-SoloFolio Custom Styles 
-*/
-
-if (get_option('sl_styleset') == '') { ?>
-
-<?php };
-if (get_option('sl_styleset') == 'Light') { ?>
-@import url("styles/light.css");
-
-h2,
-a:hover, 
-a:active, 
-#footer a:hover,
-.post-title a,
-.post-title a:hover,
-.sidebar h3,
-.current-menu-item a,
-.current_page_item a,
-.current_page_parent a
-{
-	color: #<?php echo get_option('sl_accent_color'); ?>;
-}
-
-<?php };
-if (get_option('sl_styleset') == 'Dark') { ?>
-
-
-h2,
-a:hover, 
-a:active, 
-#footer a:hover,
-.post-title a,
-.post-title a:hover,
-.sidebar h3,
-.current-menu-item a,
-.current_page_item a,
-.current_page_parent a
-{
-	color: #<?php echo get_option('sl_accent_color'); ?>;
-}
-
-<?php }; ?>
-
-/*body {
-	background: url("img/texture.png") repeat scroll 0 0 transparent;
-}*/
+?>
 
 
 #post #outerWrap {
@@ -382,5 +336,200 @@ input:focus, textarea:focus {
 .galleria-fullscreen:hover,
 .galleria-play:hover,
 .galleria-popout:hover { background-color: #eee }
+
+<?php } ?>
+
+<?php if (get_option('sl_sidebar_layout') == 'no') { ?>
+/* 
+SoloFolio
+Default Navigation for normal layout only
+*/
+
+#navigation {
+	width: 450px;
+	}
+
+#suckerfishnav {
+	float: right;
+}
+
+#suckerfishnav, #suckerfishnav ul {
+    list-style:none;
+    padding:0;
+    margin:0;
+}
+
+#suckerfishnav a {
+    display:block;
+    font-weight: normal;
+    text-decoration:none;
+    margin: 5px 0 2px 10px;
+}
+
+#suckerfishnav li {
+    float:left;
+    padding:0;
+}
+
+#suckerfishnav ul {
+    position:absolute;
+    left: -999em;
+    height: auto;
+    margin: 0;
+    padding: 0;
+    border: 0;
+}
+
+#suckerfishnav li li {
+	display: block;
+	float: none;
+	text-align: left;
+    position: relative;
+    z-index: 10;
+}
+
+#suckerfishnav li li a {
+	display: block;
+	margin: 0;
+    padding: 0 10px 4px 10px;
+}
+
+#suckerfishnav li ul ul {
+    margin:-23px 0 0 100px;
+}
+
+#suckerfishnav li:hover a, #suckerfishnav li.sfhover a {
+}
+
+#suckerfishnav li:hover li a, #suckerfishnav li li:hover li a, #suckerfishnav li li li:hover li a, #suckerfishnav li li li li:hover li a {
+}
+    
+#suckerfishnav li:hover ul ul, #suckerfishnav li:hover ul ul ul, #suckerfishnav li:hover ul ul ul ul, #suckerfishnav li.sfhover ul ul, #suckerfishnav li.sfhover ul ul ul, #suckerfishnav li.sfhover ul ul ul ul {
+    left:-999em;
+    }
+#suckerfishnav li:hover ul, #suckerfishnav li li:hover ul, #suckerfishnav li li li:hover ul, #suckerfishnav li li li li:hover ul, #suckerfishnav li.sfhover ul, #suckerfishnav li li.sfhover ul, #suckerfishnav li li li.sfhover ul, #suckerfishnav li li li li.sfhover ul {
+    left:auto;
+    background:#000000;
+    padding: 3px 0 6px;
+    z-index: 7;
+    }
+
+.solo-nav a {
+	font-weight: normal;
+	}
+
+.solo-nav li {
+	padding: 0 0 0 8px;
+}
+
+<?php } ?>
+	
+<?php if (get_option('sl_sidebar_layout') == 'yes') { ?>
+/*
+SoloFolio
+Sidebar layout
+*/
+
+a:link, a:visited {
+	font-weight: normal;
+}
+
+#header {
+	background-color: #fffffff;
+	/*border-right: 1px solid #ccc;*/
+	position: fixed;
+	z-index: 5;
+	left: 0;
+	top: 0;
+	bottom: 40px;
+	height: 100%;
+	padding: 20px 0 0 20px;
+}
+
+#header div {
+	margin-bottom: 15px;
+}
+
+#header h3 {
+	margin: 0 0 5px 0;
+	font-size: 14px;
+	padding: 0;
+	text-transform: uppercase;
+}
+
+#outerWrap {
+	width: 900px;
+}
+
+#logo {
+	position: static;
+	bottom: 0px;
+	margin-bottom: 5px;
+}
+
+#header-right {
+	position: relative;
+	text-align: left;
+	right: 0;
+	width: 250px;
+}
+
+#header ul li {
+	list-style-type: none;
+	font-weight: normal;
+	padding: 0 0 5px;
+	/*text-transform: uppercase;*/
+	letter-spacing: 1px;
+}
+
+#suckerfishnav li {
+	float: none;
+}
+
+#suckerfishnav a {
+	margin: 0;
+}
+
+#suckerfishnav, #suckerfishnav ul {
+	float: none;
+}
+
+#header-phone, #header-email {
+	display: inline;
+}
+
+#footer {
+	text-align: left;
+	position: fixed;
+	bottom: 10px;
+	left: 20px;
+	padding: 0;
+	z-index: 99;
+}
+
+.sidebar-footer {
+	font-size: 11px;
+    opacity: 0.5;
+}
+
+table tr {
+	vertical-align: top;
+}
+
+#navigation {
+	margin-top: 50px;
+}
+
+#wrapper {
+	padding: 10px 0 0 0;
+}
+
+#outerWrap {
+	margin: 0;
+}
+
+#header-phone, #header-email {
+	display: none;
+}
 
 <?php } ?>
