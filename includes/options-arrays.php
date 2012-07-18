@@ -73,7 +73,7 @@ array( "name" => "Layout",
 		"desc" => "Format: XXpx",
 		"id" => $shortname."_header_width",
 		"type" => "text",
-		"std" => "900"),
+		"std" => "250"),
 		
 	array( "name" => "Header Height",
 		"desc" => "Format: XXpx",

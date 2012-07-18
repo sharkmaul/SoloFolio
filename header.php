@@ -138,8 +138,6 @@ if (get_option('sl_maintenance_mode') == 'true') {
 			<p class="sidebar-footer"><?php echo get_option('sl_footer_text'); ?></p>
 		<?php }; ?>
 
-</div>
-
 <?php }; ?>
 	
 </div><!-- End Header -->
