@@ -764,18 +764,9 @@ ul.my_recent_galleries li {
   margin: 0 20px 0 0;
 }
 
-/*	
-#side-scroll-back {
-	background-color: red;
-	display: block;
-	font-size: 24px;
-	padding: 20px;
+/* Disable Admin Bar - More trouble than it is worth */
+
+#wpadminbar {
+display: none !important;
 }
-	
-#back-anchor {
-	display: block;
-	position: absolute;
-	top: 0;
-	left: 0;
-	z-index: -1;
-}*/
+
