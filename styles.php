@@ -508,11 +508,11 @@ a:link, a:visited {
 }
 
 #sidebar-footer {
-	position: absolute;
+	position: fixed;
 	width: 100%;
 	z-index: 5;
 	bottom: 10px;
-	height: 15px;
+	height: auto;
 }
 
 	#sidebar-footer p {
@@ -549,7 +549,7 @@ table tr {
 
 /* Time for some responsive design fun. Let's just target screens smaller than 760px for now and give them something nice and clean. */
 
-@media (max-width: 768px) {
+@mediaonly screen and (max-device-width: 480px) {
 
 	* {
 		margin: 0;
@@ -678,5 +678,20 @@ table tr {
   }
 
 }
+/* Some old responsive code to implement soon */
+
+/*
+#wrapper {
+width: auto;
+padding-right: 10px;
+}
+
+#content-page p img {
+height: auto;
+    max-width: 900px;
+    width: 100%;
+}
+*/
+
 
 <?php } ?>
