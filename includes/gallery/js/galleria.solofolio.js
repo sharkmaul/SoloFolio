@@ -35,13 +35,17 @@ Galleria.addTheme({
 		_showPopout: false,
 		_showProgress: true,
 		_showTooltip: true,
-        
-		// set this to false if you want to show the caption all the time:
-        //_toggleInfo: true
     },
 	
 	
 	init: function (s) {
+	this.attachKeyboard({
+	left: this.prev,
+	right: this.next,
+	74: this.prev,
+	75: this.next,
+	70: this.toggleFullscreen
+	});	
     this.addElement("bar", "fullscreen", "play", "popout", "thumblink", "s1", "s2", "s3", "s4", "progress");
     this.append({stage: "progress", container: ["bar", "tooltip"], bar: ["fullscreen", "play", "popout", "thumblink", "info", "counter"]});
     var v = this, Q = this.$("thumbnails-container"), M = this.$("thumblink"), O = this.$("fullscreen"), Y = this.$("play"), da = this.$("popout"), W = this.$("bar"), Z = this.$("progress"), ha = s.transition, R = s._locale, ia = false, ga = false, ka = !!s.autoplay, c = false, aa = function () {Q.height(v.getStageHeight()).width(v.getStageWidth()).css("top", ia ? 0 : v.getStageHeight() + 30);};

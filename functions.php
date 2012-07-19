@@ -150,7 +150,7 @@ global $themename, $shortname, $options, $options_design, $options_gallery;
 	}
 
 	//add_menu_page($themename, 'SoloFolio', 'administrator', 'solofolio', 'solofolio_admin', '', 28);
-	add_menu_page($themename, 'Solofolio', 'administrator', 'functions.php', 'solofolio_admin', '', 28);
+	add_menu_page($themename, 'SoloFolio', 'administrator', 'functions.php', 'solofolio_admin', '', 28);
 	add_submenu_page('functions.php', 'General Settings', 'General', 'administrator', 'functions.php', 'solofolio_admin');
 	add_submenu_page('functions.php', 'Design Editor', 'Design', 'administrator', 'solofolio-design-editor', 'solofolio_design_editor');
 	add_submenu_page('functions.php', 'Gallery Settings', 'Gallery', 'administrator', 'solofolio-gallery-settings', 'solofolio_gallery_settings');

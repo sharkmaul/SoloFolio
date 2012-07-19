@@ -47,26 +47,10 @@ $('#galleria').galleria({";
 
 $output.= " });";
 
-$output.=" var gallery = Galleria.get(0);
+$output.=" 
+ 
 
-document.onkeyup = KeyCheck;       
-function KeyCheck(e) {
-    var KeyID = (window.event) ? event.keyCode : e.keyCode;
-    switch(KeyID) {
-        case 37: //press left arrow 
-            gallery.prev();
-            break;
-        case 74: //press left arrow 
-            gallery.prev();
-            break;
-        case 39: //press right arrow
-            gallery.next();
-            break;
-        case 75: //press left arrow 
-            gallery.next();
-            break;
-    }
-}
+
 </script>";
 
 ?>
