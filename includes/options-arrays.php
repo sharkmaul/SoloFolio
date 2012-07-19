@@ -45,7 +45,7 @@ array( "name" => "Personalize",
 		"id" => $shortname."_footer_text",
 		"type" => "text",
 		"icon" => "textfield_rename",
-		"std" => "555.555.5555 - &copy; 2010 Your Name Here"),
+		"std" => "&copy; 2012 Your Name Here"),
 		
 	array( "type" => "clear"),
 		

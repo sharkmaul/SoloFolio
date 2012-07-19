@@ -19,6 +19,19 @@ INSTALLATION
 
 5. When uploading images, size to fit 1800x1200 and ~450kb file size. This image will be used in full screen mode and on supported retina devices.
 
+RECOMMENDED PLUGINS
+
+-Akismet
+-Fast Secure Contact Form
+
+THANKS
+-To Patrick and Aaron, for helping me develop v1 in 2009
+-To all the users who have submitted ideas/features
+-To the following open source projects, whose code is incorporated in this release:
+	-Galleria
+	-jQuery.Retina
+	-JQuery.jknav
+-To the fine folks at StackOverflow, for having a solution to every bug on the planet.
 
 LICENSE:
 In plain english:

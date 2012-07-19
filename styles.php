@@ -507,11 +507,20 @@ a:link, a:visited {
 	z-index: 99;
 }
 
-.sidebar-footer {
-	font-size: 11px;
-    opacity: 0.5;
-    margin: 0;
+#sidebar-footer {
+	position: absolute;
+	bottom: 10px;
+	left: 10px;
+	height: 50px;
 }
+
+
+
+	#sidebar-footer p {
+		font-size: 11px;
+		opacity: 0.5;
+		margin: 0;
+	}
 
 	.sidebar-footer a {
 		text-decoration: underline;
