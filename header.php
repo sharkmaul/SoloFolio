@@ -19,6 +19,7 @@ if (get_option('sl_maintenance_mode') == 'true') {
 <head>
 	<meta charset="utf-8">
 	<meta name="apple-mobile-web-app-capable" content="yes" />
+	<meta name="apple-mobile-web-app-capable" content="yes" />
 	
 	<title><?php bloginfo('name'); ?> <?php if ( is_single() ) { ?> &raquo; Blog Archive <?php } ?> <?php wp_title(); ?></title>	
 	
@@ -52,29 +53,23 @@ if (get_option('sl_maintenance_mode') == 'true') {
 	<link rel="apple-touch-icon-precomposed" href="<?php echo (bloginfo('template_url').'/img/favicon.ico'); ?>" />
 	<?php } ?>
 	
-	<meta name="apple-mobile-web-app-capable" content="yes" />
-	
 	<link rel="stylesheet" type="text/css" media="all" href="<?php bloginfo( 'stylesheet_url' ); ?>" />
 	
 	<link rel="stylesheet" href="<?php echo (bloginfo('template_url').'/styles.php'); ?>" type="text/css" media="screen" />
 	
 	<script type="text/javascript"> 
-   $(window).load(function(){
-			$('img').retina();
-			$('#wrapper img').jknav();
-			$.jknav.init();
-		 });
-  </script>
-  
-  <script type="text/javascript">
-
-</script>
-  
-  
+	$(window).load(function(){
+		$('img').retina();
+		$('#wrapper img').jknav();
+		$.jknav.init();
+	});
+	</script>
 	
-	<?php if (get_option('sl_custom_css') != '') { ?><style type="text/css">
+	<?php if (get_option('sl_custom_css') != '') { ?>
+	<style type="text/css">
 	<?php echo get_option('sl_custom_css'); ?>
 	</style><?php } ?>
+	
 	<?php echo stripslashes(get_option('sl_custom_head')); ?>
 	
 </head>
@@ -92,48 +87,36 @@ if (get_option('sl_maintenance_mode') == 'true') {
 		</div>
 		<?php } else { ?>
 		<a href="<?php bloginfo('url'); ?>" title="<?php bloginfo('name'); ?>"><img src="<?php echo get_option('sl_logo'); ?>" alt="<?php bloginfo('description'); ?>" data-retina="<?php echo get_option('sl_logo_retina'); ?>"/></a>
-		<?php } ?>   
+		<?php } ?>
+		<div id="header-phone" class="<?php echo get_option('sl_header_font'); ?> "><a href="tel:<?php echo get_option('sl_phone'); ?>"><?php echo get_option('sl_phone'); ?></a></div>
+		<div id="header-email" class="<?php echo get_option('sl_header_font'); ?> "><a href="mailto:<?php echo get_option('sl_email'); ?>"><?php echo get_option('sl_email'); ?></a></div>   
 	</div>
-	<div id="header-right">
-		<div id="header-phone" class="<?php echo get_option('sl_header_font'); ?> "><?php echo get_option('sl_phone'); ?></div>
-		<div id="header-email" class="<?php echo get_option('sl_header_font'); ?> "><a href="mailto:<?php echo get_option('sl_email'); ?>"><?php echo get_option('sl_email'); ?></a></div>
+	<div id="header-content">
 		<div id="navigation" class="<?php echo get_option('sl_menu_font'); ?> ">
 			<?php wp_nav_menu( array( 'menu_id' => 'suckerfishnav', 'menu_class' => 'sf-menu', 'container_class' => 'sf-menu', 'theme_location' => 'primary' ) ); ?>
 		</div>
-	</div>
-	<?php if (get_option('sl_sidebar_layout') == 'yes') { ?>
-		<?php if ( !function_exists('dynamic_sidebar') || !dynamic_sidebar("navigation-bar") ) : ?>
-		<?php endif; ?>
-	<?php } ?>
-	
-	<?php if (get_option('sl_sidebar_layout') == 'yes') { ?>
-	<?php if (is_home()){ ?>
-		<?php if ( !function_exists('dynamic_sidebar') || !dynamic_sidebar("blog-sidebar") ) : ?>
-		<?php endif; ?>
-	<?php } ?>
-	
-	<?php if (is_single()){ ?>
-		<?php if ( !function_exists('dynamic_sidebar') || !dynamic_sidebar("blog-sidebar") ) : ?>
-		<?php endif; ?>
-	<?php } ?>
-	
-	<?php if (is_archive()){ ?>
-		<?php if ( !function_exists('dynamic_sidebar') || !dynamic_sidebar("blog-sidebar") ) : ?>
-		<?php endif; ?>
-	<?php } ?>
-	<?php } ?>
-	
-	<?php if (get_option('sl_sidebar_layout') == 'yes') { ?>
-		<div id="sidebar-footer">
-		<?php if (get_option('sl_show_footer') == 'yes') {?>
-			<p class="sidebar-footer"><?php echo get_option('sl_footer_text'); ?></p>
-		<?php }; ?>
-	
-		<?php if (get_option('sl_show_att') == 'yes') {?>
-			<p class="sidebar-footer">Powered by <a id="solo-link" title="Powered by SoloFolio. The ultimate WordPress portfolio and blog." href="http://www.solofolio.net" target="_blank">SoloFolio</a></p>
-		<?php }; ?>
-		</div>
-	<?php }; ?>
+		<?php if (get_option('sl_sidebar_layout') == 'yes') { ?>
+			<?php if ( !function_exists('dynamic_sidebar') || !dynamic_sidebar("Sidebar Layout - Main Navigation") ) : ?>
+			<?php endif; ?>
+		<?php } ?>
+		
+		<?php if (get_option('sl_sidebar_layout') == 'yes') { ?>
+		<?php if (is_home()){ ?>
+			<?php if ( !function_exists('dynamic_sidebar') || !dynamic_sidebar("Sidebar Layout - Under Nav on Blog") ) : ?>
+			<?php endif; ?>
+		<?php } ?>
+		
+		<?php if (is_single()){ ?>
+			<?php if ( !function_exists('dynamic_sidebar') || !dynamic_sidebar("Sidebar Layout - Under Nav on Blog") ) : ?>
+			<?php endif; ?>
+		<?php } ?>
+		
+		<?php if (is_archive()){ ?>
+			<?php if ( !function_exists('dynamic_sidebar') || !dynamic_sidebar("Sidebar Layout - Under Nav on Blog") ) : ?>
+			<?php endif; ?>
+		<?php } ?>
+		<?php } ?>
+	</div><!-- End Header-Content -->
 	
 </div><!-- End Header -->
 

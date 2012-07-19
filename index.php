@@ -31,9 +31,15 @@
 
 </div>
 
-<?php get_sidebar(); ?>
+
 
 <div class="clear"></div>
 
+
+<?php if (get_option('sl_sidebar_layout') != 'yes') { ?>
+<?php get_sidebar(); ?>
+
 <?php include ("includes/footer-widgets.php"); ?>
+
+<?php } ?>
 <?php get_footer(); ?>	

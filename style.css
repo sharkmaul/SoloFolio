@@ -184,7 +184,7 @@ p {
 			border: none;
 		}
 		
-	#header-right {
+	#header-content {
 		bottom: 0;
 		right: 20px;
 		position: absolute;
@@ -743,6 +743,7 @@ ul.my_recent_galleries li {
 .sl-sidescroll-container {
   margin: 0 20px 0 0;
 }
+
 
 /* Disable Admin Bar - More trouble than it is worth */
 

@@ -19,9 +19,15 @@ INSTALLATION
 
 5. When uploading images, size to fit 1800x1200 and ~450kb file size. This image will be used in full screen mode and on supported retina devices.
 
+USING THE GALLERY
+
+SoloFolio piggy-backs on the built-in WordPress gallery manager. The [gallery] shortcode will accept the following variables:
+*To be continued
+
 RECOMMENDED PLUGINS
 
 -Akismet
+-All-in-one SEO
 -Fast Secure Contact Form
 
 THANKS

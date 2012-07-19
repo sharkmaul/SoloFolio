@@ -1,18 +1,26 @@
 <?php
+
+if (get_option('sl_sidebar_layout') == 'yes') { 
+if(function_exists('register_sidebar')){
+
+	register_sidebar(array('name' => 'Sidebar Layout - Main Navigation',
+		'before_widget' => '<div>',
+		'after_widget' => '</div>',
+		'before_title' => '<h3>',
+		'after_title' => '</h3>',
+	));
+	register_sidebar(array('name' => 'Sidebar Layout - Under Nav on Blog',
+		'before_widget' => '<div>',
+		'after_widget' => '</div>',
+		'before_title' => '<h3>',
+		'after_title' => '</h3>',
+	));
+}
+}
+
+if (get_option('sl_sidebar_layout') != 'yes') { 
 if(function_exists('register_sidebar')){
 	register_sidebar(array('name' => 'Sidebar',
-		'before_widget' => '<div>',
-		'after_widget' => '</div>',
-		'before_title' => '<h3>',
-		'after_title' => '</h3>',
-	));
-	register_sidebar(array('name' => 'navigation-bar',
-		'before_widget' => '<div>',
-		'after_widget' => '</div>',
-		'before_title' => '<h3>',
-		'after_title' => '</h3>',
-	));
-	register_sidebar(array('name' => 'blog-sidebar',
 		'before_widget' => '<div>',
 		'after_widget' => '</div>',
 		'before_title' => '<h3>',
@@ -42,6 +50,7 @@ if(function_exists('register_sidebar')){
 		'before_title' => '<h3>',
 		'after_title' => '</h3>',
 	));
+}
 }
 
 // Include gallery shortcode replacement

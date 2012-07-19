@@ -21,10 +21,10 @@ foreach ($options_gallery as $value) {
 ?>
 
 
-#post #outerWrap {
+/*#post #outerWrap {
 	margin: 0 auto;
 	width: <?php echo (get_option('sl_wrapper_width') + get_option('sl_wrapper_padding') + get_option('sl_wrapper_padding')); ?>px;
-	}
+	}*/
 
 #wrapper {
 	padding: <?php echo get_option('sl_wrapper_padding'); ?>px;
@@ -467,11 +467,11 @@ a:link, a:visited {
 	margin-bottom: 5px;
 }
 
-#header-right {
+#header-content {
 	position: relative;
 	text-align: left;
 	right: 0;
-	width: 250px;
+	width: auto;
 }
 
 #header ul li {
@@ -509,12 +509,11 @@ a:link, a:visited {
 
 #sidebar-footer {
 	position: absolute;
+	width: 100%;
+	z-index: 5;
 	bottom: 10px;
-	left: 10px;
-	height: 50px;
+	height: 15px;
 }
-
-
 
 	#sidebar-footer p {
 		font-size: 11px;
@@ -522,9 +521,19 @@ a:link, a:visited {
 		margin: 0;
 	}
 
-	.sidebar-footer a {
+	#sidebar-footer a {
 		text-decoration: underline;
 		}
+		
+#info-footer {
+	position: absolute;
+	left: 20px;
+}
+		
+#attr-footer {
+	position: absolute;
+	right: 20px;
+}
 
 table tr {
 	vertical-align: top;
@@ -538,8 +547,133 @@ table tr {
 	margin-left: <?php echo (get_option('sl_header_width') + 40); ?>px;
 }
 
-#header-phone, #header-email {
-	display: none;
+/* Time for some responsive design fun. Let's just target screens smaller than 760px for now and give them something nice and clean. */
+
+@media (max-width: 768px) {
+
+	* {
+		margin: 0;
+		padding: 0;
+		border: none;
+	}
+	
+	#outerWrap {
+		overflow: hidden;
+	}
+	
+	#header {
+		background-color: red;
+		height: auto;
+		position: relative;
+		margin: 0;
+		padding: 0;
+		width: 100%;
+	}
+	
+		#header-content {
+			padding: 0 0 10px 10px;
+		}
+		
+   		#header ul li {
+   			display: block; 
+   			float: left;
+   			font-size: 14px;
+   			padding: 15px 20px 15px 0;
+   		}
+   			
+		#header div {
+			clear: both;
+			margin: 0;
+		}
+		
+		#header h3 {
+			margin: 0;
+			padding: 0;
+		}
+		#logo {
+			padding: 10px 10px 0;
+		}
+
+	#wrapper {
+		background-color: blue;
+		border: none;
+		margin: 0;
+		width: 100%;
+	}
+		
+		.entry {
+			border-bottom: medium none;
+			border-bottom: medium none;
+			padding: 10px;
+			margin-bottom: 0;
+		}
+	
+			.meta-cat {
+				display: none;
+			}
+				
+		img.alignnone {
+			width: 100%;
+			height: auto;
+		}
+		
+		#wrapper a img {
+			border: none;
+			}
+	
+	#sidebar-footer {
+		background-color: green;
+		position: relative;
+		height: auto;
+		bottom: auto;
+	}
+	
+		#info-footer {
+			position: relative;
+			left: auto;
+			padding-left: 10px;
+		}
+				
+		#attr-footer {
+			position: relative;
+			right: auto;
+			padding-left: 10px;
+		}
+		
+	#wrapper #content-index {
+		width: 100%;
+	}
+	
+	/* Make mobile galleries scroll vertically. */
+	
+	#sl-sidescroll-wrap td {
+		background-color: yellow;
+		display: block;
+		margin: 0;
+		padding: 0;
+		width: 100%;
+	}
+	
+	.sl-sidescroll-container {
+		margin: 0 0 20px;
+	}
+	
+		.sl-sidescroll-container img {
+			border: none;
+			width: 100%;
+		}
+
+
+}
+
+/* LARGE DESKTOP SCREENS */
+@media (min-width: 1210px) {
+
+  /* Update subnav container */
+  .subnav-fixed .nav {
+    width: 1168px; /* 2px less to account for left/right borders being removed when in fixed mode */
+  }
+
 }
 
 <?php } ?>
