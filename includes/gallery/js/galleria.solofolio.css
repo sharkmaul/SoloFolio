@@ -187,30 +187,60 @@
 }
 .galleria-image-nav {
     position: absolute;
-    top: 50%;
-    margin-top: -18px;
+    height: 100%;
     width: 100%;
-    height: 36px;
+    top: 0;
     left: 0;
 }
+
+.galleria-image-nav-left,
+.galleria-image-nav-right {
+	height: 100%;
+	
+	position: absolute;
+    z-index: 2;
+    top: 0;
+}
+
+.galleria-image-nav-left {
+	left: 0;
+	width: 50%;
+	cursor: url("../../../img/prev.cur"), move;
+
+}
+.galleria-image-nav-right {
+	right: 0;
+	width: 50%;
+	cursor: url("../../../img/next.cur"), move;
+}
+
+.galleria-image-nav-left:hover { }
+.galleria-image-nav-right:hover { }
+
+/*
 .galleria-image-nav-left,
 .galleria-image-nav-right {
     cursor: pointer;
     width: 36px;
     height: 36px;
-    position: absolute;
+    top: 50%;
+    
     left: 20px;
-    z-index: 2;
-    background: url(nav.png);
+    
+    background: url(nav.png); 
 }
 .galleria-image-nav-right {
     left: auto;
     right: 20px;
+    top: 50%;
     background-position: -36px 0;
     z-index: 2;
 }
+
 .galleria-image-nav-left:hover { background-position: 0 -36px }
-.galleria-image-nav-right:hover { background-position: -36px -36px }
+.galleria-image-nav-right:hover { background-position: -36px -36px }*/
+
+
 .galleria-thumb-nav-left,
 .galleria-thumb-nav-right {
     cursor: pointer;

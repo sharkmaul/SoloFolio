@@ -137,6 +137,10 @@ if (get_option('sl_maintenance_mode') == 'true') {
 		<?php if (get_option('sl_show_footer') == 'yes') {?>
 			<p class="sidebar-footer"><?php echo get_option('sl_footer_text'); ?></p>
 		<?php }; ?>
+		<?php if (get_option('sl_show_att') == 'yes') {?>
+		<p class="sidebar-footer">Powered by <a id="solo-link" title="Powered by SoloFolio. The ultimate WordPress portfolio and blog." href="http://www.solofolio.net" target="_blank">Solofolio</a></p>
+		<?php }; ?>
+		
 
 <?php }; ?>
 	

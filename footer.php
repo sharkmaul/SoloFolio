@@ -29,10 +29,5 @@
 
 </div><!-- /#outerwrap -->
 
-<?php if (get_option('sl_show_att') == 'yes') {?>
-<a id="solo-link" title="Powered by SoloFolio. Your blog and portfolio in one place, the way it should be." href="http://www.solofolio.net" target="_blank"><img src="<?php echo (bloginfo('template_url').'/img/solo-link.png'); ?>" alt="Powered by SoloFolio. Your blog and portfolio in one place, the way it should be." /></a>
-<?php }; ?>
-
-
 </body>
 </html>

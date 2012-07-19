@@ -687,25 +687,6 @@ ul.my_recent_galleries li {
     display: inline;
 }
 
-/* Credit stamp */
-
-#solo-link {
-	display: block;
-	opacity: .1;
-	padding: 3px;
-	position: fixed;
-	right: 0;
-	bottom: 0;
-}
-	
-	#solo-link:hover {
-		opacity: .3;
-	}
-
-	#solo-link img  {
-		border: none;
-	}
-
 /* Social Media Widget */
 
 #solofolio-social {

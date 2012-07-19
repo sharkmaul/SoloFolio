@@ -461,10 +461,6 @@ a:link, a:visited {
 	text-transform: uppercase;
 }
 
-#outerWrap {
-	width: 900px;
-}
-
 #logo {
 	position: static;
 	bottom: 0px;
@@ -514,7 +510,12 @@ a:link, a:visited {
 .sidebar-footer {
 	font-size: 11px;
     opacity: 0.5;
+    margin: 0;
 }
+
+	.sidebar-footer a {
+		text-decoration: underline;
+		}
 
 table tr {
 	vertical-align: top;
@@ -526,10 +527,6 @@ table tr {
 
 #wrapper {
 	margin-left: <?php echo (get_option('sl_header_width') + 40); ?>px;
-}
-
-#outerWrap {
-	margin: 0;
 }
 
 #header-phone, #header-email {

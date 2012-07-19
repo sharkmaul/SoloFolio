@@ -56,7 +56,13 @@ function KeyCheck(e) {
         case 37: //press left arrow 
             gallery.prev();
             break;
+        case 74: //press left arrow 
+            gallery.prev();
+            break;
         case 39: //press right arrow
+            gallery.next();
+            break;
+        case 75: //press left arrow 
             gallery.next();
             break;
     }
