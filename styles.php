@@ -446,6 +446,10 @@ a:link, a:visited {
 	padding: 20px 0 0 20px;
 }
 
+.description {
+	display: block;
+}
+
 #header div {
 	margin-bottom: 15px;
 }
@@ -521,7 +525,7 @@ table tr {
 }
 
 #wrapper {
-	padding: 10px 0 0 0;
+	margin-left: <?php echo (get_option('sl_header_width') + 40); ?>px;
 }
 
 #outerWrap {
