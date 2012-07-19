@@ -118,6 +118,8 @@ if (get_option('sl_maintenance_mode') == 'true') {
 		<?php } ?>
 	</div><!-- End Header-Content -->
 	
+	<div class="clear"></div>
+	
 </div><!-- End Header -->
 
 <div id="wrapper"><!-- Begin Wrapper -->

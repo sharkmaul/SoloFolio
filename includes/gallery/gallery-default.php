@@ -14,7 +14,7 @@ foreach ( $attachments as $id => $attachment ) {
 	$output .= "
 		
 		<a href=\"" . $link4[0] . "\" rel=\"" . $link2 . "\">
-			<img  class=\"full\" alt=\"" .  wptexturize($attachment->post_content) . "\" src=\"". $link3[0] . "\"/>			
+			<img  class=\"full\" alt=\"" .  wptexturize($attachment->post_excerpt) . "\" src=\"". $link3[0] . "\"/>			
 		</a>
 		
 		

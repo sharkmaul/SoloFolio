@@ -562,7 +562,6 @@ table tr {
 	}
 	
 	#header {
-		background-color: red;
 		height: auto;
 		position: relative;
 		margin: 0;
@@ -595,7 +594,6 @@ table tr {
 		}
 
 	#wrapper {
-		background-color: blue;
 		border: none;
 		margin: 0;
 		width: 100%;
@@ -622,14 +620,15 @@ table tr {
 			}
 	
 	#sidebar-footer {
-		background-color: green;
 		position: relative;
 		height: auto;
 		bottom: auto;
+		
 	}
 	
 		#info-footer {
 			position: relative;
+			float: left;
 			left: auto;
 			padding-left: 10px;
 		}
@@ -637,6 +636,7 @@ table tr {
 		#attr-footer {
 			position: relative;
 			right: auto;
+			float: left;
 			padding-left: 10px;
 		}
 		
@@ -647,7 +647,6 @@ table tr {
 	/* Make mobile galleries scroll vertically. */
 	
 	#sl-sidescroll-wrap td {
-		background-color: yellow;
 		display: block;
 		margin: 0;
 		padding: 0;
@@ -661,6 +660,10 @@ table tr {
 		.sl-sidescroll-container img {
 			border: none;
 			width: 100%;
+		}
+		
+		.sl-sidescroll-container p {
+			padding: 2px 10px;
 		}
 
 

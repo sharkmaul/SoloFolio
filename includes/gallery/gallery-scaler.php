@@ -22,7 +22,7 @@ foreach ( $attachments as $id => $attachment ) {
 		<img src=\"" . $link2 . "\" alt=\"open image\" class=\"full\"/>";
 		
 	if ($captions != "false"){		
-		$output .="<p>" .  wptexturize($attachment->post_content) . "</p> ";
+		$output .="<p>" .  wptexturize($attachment->post_excerpt) . "</p> ";
 	}
 	
 	$output .= "</div>";

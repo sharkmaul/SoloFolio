@@ -3,7 +3,7 @@
 
 $output .= "<script type=\"text/javascript\" charset=\"utf-8\">
 		$(function(){
-			$(\"#sl-sidescroll-wrap\").wrapInner(\"<table ><tr>\");
+			$(\"#sl-sidescroll-wrap\").wrapInner(\"<table cellspacing=\"0\" ><tr>\");
 			$(\".sl-sidescroll-container\").wrap(\"<td>\");
 		});
 
@@ -29,7 +29,7 @@ $output .= "<script type=\"text/javascript\" charset=\"utf-8\">
 			<img src=\"" . $link4[0] . "\" data-retina=\"" . $link2 . "\" alt=\"open image\" class=\"full\" id=\"" . $i . "\"/>";
 			
 		if ($captions != "false"){		
-			$output .="<p>" .  wptexturize($attachment->post_content) . "</p> ";
+			$output .="<p>" .  wptexturize($attachment->post_excerpt) . "</p> ";
 		}
 		
 		$output .= "</div>";
