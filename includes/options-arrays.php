@@ -571,6 +571,12 @@ array( "type" => "clear"),
 		
 array( "type" => "clear"),
 		
+	array( "name" => "Cursor Color",
+		"id" => $shortname."_gallery_cursor_color",
+		"type" => "select",
+		"options" => array("Dark", "Light"),
+		"std" => "Dark"),	
+		
 	array( "name" => "Icon Color",
 		"id" => $shortname."_gallery_outside_color",
 		"type" => "select",

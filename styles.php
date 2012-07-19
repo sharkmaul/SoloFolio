@@ -73,28 +73,6 @@ a.outPause, a.outThumbs, a.outLeft, a.outRight {
 .galleria-image-nav-left:hover, .galleria-image-nav-right:hover {
 	opacity: <?php echo get_option('sl_gallery_outside_controls_opacity_hover'); ?>;
 }
-
-<?php
-
-if (get_option('sl_gallery_outside_color') == 'Dark') {?>
-
-a.outLeft {
-	background: url('gallery/sg/css/img/dark-left.png') no-repeat center left;
-}
-
-a.outRight {
-	background: url('gallery/sg/css/img/dark-right.png') no-repeat center right;
-}
-
-a.outPause {
-	background: url('gallery/sg/css/img/dark-pause.png') no-repeat center right;
-}
-
-a.outThumbs {
-	background: url('gallery/sg/css/img/dark-thumbs.png') no-repeat center right;
-}
-
-<?php }; ?>
 		
 /*a.outLeft:hover, a.outRight:hover {
 	background-color: #<?php echo get_option('sl_gallery_outside_controls_bg'); ?>;
@@ -308,6 +286,27 @@ input:focus, textarea:focus {
 	margin-right: <?php echo get_option('sl_gallery_sidescroll_padding'); ?>px;
 }
 
+<?php if (get_option('sl_gallery_cursor_color') == 'Light') {?>
+
+.galleria-image-nav-left {
+	cursor: url("img/prev.light.cur"), move;
+
+}
+.galleria-image-nav-right {
+	cursor: url("img/next.light.cur"), move;
+}
+
+<?php } else { ?>
+
+.galleria-image-nav-left {
+	cursor: url("img/prev.dark.cur"), move;
+}
+
+.galleria-image-nav-right {
+	cursor: url("img/next.dark.cur"), move;
+}
+
+<?php } ?>
 
 <?php if (get_option('sl_gallery_outside_color') == 'Dark') {?>
 
@@ -512,7 +511,8 @@ a:link, a:visited {
 	width: 100%;
 	z-index: 5;
 	bottom: 10px;
-	height: auto;
+	left: 20px;
+	height: 30px;
 }
 
 	#sidebar-footer p {
@@ -524,16 +524,6 @@ a:link, a:visited {
 	#sidebar-footer a {
 		text-decoration: underline;
 		}
-		
-#info-footer {
-	position: absolute;
-	left: 20px;
-}
-		
-#attr-footer {
-	position: absolute;
-	right: 20px;
-}
 
 table tr {
 	vertical-align: top;
@@ -549,7 +539,7 @@ table tr {
 
 /* Time for some responsive design fun. Let's just target screens smaller than 760px for now and give them something nice and clean. */
 
-@mediaonly screen and (max-device-width: 480px) {
+@media only screen and (max-device-width: 768px) {
 
 	* {
 		margin: 0;
@@ -622,22 +612,11 @@ table tr {
 	#sidebar-footer {
 		position: relative;
 		height: auto;
-		bottom: auto;
-		
+		bottom: auto;	
 	}
 	
-		#info-footer {
-			position: relative;
-			float: left;
-			left: auto;
-			padding-left: 10px;
-		}
-				
-		#attr-footer {
-			position: relative;
-			right: auto;
-			float: left;
-			padding-left: 10px;
+		#sidebar-footer p {
+			display: inline;
 		}
 		
 	#wrapper #content-index {

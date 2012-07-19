@@ -205,13 +205,10 @@
 .galleria-image-nav-left {
 	left: 0;
 	width: 50%;
-	cursor: url("../../../img/prev.cur"), move;
-
 }
 .galleria-image-nav-right {
 	right: 0;
 	width: 50%;
-	cursor: url("../../../img/next.cur"), move;
 }
 
 .galleria-image-nav-left:hover { }

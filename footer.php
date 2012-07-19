@@ -26,17 +26,13 @@
 
 <?php if (get_option('sl_sidebar_layout') == 'yes') { ?>
 	<div id="sidebar-footer">
-		<div id="info-footer">
 		<?php if (get_option('sl_show_footer') == 'yes') {?>
-			<p><?php echo get_option('sl_footer_text'); ?></p>
+			<p id="info-footer"><?php echo get_option('sl_footer_text'); ?></p>
 		<?php }; ?>
-		</div>
-		<div id="attr-footer">
 		<?php if (get_option('sl_show_att') == 'yes') {?>
-			<p>Powered by <a id="solo-link" title="Powered by SoloFolio. The ultimate WordPress portfolio and blog." href="http://www.solofolio.net" target="_blank">SoloFolio</a>.</p>
+			<p id="attr-footer">Powered by <a title="Powered by SoloFolio. The ultimate WordPress portfolio and blog." href="http://www.solofolio.net" target="_blank">SoloFolio</a>.</p>
 		<?php }; ?>
-	</div>
-	
+		
 	</div>
 	
 <?php }; ?>
