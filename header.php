@@ -80,16 +80,19 @@ if (get_option('sl_maintenance_mode') == 'true') {
 
 <div id="header" class="sans"><!-- Begin Header -->
 	<div id="logo">
-		<?php if (get_option('sl_logo') == '') { ?>
-		<div id="headerimg">
+		<div id="logo-noimg">
 			<h1><a href="<?php echo get_option('home'); ?>/"><?php bloginfo('name'); ?></a></h1>
-			<div class="description"><?php bloginfo('description'); ?></div>
+			<span class="description"><?php bloginfo('description'); ?></span>
 		</div>
-		<?php } else { ?>
-		<a href="<?php bloginfo('url'); ?>" title="<?php bloginfo('name'); ?>"><img src="<?php echo get_option('sl_logo'); ?>" alt="<?php bloginfo('description'); ?>" data-retina="<?php echo get_option('sl_logo_retina'); ?>"/></a>
-		<?php } ?>
-		<div id="header-phone" class="<?php echo get_option('sl_header_font'); ?> "><a href="tel:<?php echo get_option('sl_phone'); ?>"><?php echo get_option('sl_phone'); ?></a></div>
-		<div id="header-email" class="<?php echo get_option('sl_header_font'); ?> "><a href="mailto:<?php echo get_option('sl_email'); ?>"><?php echo get_option('sl_email'); ?></a></div>   
+		
+		<div id="logo-img">
+			<?php if (get_option('sl_logo') != '') { ?>
+			<a href="<?php bloginfo('url'); ?>" title="<?php bloginfo('name'); ?>"><img src="<?php echo get_option('sl_logo'); ?>" alt="<?php bloginfo('description'); ?>" data-retina="<?php echo get_option('sl_logo_retina'); ?>"/></a>
+			<?php } ?>
+			<div id="header-phone" class="<?php echo get_option('sl_header_font'); ?> "><a href="tel:<?php echo get_option('sl_phone'); ?>"><?php echo get_option('sl_phone'); ?></a></div>
+			<div id="header-email" class="<?php echo get_option('sl_header_font'); ?> "><a href="mailto:<?php echo get_option('sl_email'); ?>"><?php echo get_option('sl_email'); ?></a></div>  
+		</div>
+		
 	</div>
 	<div id="header-content">
 		<div id="navigation" class="<?php echo get_option('sl_menu_font'); ?> ">
@@ -116,8 +119,22 @@ if (get_option('sl_maintenance_mode') == 'true') {
 			<?php endif; ?>
 		<?php } ?>
 		<?php } ?>
+	
 	</div><!-- End Header-Content -->
 	
+<?php if (get_option('sl_sidebar_layout') == 'yes') { ?>
+	<div id="sidebar-footer">
+			<p id="help-footer"><strong>j</strong>:prev <strong>k</strong>:next <strong>f</strong>:fullscreen<p>
+		<?php if (get_option('sl_show_footer') == 'yes') {?>
+			<p id="info-footer"><?php echo get_option('sl_footer_text'); ?></p>
+		<?php }; ?>
+		<?php if (get_option('sl_show_att') == 'yes') {?>
+			<p id="attr-footer">Powered by <a title="Powered by SoloFolio. The ultimate WordPress portfolio and blog." href="http://www.solofolio.net" target="_blank">SoloFolio</a></p>
+		<?php }; ?>
+		
+	</div>
+<?php }; ?>	
+
 	<div class="clear"></div>
 	
 </div><!-- End Header -->

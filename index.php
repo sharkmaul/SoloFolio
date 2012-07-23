@@ -14,7 +14,8 @@
 		</div>
 		<?php the_content('Continue reading &raquo;'); ?>
 		<div class="clear"></div>
-		<span class="meta-cat sans"><?php comments_popup_link('No Comments &#187;', '1 Comment &#187;', '% Comments &#187;'); ?>  <?php the_tags('| Tags: ', ', ', ''); ?></span>
+		<!--<span class="meta-cat sans"><?php comments_popup_link('No Comments &#187;', '1 Comment &#187;', '% Comments &#187;'); ?>  <?php the_tags('| Tags: ', ', ', ''); ?></span>-->
+		<span class="meta-cat sans"><?php comments_popup_link('', '1 Comment &#187;', '% Comments &#187;'); ?>  <?php the_tags('| Tags: ', ', ', ''); ?></span>
 		<div class="clear"></div>
 	</div>
 	<?php endwhile; ?>

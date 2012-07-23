@@ -20,12 +20,6 @@ foreach ($options_gallery as $value) {
 	
 ?>
 
-
-/*#post #outerWrap {
-	margin: 0 auto;
-	width: <?php echo (get_option('sl_wrapper_width') + get_option('sl_wrapper_padding') + get_option('sl_wrapper_padding')); ?>px;
-	}*/
-
 #wrapper {
 	padding: <?php echo get_option('sl_wrapper_padding'); ?>px;
 	width: <?php echo get_option('sl_wrapper_width'); ?>px;
@@ -421,6 +415,14 @@ Default Navigation for normal layout only
 	padding: 0 0 0 8px;
 }
 
+<?php if (get_option('sl_logo') != '') { ?>
+#logo-noimg {
+	display: none;
+	}
+
+<?php } ?>
+
+
 <?php } ?>
 	
 <?php if (get_option('sl_sidebar_layout') == 'yes') { ?>
@@ -440,6 +442,7 @@ a:link, a:visited {
 	z-index: 5;
 	left: 0;
 	top: 0;
+	bottom: 0;
 	bottom: 40px;
 	height: 100%;
 	padding: 20px 0 0 20px;
@@ -464,6 +467,7 @@ a:link, a:visited {
 	position: static;
 	bottom: 0px;
 	margin-bottom: 5px;
+	width: auto;
 }
 
 #header-content {
@@ -510,9 +514,9 @@ a:link, a:visited {
 	position: fixed;
 	width: 100%;
 	z-index: 5;
-	bottom: 10px;
+	bottom: 0;
 	left: 20px;
-	height: 30px;
+	height: 60px;
 }
 
 	#sidebar-footer p {
@@ -524,6 +528,14 @@ a:link, a:visited {
 	#sidebar-footer a {
 		text-decoration: underline;
 		}
+		
+#sidebar-footer #help-footer {
+	margin-bottom: 10px;
+	}
+
+#sidebar-footer strong {
+	color: #ffffff;
+}
 
 table tr {
 	vertical-align: top;
@@ -535,6 +547,18 @@ table tr {
 
 #wrapper {
 	margin-left: <?php echo (get_option('sl_header_width') + 40); ?>px;
+}
+
+#wrapper {
+	width: auto;
+	max-width: <?php echo get_option('sl_wrapper_width'); ?>px;
+	padding-right: 10px;
+}
+
+#content-page p img {
+	height: auto;
+    max-width: <?php echo get_option('sl_wrapper_width'); ?>px;
+    width: 100%;
 }
 
 /* Time for some responsive design fun. Let's just target screens smaller than 760px for now and give them something nice and clean. */
@@ -649,28 +673,23 @@ table tr {
 }
 
 /* LARGE DESKTOP SCREENS */
-@media (min-width: 1210px) {
+@media (min-width: <?php echo (get_option('sl_wrapper_width') + get_option('sl_header_width') + 200); ?>px) {
 
-  /* Update subnav container */
-  .subnav-fixed .nav {
-    width: 1168px; /* 2px less to account for left/right borders being removed when in fixed mode */
-  }
-
+#outerWrap {
+	margin: 0 auto;
+	position: relative;
+	width: <?php echo (get_option('sl_wrapper_width') + get_option('sl_header_width') + 80); ?>px;
 }
+
+#header {
+	position: absolute;
+}
+
 /* Some old responsive code to implement soon */
 
-/*
-#wrapper {
-width: auto;
-padding-right: 10px;
-}
-
-#content-page p img {
-height: auto;
-    max-width: 900px;
-    width: 100%;
-}
-*/
-
+/*#post #outerWrap {
+	margin: 0 auto;
+	width: <?php echo (get_option('sl_wrapper_width') + get_option('sl_wrapper_padding') + get_option('sl_wrapper_padding')); ?>px;
+	}*/
 
 <?php } ?>
