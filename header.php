@@ -124,7 +124,7 @@ if (get_option('sl_maintenance_mode') == 'true') {
 	
 <?php if (get_option('sl_sidebar_layout') == 'yes') { ?>
 	<div id="sidebar-footer">
-			<p id="help-footer"><strong>j</strong>:prev <strong>k</strong>:next <strong>f</strong>:fullscreen<p>
+			<p id="help-footer"><strong>j</strong>:prev <strong>k</strong>:next</p>
 		<?php if (get_option('sl_show_footer') == 'yes') {?>
 			<p id="info-footer"><?php echo get_option('sl_footer_text'); ?></p>
 		<?php }; ?>

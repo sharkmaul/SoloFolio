@@ -1,7 +1,3 @@
-/**
- * @preserve Galleria Classic Theme 2011-06-07
- */
-
 (function($) {
 
 Galleria.addTheme({
@@ -34,7 +30,7 @@ Galleria.addTheme({
         _showFullscreen: true,
 		_showPopout: false,
 		_showProgress: true,
-		_showTooltip: true,
+		_showTooltip: false,
     },
 	
 	
@@ -46,8 +42,8 @@ Galleria.addTheme({
 	75: this.next,
 	70: this.toggleFullscreen
 	});	
-    this.addElement("bar", "fullscreen", "play", "popout", "thumblink", "s1", "s2", "s3", "s4", "progress");
-    this.append({stage: "progress", container: ["bar", "tooltip"], bar: ["fullscreen", "play", "popout", "thumblink", "info", "counter"]});
+    this.addElement("bar", "controls", "clear", "fullscreen", "play", "popout", "thumblink", "s1", "s2", "s3", "s4", "progress");
+    this.append({stage: "progress", container: ["bar", "tooltip"], bar: ["controls", "info"], controls: ["fullscreen", "play", "popout", "thumblink", "counter", "clear"]});
     var v = this, Q = this.$("thumbnails-container"), M = this.$("thumblink"), O = this.$("fullscreen"), Y = this.$("play"), da = this.$("popout"), W = this.$("bar"), Z = this.$("progress"), ha = s.transition, R = s._locale, ia = false, ga = false, ka = !!s.autoplay, c = false, aa = function () {Q.height(v.getStageHeight()).width(v.getStageWidth()).css("top", ia ? 0 : v.getStageHeight() + 30);};
     aa();
     s._showTooltip &&

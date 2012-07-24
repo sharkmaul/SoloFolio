@@ -552,7 +552,8 @@ table tr {
 #wrapper {
 	width: auto;
 	max-width: <?php echo get_option('sl_wrapper_width'); ?>px;
-	padding-right: 10px;
+	
+	padding: 20px 10px 0 0;
 }
 
 #content-page p img {

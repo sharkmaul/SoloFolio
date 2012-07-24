@@ -55,7 +55,8 @@ function solofolio_gallery_shortcode($attr) {
 		'speed'    => '',
 		'transition'    => '',
 		'fullscreen'    => '',
-		'showPlay'    => '0',
+		'showplay'    => '',
+		'showthumbnails'    => '',
 		'exclude'    => ''
 	), $attr));
 

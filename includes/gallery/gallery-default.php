@@ -38,7 +38,7 @@ $('#galleria').galleria({";
 	if ($width != ""){$output.= "width: " .  $width . ",";}
 	if ($height != ""){$output.= "height: " .  $height . ",";} else {$output.= "height: 680,";}
 	
-	if ($fullscreen== "false"){$output.= "showFullscreen: false,";}
+	if ($fullscreen== "false"){$output.= "_showFullscreen: false,";}
 	
 	$output.="swipe: true,";
 	$output.="responsive: true,";
@@ -47,10 +47,18 @@ $('#galleria').galleria({";
 
 $output.= " });";
 
-$output.=" 
- 
+$output.= "</script>";
 
+$output.= "<style>";
 
-</script>";
+if ($showthumbnails== "false"){
+	$output.= ".galleria-thumblink {display:none} ";
+	};
+	
+if ($showplay== "false"){
+	$output.= ".galleria-play {display:none} ";
+	};
+
+$output.="</style>";
 
 ?>
