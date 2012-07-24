@@ -516,7 +516,7 @@ a:link, a:visited {
 	z-index: 5;
 	bottom: 0;
 	left: 20px;
-	height: 60px;
+	height: 55px;
 }
 
 	#sidebar-footer p {
@@ -530,7 +530,7 @@ a:link, a:visited {
 		}
 		
 #sidebar-footer #help-footer {
-	margin-bottom: 10px;
+	margin-bottom: 5px;
 	}
 
 #sidebar-footer strong {
@@ -556,6 +556,23 @@ table tr {
 	padding: 20px 10px 0 0;
 }
 
+/* Responsive sizing for blog */
+
+#content-index, #content-single {
+	width: 100%;
+}
+
+	#content-index .entry .wp-caption {
+		width: 100%;
+	}
+				
+	.wp-caption img {
+		height: auto;
+		width: 100%;
+	}
+
+
+
 #content-page p img {
 	height: auto;
     max-width: <?php echo get_option('sl_wrapper_width'); ?>px;
@@ -564,7 +581,7 @@ table tr {
 
 /* Time for some responsive design fun. Let's just target screens smaller than 760px for now and give them something nice and clean. */
 
-@media only screen and (max-device-width: 768px) {
+@media only screen and (max-width: 768px) {
 
 	* {
 		margin: 0;
@@ -638,6 +655,7 @@ table tr {
 		position: relative;
 		height: auto;
 		bottom: auto;	
+		left: 10px;
 	}
 	
 		#sidebar-footer p {
@@ -648,6 +666,10 @@ table tr {
 		width: 100%;
 	}
 	
+	#sidebar-footer #help-footer {
+		display: none;
+	}
+			
 	/* Make mobile galleries scroll vertically. */
 	
 	#sl-sidescroll-wrap td {

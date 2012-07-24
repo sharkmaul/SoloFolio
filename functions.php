@@ -53,6 +53,26 @@ if(function_exists('register_sidebar')){
 }
 }
 
+// Remove image margins automatically added by WordPress. 
+// From: http://wordpress.org/support/topic/10px-added-to-width-in-image-captions
+class fixImageMargins{
+    public function __construct(){
+        add_filter('img_caption_shortcode', array(&$this, 'fixme'), 10, 3);
+    }
+    public function fixme($x=null, $attr, $content){
+        extract(shortcode_atts(array(
+                'id'    => '',
+                'align'    => 'alignnone',
+                'width'    => '',
+                'caption' => ''
+            ), $attr));
+        if ( 1 > (int) $width || empty($caption) ) {return $content;}
+        if ( $id ) $id = 'id="' . $id . '" ';
+    return '<div ' . $id . 'class="wp-caption ' . $align . '">' . $content . '<p class="wp-caption-text">' . $caption . '</p></div>';
+    }
+}
+$fixImageMargins = new fixImageMargins();
+
 // Include gallery shortcode replacement
 include_once("includes/gallery.php");
 include_once("includes/gallery-settings.php");
