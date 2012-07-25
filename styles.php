@@ -415,6 +415,8 @@ Default Navigation for normal layout only
 	padding: 0 0 0 8px;
 }
 
+<?php } ?>
+	
 <?php if (get_option('sl_logo') != '') { ?>
 #logo-noimg {
 	display: none;
@@ -422,9 +424,6 @@ Default Navigation for normal layout only
 
 <?php } ?>
 
-
-<?php } ?>
-	
 <?php if (get_option('sl_sidebar_layout') == 'yes') { ?>
 /*
 SoloFolio
@@ -511,12 +510,7 @@ a:link, a:visited {
 }
 
 #sidebar-footer {
-	position: fixed;
-	width: 100%;
-	z-index: 5;
-	bottom: 0;
-	left: 20px;
-	height: 55px;
+
 }
 
 	#sidebar-footer p {
@@ -547,14 +541,18 @@ table tr {
 
 #wrapper {
 	margin-left: <?php echo (get_option('sl_header_width') + 40); ?>px;
+	padding: 20px 10px 0 0;
+	width: auto;
 }
 
-#wrapper {
-	width: auto;
-	max-width: <?php echo get_option('sl_wrapper_width'); ?>px;
+	#wrapper {
+		max-width: <?php echo get_option('sl_wrapper_width'); ?>px;	
+	}
 	
-	padding: 20px 10px 0 0;
-}
+	#content-page p img {
+    	max-width: <?php echo get_option('sl_wrapper_width'); ?>px;
+	}
+
 
 /* Responsive sizing for blog */
 
@@ -564,24 +562,21 @@ table tr {
 
 	#content-index .entry .wp-caption {
 		width: 100%;
-	}
-				
-	.wp-caption img {
+	}	
+			
+	.wp-caption img, .entry img {
 		height: auto;
 		width: 100%;
 	}
 
-
-
 #content-page p img {
 	height: auto;
-    max-width: <?php echo get_option('sl_wrapper_width'); ?>px;
     width: 100%;
 }
 
 /* Time for some responsive design fun. Let's just target screens smaller than 760px for now and give them something nice and clean. */
 
-@media only screen and (max-width: 768px) {
+@media (max-device-width: 480px){
 
 	* {
 		margin: 0;

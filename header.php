@@ -1,5 +1,5 @@
 <?php
-//allows the theme to get info from the theme options page
+// allows the theme to get info from the theme options page
 global $options;
 foreach ($options as $value) {
 	if (get_option( $value['id'] ) === FALSE) { $$value['id'] = $value['std']; }
@@ -18,8 +18,9 @@ if (get_option('sl_maintenance_mode') == 'true') {
 <html>
 <head>
 	<meta charset="utf-8">
+	<meta name="viewport" content="user-scalable = no">
 	<meta name="apple-mobile-web-app-capable" content="yes" />
-	<meta name="apple-mobile-web-app-capable" content="yes" />
+	<meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0;">
 	
 	<title><?php bloginfo('name'); ?> <?php if ( is_single() ) { ?> &raquo; Blog Archive <?php } ?> <?php wp_title(); ?></title>	
 	
@@ -33,6 +34,7 @@ if (get_option('sl_maintenance_mode') == 'true') {
 	<script type="text/javascript" src="<?php echo bloginfo('template_url'); ?>/includes/gallery/js/galleria.solofolio.js"></script>
 	<script type="text/javascript" src="<?php echo bloginfo('template_url'); ?>/js/jquery.retina.min.js"></script>
 	<script type="text/javascript" src="<?php echo bloginfo('template_url'); ?>/js/jquery.jknav.min.js"></script>
+
 	
 	<link rel="alternate" type="application/rss+xml" title="RSS 2.0" href="<?php bloginfo('url'); ?>/wp-rss.php" />
 	<link rel="alternate" type="application/rss+xml" title="RSS 2.0" href="<?php bloginfo('rss2_url'); ?>" />
@@ -40,21 +42,20 @@ if (get_option('sl_maintenance_mode') == 'true') {
 	<link rel="alternate" type="application/atom+xml" title="Atom 0.3" href="<?php bloginfo('atom_url'); ?>" />
 	<link rel="pingback" href="<?php bloginfo('pingback_url'); ?>" />
 	
-	<?php if (get_option('sl_favicon_url') != '') { ?>
+<?php if (get_option('sl_favicon_url') != '') { ?>
 	<link href="<?php echo get_option('sl_favicon_url'); ?>" rel="shortcut icon" />
-	<?php } else { ?>
+<?php } else { ?>
 	<link href="<?php echo (bloginfo('template_url').'/img/favicon.ico'); ?>" rel="shortcut icon" />
-	<?php } ?>
+<?php } ?>
 	
-	<?php if (get_option('sl_ios_url') != '') { ?>
+<?php if (get_option('sl_ios_url') != '') { ?>
 	<link href="" rel="shortcut icon" />
 	<link rel="apple-touch-icon-precomposed" href="<?php echo get_option('sl_ios_url'); ?>" />
-	<?php } else { ?>
+<?php } else { ?>
 	<link rel="apple-touch-icon-precomposed" href="<?php echo (bloginfo('template_url').'/img/favicon.ico'); ?>" />
-	<?php } ?>
+<?php } ?>
 	
 	<link rel="stylesheet" type="text/css" media="all" href="<?php bloginfo( 'stylesheet_url' ); ?>" />
-	
 	<link rel="stylesheet" href="<?php echo (bloginfo('template_url').'/styles.php'); ?>" type="text/css" media="screen" />
 	
 	<script type="text/javascript"> 
@@ -62,16 +63,20 @@ if (get_option('sl_maintenance_mode') == 'true') {
 		$('img').retina();
 		$('#wrapper img').jknav();
 		$.jknav.init();
+		$('img').each(function(){ 
+        	$(this).removeAttr('width')
+        	$(this).removeAttr('height');
+    	}); 
 	});
 	</script>
 	
-	<?php if (get_option('sl_custom_css') != '') { ?>
+<?php if (get_option('sl_custom_css') != '') { ?>
 	<style type="text/css">
 	<?php echo get_option('sl_custom_css'); ?>
-	</style><?php } ?>
+	</style>
+<?php } ?>
 	
 	<?php echo stripslashes(get_option('sl_custom_head')); ?>
-	
 </head>
 
 <body id="<?php echo get_post_type( $post ); ?>"   class="<?php echo get_option('sl_body_font'); ?>">
@@ -124,7 +129,7 @@ if (get_option('sl_maintenance_mode') == 'true') {
 	
 <?php if (get_option('sl_sidebar_layout') == 'yes') { ?>
 	<div id="sidebar-footer">
-			<p id="help-footer"><strong>j</strong>:prev <strong>k</strong>:next</p>
+			<!--<p id="help-footer"><strong>j</strong>:prev <strong>k</strong>:next</p>-->
 		<?php if (get_option('sl_show_footer') == 'yes') {?>
 			<p id="info-footer"><?php echo get_option('sl_footer_text'); ?></p>
 		<?php }; ?>

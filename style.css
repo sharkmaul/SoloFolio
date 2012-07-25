@@ -204,6 +204,7 @@ p {
 	margin: 0 auto;
 	padding: 20px;
 	width: 900px;
+	overflow: hidden;
 }
 
 #content-page {
@@ -620,8 +621,10 @@ div.aligncenter {
 
 .wp-caption p.wp-caption-text {
 	font-family: arial,helvetica,sans-serif;
-	font-size: 12px;
 	margin: 3px 2px;
+	font-size: 10px;
+	padding-bottom: 5px;
+}
 }
 
 /* Forms */
