@@ -18,7 +18,6 @@ if (get_option('sl_maintenance_mode') == 'true') {
 <html>
 <head>
 	<meta charset="utf-8">
-	<meta name="viewport" content="user-scalable = no">
 	<meta name="apple-mobile-web-app-capable" content="yes" />
 	<meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0;">
 	
@@ -91,12 +90,11 @@ if (get_option('sl_maintenance_mode') == 'true') {
 		</div>
 		
 		<div id="logo-img">
-			<?php if (get_option('sl_logo') != '') { ?>
-			<a href="<?php bloginfo('url'); ?>" title="<?php bloginfo('name'); ?>"><img src="<?php echo get_option('sl_logo'); ?>" alt="<?php bloginfo('description'); ?>" data-retina="<?php echo get_option('sl_logo_retina'); ?>"/></a>
-			<?php } ?>
-			<div id="header-phone" class="<?php echo get_option('sl_header_font'); ?> "><a href="tel:<?php echo get_option('sl_phone'); ?>"><?php echo get_option('sl_phone'); ?></a></div>
-			<div id="header-email" class="<?php echo get_option('sl_header_font'); ?> "><a href="mailto:<?php echo get_option('sl_email'); ?>"><?php echo get_option('sl_email'); ?></a></div>  
+			<a href="<?php bloginfo('url'); ?>" title="<?php bloginfo('name'); ?>"><img src="<?php echo get_option('sl_logo'); ?>" alt="<?php bloginfo('description'); ?>" data-retina="<?php echo get_option('sl_logo_retina'); ?>"/></a>	
 		</div>
+		
+		<div id="header-phone" class="<?php echo get_option('sl_header_font'); ?> "><span><?php echo get_option('sl_phone'); ?></span></div>
+			<div id="header-email" class="<?php echo get_option('sl_header_font'); ?> "><a href="mailto:<?php echo get_option('sl_email'); ?>"><?php echo get_option('sl_email'); ?></a></div>  
 		
 	</div>
 	<div id="header-content">

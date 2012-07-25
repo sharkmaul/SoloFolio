@@ -596,15 +596,28 @@ table tr {
 		width: 100%;
 	}
 	
+		#logo-img {
+			display: none;
+		}
+		
+		#logo-noimg {
+			display: block;
+		}
+	
 		#header-content {
 			padding: 0 0 10px 10px;
+		}
+		
+		#header #header-phone, #header #header-email {
+			display: inline;
+			padding-right: 5px;
 		}
 		
    		#header ul li {
    			display: block; 
    			float: left;
    			font-size: 14px;
-   			padding: 15px 20px 15px 0;
+   			padding: 10px 20px 10px 0;
    		}
    			
 		#header div {

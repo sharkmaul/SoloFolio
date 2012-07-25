@@ -1,10 +1,5 @@
 SoloFolio
 =========
-
-A Wordpress platform built by &amp; for creatives.
-
-
-SoloFolio for WordPress
 http://www.solofolio.net/
 
 INSTALLATION
@@ -26,24 +21,39 @@ SoloFolio piggy-backs on the built-in WordPress gallery manager. The [gallery] s
 
 RECOMMENDED PLUGINS
 
+
 -Akismet
+
 -All-in-one SEO
+
 -Fast Secure Contact Form
 
+
 THANKS
+
 -To Patrick and Aaron, for helping me develop v1 in 2009
+
 -To all the users who have submitted ideas/features
+
 -To the following open source projects, whose code is incorporated in this release:
+
 	-Galleria
+
 	-jQuery.Retina
+
 	-JQuery.jknav
+
 -To the fine folks at StackOverflow, for having a solution to every bug on the planet.
 
+
 LICENSE:
+
 In plain english:
 
 1. SoloFolio can be used for both personal and commercial projects.
+
 2. You can NOT publish, redistribute, or otherwise disseminate any component of SoloFolio, including the gallery components used in the theme.
+
 3. Attribution is appreciated, but not required. You can toggle this in under SoloFolio > General.
  
 Now for the legalese:
