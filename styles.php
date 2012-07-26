@@ -713,7 +713,7 @@ table tr {
 }
 
 #header {
-	position: absolute;
+	left: auto;
 }
 
 /* Some old responsive code to implement soon */
