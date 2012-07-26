@@ -204,7 +204,6 @@ p {
 	margin: 0 auto;
 	padding: 20px;
 	width: 900px;
-	overflow: hidden;
 }
 
 #content-page {
@@ -435,6 +434,7 @@ h1.blog-title a:hover {
 	border-bottom: 1px solid #666666;
 	margin: 0 0 2em;
 	padding-bottom: 5px;
+	overflow: hidden;
 }
 	
 .post-meta {
@@ -748,6 +748,69 @@ ul.my_recent_galleries li {
 
 .sl-sidescroll-container {
   margin: 0 20px 0 0;
+  position: relative;
+}
+
+	/* Make sidescroll images retina-friendly! */
+	.sl-sidescroll-container img {
+		width: 100%;
+		height: auto;
+	}
+	
+/* Pageslide stuff */
+
+#pageslide {
+    display: none;
+    position: absolute;
+    position: fixed;
+    top: 0;
+    height: 100%;
+    z-index: 999999;
+    
+    /* Specify the width of pageslide here */
+    width: 260px;
+    padding: 0;
+    
+    /* These styles are optional, and describe how the pageslide will look */
+    background-color: #333;
+    color: #FFF;
+    -webkit-box-shadow: inset 0 0 5px 5px #222;
+    -moz-box-shadow: inset 0 0 5px 5px #222;
+    box-shadow: inset 0 0 5px 5px #222;
+}
+
+#pageslide ul {
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+}
+
+#pageslide #navigation {
+	margin: 0;
+	padding: 0;
+}
+
+#pageslide li {
+	list-style-type: none;
+}
+
+.open {
+	display: none;
+	float: left;
+	width: 40px;
+	height: 30px;
+	margin-right: 10px;
+	background: url("img/menu.png") center center no-repeat #333;
+	-moz-border-radius: 8px;
+	-webkit-border-radius: 8px;
+	-border-radius: 8px;
+	box-shadow: inset 0 0 3px #000;
+	text-indent: -999999px;
+	border: 0;
+}
+
+#modal {
+	display: none;
 }
 
 

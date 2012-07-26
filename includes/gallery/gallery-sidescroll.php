@@ -3,7 +3,7 @@
 
 $output .= "<script type=\"text/javascript\" charset=\"utf-8\">
 		$(function(){
-			$(\"#sl-sidescroll-wrap\").wrapInner(\"<table cellspacing=\"0\" ><tr>\");
+			$(\"#sl-sidescroll-wrap\").wrapInner(\"<table cellspacing=0 ><tr>\");
 			$(\".sl-sidescroll-container\").wrap(\"<td>\");
 		});
 
@@ -22,7 +22,7 @@ $output .= "<script type=\"text/javascript\" charset=\"utf-8\">
 		$link3 = wp_get_attachment_image_src($id, 'thumbnail');
 		$link4 = wp_get_attachment_image_src($id, 'large');
 
-		$output .= "\n\n<div class=\"sl-sidescroll-container\">";
+		$output .= "\n\n<div class=\"sl-sidescroll-container\" style=\"width:" . $link4[1] . "px; height:" . $link4[2] . "px \">";
 		
 		$output .= "
 			

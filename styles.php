@@ -421,7 +421,10 @@ Default Navigation for normal layout only
 #logo-noimg {
 	display: none;
 	}
-
+<?php } else { ?>
+#logo-img {
+	display: none;
+	}
 <?php } ?>
 
 <?php if (get_option('sl_sidebar_layout') == 'yes') { ?>
@@ -574,6 +577,12 @@ table tr {
     width: 100%;
 }
 
+
+#pageslide {
+    /* Specify the width of pageslide here */
+    padding: 0 20px;
+}
+
 /* Time for some responsive design fun. Let's just target screens smaller than 760px for now and give them something nice and clean. */
 
 @media (max-device-width: 480px){
@@ -637,6 +646,7 @@ table tr {
 		border: none;
 		margin: 0;
 		width: 100%;
+		overflow: hidden;
 	}
 		
 		.entry {
@@ -687,8 +697,9 @@ table tr {
 		width: 100%;
 	}
 	
-	.sl-sidescroll-container {
+	#sl-sidescroll-wrap .sl-sidescroll-container {
 		margin: 0 0 20px;
+		width: 100% !important; /* HACK! Override image widths that were set for Retina iPad */
 	}
 	
 		.sl-sidescroll-container img {
@@ -706,21 +717,39 @@ table tr {
 /* LARGE DESKTOP SCREENS */
 @media (min-width: <?php echo (get_option('sl_wrapper_width') + get_option('sl_header_width') + 200); ?>px) {
 
-#outerWrap {
-	margin: 0 auto;
-	position: relative;
-	width: <?php echo (get_option('sl_wrapper_width') + get_option('sl_header_width') + 80); ?>px;
+	#outerWrap {
+		margin: 0 auto;
+		position: relative;
+		width: <?php echo (get_option('sl_wrapper_width') + get_option('sl_header_width') + 80); ?>px;
+	}
+	
+	#header {
+		left: auto;
+	}
+
 }
 
-#header {
-	left: auto;
+/* Pageslide magic menu */
+
+/* Mobile and iPad Portrait */
+
+/* Mobile Landscape and Portrait */
+@media only screen and (max-width: 767px) {
+	#content h1 { font-size: 22px; line-height: 30px; background-color: #000; color: #FFF; padding: 10px; }
+	#header-content { display: none; }
+	
+	#header {
+		background-color: blue;
+	}
+	
+	.open { display: block; }
+	
+	#pageslide { width: 200px; }
 }
 
-/* Some old responsive code to implement soon */
-
-/*#post #outerWrap {
-	margin: 0 auto;
-	width: <?php echo (get_option('sl_wrapper_width') + get_option('sl_wrapper_padding') + get_option('sl_wrapper_padding')); ?>px;
-	}*/
+/* Mobile Portrait */
+@media only screen and (max-width: 479px) {
+	#content h1 { font-size: 14px; }
+}
 
 <?php } ?>

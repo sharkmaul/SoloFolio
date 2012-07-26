@@ -15,11 +15,12 @@ if (get_option('sl_maintenance_mode') == 'true') {
 ?>	
 
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
 	<meta charset="utf-8">
-	<meta name="apple-mobile-web-app-capable" content="yes" />
-	<meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0;">
+	<meta id="extViewportMeta" name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no">
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="apple-mobile-web-app-status-bar-style" content="black" />	
 	
 	<title><?php bloginfo('name'); ?> <?php if ( is_single() ) { ?> &raquo; Blog Archive <?php } ?> <?php wp_title(); ?></title>	
 	
@@ -27,12 +28,13 @@ if (get_option('sl_maintenance_mode') == 'true') {
 		
 	<link rel="profile" href="http://gmpg.org/xfn/11" />
 	<link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>" />
-	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"></script>
+	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
 	<script type="text/javascript" src="<?php echo bloginfo('template_url'); ?>/includes/gallery/js/galleria-1.2.7.min.js"></script> 
 	<script type="text/javascript" src="<?php echo bloginfo('template_url'); ?>/includes/gallery/js/galleria.history.min.js"></script> 
 	<script type="text/javascript" src="<?php echo bloginfo('template_url'); ?>/includes/gallery/js/galleria.solofolio.js"></script>
 	<script type="text/javascript" src="<?php echo bloginfo('template_url'); ?>/js/jquery.retina.min.js"></script>
 	<script type="text/javascript" src="<?php echo bloginfo('template_url'); ?>/js/jquery.jknav.min.js"></script>
+	
 
 	
 	<link rel="alternate" type="application/rss+xml" title="RSS 2.0" href="<?php bloginfo('url'); ?>/wp-rss.php" />
@@ -85,6 +87,7 @@ if (get_option('sl_maintenance_mode') == 'true') {
 <div id="header" class="sans"><!-- Begin Header -->
 	<div id="logo">
 		<div id="logo-noimg">
+			<a href="#header-content" class="open">Menu</a>
 			<h1><a href="<?php echo get_option('home'); ?>/"><?php bloginfo('name'); ?></a></h1>
 			<span class="description"><?php bloginfo('description'); ?></span>
 		</div>
@@ -122,21 +125,23 @@ if (get_option('sl_maintenance_mode') == 'true') {
 			<?php endif; ?>
 		<?php } ?>
 		<?php } ?>
-	
+		
+	<?php if (get_option('sl_sidebar_layout') == 'yes') { ?>
+		<div id="sidebar-footer">
+				<!--<p id="help-footer"><strong>j</strong>:prev <strong>k</strong>:next</p>-->
+			<?php if (get_option('sl_show_footer') == 'yes') {?>
+				<p id="info-footer"><?php echo get_option('sl_footer_text'); ?></p>
+			<?php }; ?>
+			<?php if (get_option('sl_show_att') == 'yes') {?>
+				<p id="attr-footer">Powered by <a title="Powered by SoloFolio. The ultimate WordPress portfolio and blog." href="http://www.solofolio.net" target="_blank">SoloFolio</a></p>
+			<?php }; ?>
+			
+		</div>
+	<?php }; ?>	
+		
 	</div><!-- End Header-Content -->
 	
-<?php if (get_option('sl_sidebar_layout') == 'yes') { ?>
-	<div id="sidebar-footer">
-			<!--<p id="help-footer"><strong>j</strong>:prev <strong>k</strong>:next</p>-->
-		<?php if (get_option('sl_show_footer') == 'yes') {?>
-			<p id="info-footer"><?php echo get_option('sl_footer_text'); ?></p>
-		<?php }; ?>
-		<?php if (get_option('sl_show_att') == 'yes') {?>
-			<p id="attr-footer">Powered by <a title="Powered by SoloFolio. The ultimate WordPress portfolio and blog." href="http://www.solofolio.net" target="_blank">SoloFolio</a></p>
-		<?php }; ?>
-		
-	</div>
-<?php }; ?>	
+
 
 	<div class="clear"></div>
 	

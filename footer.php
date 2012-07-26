@@ -29,5 +29,13 @@
 <?php echo stripslashes(get_option('sl_tracking_code')); ?>
 <?php } ?>
 
+<script type="text/javascript" src="<?php echo bloginfo('template_url'); ?>/js/jquery.pageslide.min.js"></script>
+<script>
+	$('.open').pageslide({
+		speed: 0,
+		iframe: false
+	});
+</script>
+
 </body>
 </html>
