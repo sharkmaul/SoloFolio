@@ -580,7 +580,7 @@ table tr {
 
 #pageslide {
     /* Specify the width of pageslide here */
-    padding: 0 20px;
+    padding: 10px 10px 10px 0;
 }
 
 /* Time for some responsive design fun. Let's just target screens smaller than 760px for now and give them something nice and clean. */
@@ -618,7 +618,6 @@ table tr {
 		}
 		
 		#header #header-phone, #header #header-email {
-			display: inline;
 			padding-right: 5px;
 		}
 		
@@ -673,12 +672,10 @@ table tr {
 		position: relative;
 		height: auto;
 		bottom: auto;	
-		left: 10px;
+		padding: 10px 8px;
+        font-size: 14px;
+        line-height: 18px;
 	}
-	
-		#sidebar-footer p {
-			display: inline;
-		}
 		
 	#wrapper #content-index {
 		width: 100%;
@@ -739,7 +736,11 @@ table tr {
 	#header-content { display: none; }
 	
 	#header {
-		background-color: blue;
+		min-width: 320px;
+	}
+	
+	#wrapper {
+		min-width: 320px;
 	}
 	
 	.open { display: block; }

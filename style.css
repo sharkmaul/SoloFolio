@@ -26,12 +26,10 @@ THE SOFTWARE IS PROVIDED “AS IS”, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR I
 	padding: 0;
 }
 
-body, html {
+body {
 	font-family: Helvetica, Verdana, Arial, Utkal, sans-serif;
 	color: #000000;
-}
-
-body {
+	-webkit-text-size-adjust: 100%;
 	font-size: 12px;
 	margin: 0;
 	padding: 0;
@@ -773,10 +771,18 @@ ul.my_recent_galleries li {
     
     /* These styles are optional, and describe how the pageslide will look */
     background-color: #333;
-    color: #FFF;
-    -webkit-box-shadow: inset 0 0 5px 5px #222;
-    -moz-box-shadow: inset 0 0 5px 5px #222;
-    box-shadow: inset 0 0 5px 5px #222;
+        
+    /*-webkit-box-shadow: inset -5px 0 5px 0 #1A1A1A;
+    -moz-box-shadow: inset -5px 0 5px 0 #1A1A1A;
+    box-shadow: inset -5px 0 5px 0 #1A1A1A;*/
+}
+
+#pageslide #header-content {
+	position: absolute;
+    width: 100%;
+	top: 0;
+	overflow-y: scroll;
+	-webkit-overflow-scrolling: touch;
 }
 
 #pageslide ul {
@@ -792,6 +798,33 @@ ul.my_recent_galleries li {
 
 #pageslide li {
 	list-style-type: none;
+	position: relative;
+	display: block;
+	list-style: none;
+	min-height: 43px;
+	line-height: 40px;
+	padding: 3px 0 3px 8px;     
+	background-color: #484848;
+	border-bottom: 1px solid #383838;
+	-webkit-box-shadow: inset 0 1px 0 rgba(255, 255, 255, .08);
+	font-size: 16px;
+	color: #C4CCDA;
+	text-shadow: 0 1px 0 rgba(0, 0, 0, .6);
+}
+
+#pageslide #header-content h3 {
+	background: #434B5C;
+	display: block;
+	background: -webkit-gradient( linear, left top, left bottom, from(#5c5c5c), to(#525252));
+	border-bottom: 1px solid #383838;
+	border-top: none;
+	-webkit-box-shadow: inset 0 1px 0 rgba(255, 255, 255, .08);
+	color: #919191;
+	padding: 4px 0 4px 8px;
+	text-shadow: 0 1px 0 rgba(0, 0, 0, .6);
+	font-size: 10px;
+	line-height: 12px;
+	text-transform: uppercase;
 }
 
 .open {
@@ -799,7 +832,7 @@ ul.my_recent_galleries li {
 	float: left;
 	width: 40px;
 	height: 30px;
-	margin-right: 10px;
+	margin: 0 10px 20px 0;
 	background: url("img/menu.png") center center no-repeat #333;
 	-moz-border-radius: 8px;
 	-webkit-border-radius: 8px;

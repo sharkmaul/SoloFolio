@@ -107,9 +107,6 @@ if (get_option('sl_maintenance_mode') == 'true') {
 		<?php if (get_option('sl_sidebar_layout') == 'yes') { ?>
 			<?php if ( !function_exists('dynamic_sidebar') || !dynamic_sidebar("Sidebar Layout - Main Navigation") ) : ?>
 			<?php endif; ?>
-		<?php } ?>
-		
-		<?php if (get_option('sl_sidebar_layout') == 'yes') { ?>
 		<?php if (is_home()){ ?>
 			<?php if ( !function_exists('dynamic_sidebar') || !dynamic_sidebar("Sidebar Layout - Under Nav on Blog") ) : ?>
 			<?php endif; ?>
