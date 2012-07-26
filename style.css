@@ -782,7 +782,7 @@ ul.my_recent_galleries li {
     width: 100%;
 	top: 0;
 	overflow-y: scroll;
-	-webkit-overflow-scrolling: touch;
+	/*-webkit-overflow-scrolling: touch;*/
 }
 
 #pageslide ul {
@@ -823,21 +823,17 @@ ul.my_recent_galleries li {
 	padding: 4px 0 4px 8px;
 	text-shadow: 0 1px 0 rgba(0, 0, 0, .6);
 	font-size: 10px;
-	line-height: 12px;
+	line-height: 18px;
 	text-transform: uppercase;
 }
 
 .open {
 	display: none;
 	float: left;
-	width: 40px;
-	height: 30px;
+	width: 50px;
+	height: 50px;
 	margin: 0 10px 20px 0;
-	background: url("img/menu.png") center center no-repeat #333;
-	-moz-border-radius: 8px;
-	-webkit-border-radius: 8px;
-	-border-radius: 8px;
-	box-shadow: inset 0 0 3px #000;
+	background: url("img/menu.png") center center no-repeat;
 	text-indent: -999999px;
 	border: 0;
 }

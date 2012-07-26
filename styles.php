@@ -598,6 +598,8 @@ table tr {
 	}
 	
 	#header {
+		background: -webkit-gradient( linear, left top, left bottom, from(#333333), to(#262626) );
+		border-bottom: 1px solid #333333;
 		height: auto;
 		position: relative;
 		margin: 0;
@@ -620,13 +622,6 @@ table tr {
 		#header #header-phone, #header #header-email {
 			padding-right: 5px;
 		}
-		
-   		#header ul li {
-   			display: block; 
-   			float: left;
-   			font-size: 14px;
-   			padding: 10px 20px 10px 0;
-   		}
    			
 		#header div {
 			clear: both;
@@ -658,6 +653,10 @@ table tr {
 			.meta-cat {
 				display: none;
 			}
+		
+		#content-page p, #content-page h2 {
+			padding: 0 10px;
+		}
 				
 		img.alignnone {
 			width: 100%;
@@ -697,6 +696,7 @@ table tr {
 	#sl-sidescroll-wrap .sl-sidescroll-container {
 		margin: 0 0 20px;
 		width: 100% !important; /* HACK! Override image widths that were set for Retina iPad */
+		height: auto !important; /* HACK! Override image widths that were set for Retina iPad */
 	}
 	
 		.sl-sidescroll-container img {
