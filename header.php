@@ -20,7 +20,7 @@ if (get_option('sl_maintenance_mode') == 'true') {
 	<meta charset="utf-8">
 	<meta id="extViewportMeta" name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no">
 	<meta name="apple-mobile-web-app-capable" content="yes">
-	<meta name="apple-mobile-web-app-status-bar-style" content="black" />	
+	<meta name="apple-mobile-web-app-status-bar-style" content="black" />
 	
 	<title><?php bloginfo('name'); ?> <?php if ( is_single() ) { ?> &raquo; Blog Archive <?php } ?> <?php wp_title(); ?></title>	
 	
@@ -68,6 +68,15 @@ if (get_option('sl_maintenance_mode') == 'true') {
         	$(this).removeAttr('width')
         	$(this).removeAttr('height');
     	}); 
+	});
+	
+	// Scroll past iOS address bar
+	window.addEventListener("load",function() {
+	  // Set a timeout...
+	  setTimeout(function(){
+		// Hide the address bar!
+		window.scrollTo(0, 1);
+	  }, 0);
 	});
 	</script>
 	
