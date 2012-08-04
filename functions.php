@@ -71,17 +71,35 @@ class fixImageMargins{
     return '<div ' . $id . 'class="wp-caption ' . $align . '">' . $content . '<p class="wp-caption-text">' . $caption . '</p></div>';
     }
 }
+
+// Load GPS data from EXIF before it is wiped
+function add_geo_exif($meta,$file,$sourceImageType) {
+		$exif = @exif_read_data( $file );
+			if (!empty($exif['GPSLatitude']))
+				$meta['latitude'] = $exif['GPSLatitude'] ;
+			if (!empty($exif['GPSLatitudeRef']))
+				$meta['latitude_ref'] = trim( $exif['GPSLatitudeRef'] );
+			if (!empty($exif['GPSLongitude']))
+				$meta['longitude'] = $exif['GPSLongitude'] ;
+			if (!empty($exif['GPSLongitudeRef']))
+				$meta['longitude_ref'] = trim( $exif['GPSLongitudeRef'] );
+	return $meta;
+}
+
+
+add_filter('wp_read_image_metadata', 'add_geo_exif','',3);
 $fixImageMargins = new fixImageMargins();
 
-// Include gallery shortcode replacement
-include_once("includes/gallery.php");
-include_once("includes/gallery-settings.php");
-include_once("includes/gallery-upload.php");
-include_once("includes/photoshelter.php");
-include_once("includes/design-editor.php");
-include_once("includes/options.php");
-include_once("includes/options-arrays.php");
-include_once("includes/social-widget.php");
+
+include_once("includes/gallery.php");			// Include gallery shortcode replacement
+include_once("includes/gallery-settings.php");	// Include gallery settings page
+include_once("includes/gallery-upload.php");	// Include gallery upload filter
+include_once("includes/photoshelter.php");		// Include photoshelter code
+include_once("includes/design-editor.php");		// Include design editor code (deprecated now)
+include_once("includes/options.php");			// Include admin option menu
+include_once("includes/options-arrays.php");	// Include admin options lists
+include_once("includes/social-widget.php");		// Include social media widget
+include_once("includes/map/map.php");			// Include gallery map plugin
 
 // Add WP2.9 thumbnail support
 if ( function_exists( 'add_theme_support' ) )

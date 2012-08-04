@@ -179,10 +179,6 @@ function solofolio_gallery_shortcode($attr) {
 	if ($type == "scaler") {
 		include("gallery/gallery-scaler.php");
 	}
-	
-	if ($type == "map") {
-		include("gallery/gallery-map.php");
-	}
 		
 	return $output;
 }
