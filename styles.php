@@ -614,6 +614,10 @@ table tr {
 		#logo-noimg {
 			display: block;
 		}
+		
+			#logo-noimg .description {
+				display: none;
+			}
 	
 		#header-content {
 			padding: 0 0 10px 10px;
