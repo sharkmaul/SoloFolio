@@ -585,7 +585,7 @@ table tr {
 
 /* Time for some responsive design fun. Let's just target screens smaller than 760px for now and give them something nice and clean. */
 
-@media (max-device-width: 480px){
+@media only screen and (max-width: 770px) {
 
 	* {
 		margin: 0;
@@ -603,7 +603,7 @@ table tr {
 		height: auto;
 		position: relative;
 		margin: 0;
-		padding: 0;
+		padding: 10px;
 		width: 100%;
 	}
 	
@@ -636,13 +636,16 @@ table tr {
 			margin: 0;
 			padding: 0;
 		}
-		#logo {
-			padding: 10px 10px 0;
+		
+		.galleria-info-description {
+			display: block;
+			padding: 10px;
 		}
 
 	#wrapper {
 		border: none;
 		margin: 0;
+		padding: 0;
 		width: 100%;
 		overflow: hidden;
 	}
@@ -687,31 +690,6 @@ table tr {
 	#sidebar-footer #help-footer {
 		display: none;
 	}
-			
-	/* Make mobile galleries scroll vertically. */
-	
-	#sl-sidescroll-wrap td {
-		display: block;
-		margin: 0;
-		padding: 0;
-		width: 100%;
-	}
-	
-	#sl-sidescroll-wrap .sl-sidescroll-container {
-		margin: 0 0 20px;
-		width: 100% !important; /* HACK! Override image widths that were set for Retina iPad */
-		height: auto !important; /* HACK! Override image widths that were set for Retina iPad */
-	}
-	
-		.sl-sidescroll-container img {
-			border: none;
-			width: 100%;
-		}
-		
-		.sl-sidescroll-container p {
-			padding: 2px 10px;
-		}
-
 
 }
 
@@ -735,7 +713,7 @@ table tr {
 /* Mobile and iPad Portrait */
 
 /* Mobile Landscape and Portrait */
-@media only screen and (max-width: 767px) {
+@media only screen and (max-width: 770px) {
 	#content h1 { font-size: 22px; line-height: 30px; background-color: #000; color: #FFF; padding: 10px; }
 	#header-content { display: none; }
 	
@@ -754,7 +732,39 @@ table tr {
 
 /* Mobile Portrait */
 @media only screen and (max-width: 479px) {
+	
 	#content h1 { font-size: 14px; }
+	
+	/* Make mobile galleries scroll vertically. */
+	
+	#sl-sidescroll-wrap td {
+		display: block;
+		margin: 0;
+		padding: 0;
+		width: 100%;
+	}
+	
+	#sl-sidescroll-wrap .sl-sidescroll-container {
+		margin: 0 0 20px;
+		width: 100% !important; /* HACK! Override image widths that were set for Retina iPad */
+		height: auto !important; /* HACK! Override image widths that were set for Retina iPad */
+	}
+	
+		.sl-sidescroll-container img {
+			border: none;
+			width: 100%;
+		}
+		
+		.sl-sidescroll-container p {
+			padding: 2px 10px;
+		}
+	
+	/* Clean up Galleria */
+		
+	.galleria-thumblink, .galleria-fullscreen {
+		display: none;
+	}
+	
 }
 
 <?php } ?>

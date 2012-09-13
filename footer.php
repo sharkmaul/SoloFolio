@@ -17,11 +17,6 @@
 </div><!-- End Footer -->
 <?php }; ?>
 
-
-<?php
-	wp_footer();
-?>
-
 </div><!-- /#outerwrap -->
 
 <?php global $current_user; get_currentuserinfo(); if ($current_user->user_level == 10 ) { ?>
@@ -36,6 +31,10 @@
 		iframe: false
 	});
 </script>
+
+<?php
+	wp_footer();
+?>
 
 </body>
 </html>

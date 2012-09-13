@@ -98,7 +98,6 @@ if (get_option('sl_maintenance_mode') == 'true') {
 		<div id="logo-noimg">
 			<a href="#header-content" class="open">Menu</a>
 			<h1><a href="<?php echo get_option('home'); ?>/"><?php bloginfo('name'); ?></a></h1>
-			<span class="description"><?php bloginfo('description'); ?></span>
 		</div>
 		
 		<div id="logo-img">

@@ -182,6 +182,10 @@ p {
 			border: none;
 		}
 		
+		#logo #logo-noimg {
+			margin: 0;
+		}
+		
 	#header-content {
 		bottom: 0;
 		right: 20px;
@@ -430,8 +434,7 @@ h1.blog-title a:hover {
 /* Content */
 .entry {
 	border-bottom: 1px solid #666666;
-	margin: 0 0 2em;
-	padding-bottom: 5px;
+	margin: 0 0 20px;
 	overflow: hidden;
 }
 	
@@ -831,8 +834,7 @@ ul.my_recent_galleries li {
 	display: none;
 	float: left;
 	width: 50px;
-	height: 5	0px;
-	margin: 0 10px 20px 0;
+	height: 35px;
 	background: url("img/menu.png") center center no-repeat;
 	text-indent: -999999px;
 	border: 0;

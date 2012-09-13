@@ -1,6 +1,6 @@
 <?php
 
-$output .="<div id=\"galleria\" class=\"galleria-container notouch\">";
+$output .="<div class=\"galleria\" class=\"galleria-container notouch\">";
 
 $i = 0;
 	
@@ -22,23 +22,22 @@ foreach ( $attachments as $id => $attachment ) {
 } // End ForEach
 
 	$output .= "</div>";
-			
-	$output .= " <script type=\"text/javascript\">
 
-// Initialize Galleria
+add_action('wp_footer', 'test');
+ 
+function test() {
+     
+    $output .= " <script type=\"text/javascript\">$('.galleria').galleria({";
 
-$('#galleria').galleria({";
-
-	if ($captions == "false"){$output.= "showInfo: false,";}
-	if ($transition != ""){$output.= "transition: '" .  $transition . "',";}
-	if ($speed != ""){$output.= "transitionSpeed: " .  $speed . ",";}
-	if ($shownav != ""){$output.= "showImagenav: " .  $shownav . ",";}
-	if ($showcounter != ""){$output.= "showCounter: " .  $showcounter . ",";}
-	if ($autoplay == "true"){$output.= "autoplay: true,";}
-	if ($width != ""){$output.= "width: " .  $width . ",";}
-	if ($height != ""){$output.= "height: " .  $height . ",";} else {$output.= "height: 680,";}
-	
-	if ($fullscreen== "false"){$output.= "_showFullscreen: false,";}
+		if ($captions == "false"){$output.= "showInfo: false,";}
+		if ($transition != ""){$output.= "transition: '" .  $transition . "',";}
+		if ($speed != ""){$output.= "transitionSpeed: " .  $speed . ",";}
+		if ($shownav != ""){$output.= "showImagenav: " .  $shownav . ",";}
+		if ($showcounter != ""){$output.= "showCounter: " .  $showcounter . ",";}
+		if ($autoplay == "true"){$output.= "autoplay: true,";}
+		if ($width != ""){$output.= "width: " .  $width . ",";}
+		if ($height != ""){$output.= "height: " .  $height . ",";} else {$output.= "height: .8,";}
+		if ($fullscreen== "false"){$output.= "_showFullscreen: false,";}
 	
 	$output.="swipe: true,";
 	$output.="responsive: true,";
@@ -49,7 +48,7 @@ $output.= " });";
 
 $output.= "</script>";
 
-$output.= "<style>";
+$output.= "\n<style>";
 
 if ($showthumbnails== "false"){
 	$output.= ".galleria-thumblink {display:none} ";
@@ -59,6 +58,10 @@ if ($showplay== "false"){
 	$output.= ".galleria-play {display:none} ";
 	};
 
-$output.="</style>";
+$output.="</style>\n";
+     
+    echo $output;
+ 
+}
 
 ?>
