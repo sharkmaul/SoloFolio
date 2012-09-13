@@ -620,7 +620,7 @@ div.aligncenter {
 	padding: 0;
 }
 
-.wp-caption p.wp-caption-text {
+.wp-caption-text {
 	font-family: arial,helvetica,sans-serif;
 	margin: 3px 2px;
 	font-size: 10px;
@@ -834,7 +834,7 @@ ul.my_recent_galleries li {
 	display: none;
 	float: left;
 	width: 50px;
-	height: 35px;
+	height: 45px;
 	background: url("img/menu.png") center center no-repeat;
 	text-indent: -999999px;
 	border: 0;

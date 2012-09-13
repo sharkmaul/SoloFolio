@@ -19,6 +19,7 @@ Galleria.addTheme({
         maxScaleRatio: 1,
         preload: 'all',
         swipe: true,
+        showInfo: false,
         _locale: {show_thumbnails: 'Show thumbnails',
          hide_thumbnails: 'Hide thumbnails',
          play: 'Play slideshow',
@@ -38,12 +39,12 @@ Galleria.addTheme({
 	this.attachKeyboard({
 	left: this.prev,
 	right: this.next,
-	74: this.prev,
-	75: this.next,
+	74: this.next,
+	75: this.prev,
 	70: this.toggleFullscreen
 	});	
-    this.addElement("bar", "controls", "clear", "fullscreen", "play", "popout", "thumblink", "s1", "s2", "s3", "s4", "progress");
-    this.append({stage: "progress", container: ["bar", "tooltip"], bar: ["controls", "info"], controls: ["fullscreen", "play", "popout", "thumblink", "counter", "clear"]});
+    this.addElement("fullscreen", "play", "popout", "thumblink", "progress");
+    this.append({stage: "progress"});
     var v = this, Q = this.$("thumbnails-container"), M = this.$("thumblink"), O = this.$("fullscreen"), Y = this.$("play"), da = this.$("popout"), W = this.$("bar"), Z = this.$("progress"), ha = s.transition, R = s._locale, ia = false, ga = false, ka = !!s.autoplay, c = false, aa = function () {Q.height(v.getStageHeight()).width(v.getStageWidth()).css("top", ia ? 0 : v.getStageHeight() + 30);};
     aa();
     s._showTooltip &&
@@ -87,7 +88,6 @@ Galleria.addTheme({
         da.remove();
         if (s._showFullscreen) {
             this.$("s4").remove();
-            this.$("info").css("right", 40);
             O.css("right", 0);
         }
     }
@@ -98,13 +98,11 @@ Galleria.addTheme({
         O.remove();
         if (s._show_popout) {
             this.$("s4").remove();
-           // this.$("info").css("right", 40);
             da.css("right", 0);
         }
     }
     if (!s._showFullscreen && !s._showPopout) {
         this.$("s3,s4").remove();
-        this.$("info").css("right", 10);
     }
     s.autoplay && this.trigger("play");
 	}

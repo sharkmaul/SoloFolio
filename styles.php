@@ -593,17 +593,17 @@ table tr {
 		border: none;
 	}
 	
-	#outerWrap {
+	/*#outerWrap {
 		overflow: hidden;
-	}
+	}*/
 	
 	#header {
-		background: -webkit-gradient( linear, left top, left bottom, from(#333333), to(#262626) );
+		background: -webkit-gradient( linear, left top, left bottom, from(#333333), to(#262626));
 		border-bottom: 1px solid #333333;
 		height: auto;
 		position: relative;
 		margin: 0;
-		padding: 10px;
+		padding: 0;
 		width: 100%;
 	}
 	
@@ -636,18 +636,13 @@ table tr {
 			margin: 0;
 			padding: 0;
 		}
-		
-		.galleria-info-description {
-			display: block;
-			padding: 10px;
-		}
 
 	#wrapper {
 		border: none;
 		margin: 0;
 		padding: 0;
 		width: 100%;
-		overflow: hidden;
+		/*overflow: hidden;*/
 	}
 		
 		.entry {
@@ -719,21 +714,44 @@ table tr {
 	
 	#header {
 		min-width: 320px;
+		left: auto;
+		bottom: auto;
 	}
 	
+		#logo {
+			padding: 5px 0 5px 50px;
+		}
+	
+	.galleria-info {
+		padding: 7px 10px 0;
+	}
+	
+	.galleria-controls {
+		padding-right: 10px;
+	}
+		
 	#wrapper {
 		min-width: 320px;
 	}
 	
-	.open { display: block; }
+	.open {
+		display: block; 
+		position: fixed;
+	}
 	
 	#pageslide { width: 200px; }
 }
 
-/* Mobile Portrait */
-@media only screen and (max-width: 479px) {
+/* Phone */
+@media only screen and (max-width: 480px) {
 	
-	#content h1 { font-size: 14px; }
+	#content h1 {
+		font-size: 14px;
+	}
+	
+	#outerWrap {
+		overflow: hidden;
+	}
 	
 	/* Make mobile galleries scroll vertically. */
 	
@@ -746,6 +764,7 @@ table tr {
 	
 	#sl-sidescroll-wrap .sl-sidescroll-container {
 		margin: 0 0 20px;
+		max-width: 100% !important;
 		width: 100% !important; /* HACK! Override image widths that were set for Retina iPad */
 		height: auto !important; /* HACK! Override image widths that were set for Retina iPad */
 	}

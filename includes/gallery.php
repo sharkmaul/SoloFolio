@@ -157,12 +157,15 @@ function solofolio_gallery_shortcode($attr) {
 	
 	$mobile = detect_mobile();
 	
-	if (get_option('sl_gallery_mobile_toggle') =="true"){
-		if($mobile === true)
-		{
-			$type = "side-scroll";
-		} 
+	if($mobile === true)
+	{
+		$type = "side-scroll";
 	} 
+	
+	
+	if ( is_home() || is_single()) {
+		$type = "vert-scroll";
+	}
 	
 	if ($type == "") { 
 		include("gallery/gallery-default.php");
@@ -174,6 +177,10 @@ function solofolio_gallery_shortcode($attr) {
 			
 	if ($type == "side-scroll") {
 		include("gallery/gallery-sidescroll.php");
+	}
+	
+	if ($type == "vert-scroll") {
+		include("gallery/gallery-vertscroll.php");
 	}
 	
 	if ($type == "scaler") {

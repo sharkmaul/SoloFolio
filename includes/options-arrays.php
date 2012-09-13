@@ -625,10 +625,10 @@ array( "name" => "Side-Scroll",
 		"suffix" => "px",
 		"std" => "20"),
 		
-	array( "name" => "Use for Mobile Devices",
+	/*array( "name" => "Use for Mobile Devices",
 		"id" => $shortname."_gallery_mobile_toggle",
 		"type" => "checkbox",
-		"std" => "true"),
+		"std" => "true"),*/
 		
 	array( "type" => "clear"),
 		

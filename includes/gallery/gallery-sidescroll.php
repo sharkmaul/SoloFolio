@@ -6,6 +6,15 @@ $output .= "<script type=\"text/javascript\" charset=\"utf-8\">
 			$(\"#sl-sidescroll-wrap\").wrapInner(\"<table cellspacing=0 ><tr>\");
 			$(\".sl-sidescroll-container\").wrap(\"<td>\");
 		});
+		
+		$( document ).ready( function(){
+    		setMaxWidth();
+    		$( window ).bind(\"resize\", setMaxWidth );
+    		function setMaxWidth() {
+    			$(\".sl-sidescroll-container\").css(\"maxWidth\", ($(\"#wrapper\").innerWidth() - 30));
+    		}
+
+});
 
 	</script>";
 	

@@ -94,9 +94,10 @@ if (get_option('sl_maintenance_mode') == 'true') {
 <div id="outerWrap">
 
 <div id="header" class="sans"><!-- Begin Header -->
+	<a href="#header-content" class="open">Menu</a>
+	
 	<div id="logo">
 		<div id="logo-noimg">
-			<a href="#header-content" class="open">Menu</a>
 			<h1><a href="<?php echo get_option('home'); ?>/"><?php bloginfo('name'); ?></a></h1>
 		</div>
 		

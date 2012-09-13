@@ -17,7 +17,7 @@
     top: 0;
     left: 0;
     right: 0;
-    bottom: 80px;
+    bottom: 0;
 }
 .galleria-container.fullscreen {}
 .galleria-bar {
@@ -131,9 +131,8 @@
     -webkit-box-shadow: 0 0 3px rgba(0,0,0,.4);
 }
 .galleria-info {
-    overflow: hidden;
-    height: 80px;
     color: #bbb;
+    padding-top: 7px;
 }
 
 .fullscreen .galleria-info {
@@ -161,9 +160,7 @@
 	display: inline;
 }
 .galleria-counter {
-    float: right;
-    display: block;
-    padding: 7px;
+    display: inline;
 }
 .galleria-loader {
     width: 48px;
@@ -274,6 +271,7 @@
 	
 .galleria-controls {
 	display: block;
+	line-height: 30px;
 	float: right;
 	padding-left: 10px;
 }

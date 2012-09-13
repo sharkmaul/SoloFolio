@@ -22,6 +22,21 @@ foreach ( $attachments as $id => $attachment ) {
 } // End ForEach
 
 	$output .= "</div>";
+	
+	$output .= "<div class=\"galleriabar\">";
+		$output .= "<div class=\"galleria-controls\">
+						<a id=\"prev\" href\"#\">Prev</a>
+						<div class=\"galleria-counter\">
+							<span id=\"index\"></span> of 
+							<span id=\"total\"></span>
+						</div>
+						<a id=\"next\" href\"#\">Next</a> 
+						<a id=\"fullscreen\" href\"#\">Fullscreen</a>
+						<a id=\"play\">Slideshow</a>
+						<a class=\"galleria-thumblink\"></a>
+					</div>";
+		$output .= "<div class=\"galleria-info\"></div>";
+	$output .= "</div>";
 
 add_action('wp_footer', 'test');
  
@@ -36,29 +51,60 @@ function test() {
 		if ($showcounter != ""){$output.= "showCounter: " .  $showcounter . ",";}
 		if ($autoplay == "true"){$output.= "autoplay: true,";}
 		if ($width != ""){$output.= "width: " .  $width . ",";}
-		if ($height != ""){$output.= "height: " .  $height . ",";} else {$output.= "height: .8,";}
+		if ($height != ""){$output.= "height: " .  $height . ",";} else {$output.= "height: .667,";}
 		if ($fullscreen== "false"){$output.= "_showFullscreen: false,";}
 	
-	$output.="swipe: true,";
-	$output.="responsive: true,";
-	$output.="maxScaleRatio: 1,";
-	$output.="trueFullscreen: true";
+		$output.="swipe: true,";
+		$output.="responsive: true,";
+		$output.="maxScaleRatio: 1,";
+		$output.="trueFullscreen: true";
 
-$output.= " });";
-
-$output.= "</script>";
-
-$output.= "\n<style>";
-
-if ($showthumbnails== "false"){
-	$output.= ".galleria-thumblink {display:none} ";
-	};
+	$output.= " });";
 	
-if ($showplay== "false"){
-	$output.= ".galleria-play {display:none} ";
-	};
+	$output.= "Galleria.ready(function() {
+				var gallery = this, data;
+				$('#prev').click(function() {
+					gallery.prev();
+				});
+				$('#next').click(function() {
+					gallery.next();
+				});
+				$('#fullscreen').click(function() {
+					gallery.toggleFullscreen();
+				});
+				$('#play').click(function() {
+					gallery.playToggle();
+				});
+				this.bind('image', function(e) {
+					data = e.galleriaData;
+					$('.galleria-info').html('<div class=\"galleria-info-description\">'+data.description+'</div>' );
+				});
+				this.bind('image', function(e) {
+					data = e.index;
+					$('#index').html(data + 1);
+				});
+				this.bind('image', function(e) {
+					data = e.index;
+					$('#index').html(data + 1);
+				});
+				$('#total').append(this.getDataLength());
+			});";
+	
+	$output.= "</script>";
+	
+	$output.= "\n<style>";
+	
+	if ($showthumbnails== "false"){
+		$output.= ".galleria-thumblink {display:none} ";
+		};
+		
+	if ($showplay== "false"){
+		$output.= ".galleria-play {display:none} ";
+		};
+	
+	$output.="</style>\n";
 
-$output.="</style>\n";
+
      
     echo $output;
  
