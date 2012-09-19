@@ -69,7 +69,11 @@ if (get_option('sl_maintenance_mode') == 'true') {
 		$('img').each(function(){ 
         	$(this).removeAttr('width')
         	$(this).removeAttr('height');
-    	}); 
+    	});
+    	$('#menu-icon').click(function(){
+		$("#header-content").slideToggle();
+			$(this).toggleClass("active");
+		});
 	});
 	
 	// Scroll past iOS address bar
@@ -96,7 +100,7 @@ if (get_option('sl_maintenance_mode') == 'true') {
 <div id="outerWrap">
 
 <div id="header" class="sans"><!-- Begin Header -->
-	<a href="#header-content" class="open">Menu</a>
+	<a id='menu-icon'>Menu</a>
 	
 	<div id="logo">
 		<div id="logo-noimg">

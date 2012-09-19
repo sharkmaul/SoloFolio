@@ -63,6 +63,16 @@ function test() {
 	
 	$output.= "Galleria.ready(function() {
 				var gallery = this, data;
+				this.addElement('exit').appendChild('container','exit');
+				var btn = this.$('exit').hide().text('Close').click(function(e) {
+					gallery.exitFullscreen();
+				});
+				this.bind('fullscreen_enter', function() {
+					btn.show();
+				});
+				this.bind('fullscreen_exit', function() {
+					btn.hide();
+				});
 				$('#prev').click(function() {
 					gallery.prev();
 				});

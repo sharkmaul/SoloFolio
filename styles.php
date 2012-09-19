@@ -598,8 +598,8 @@ table tr {
 	}*/
 	
 	#header {
-		background: -webkit-gradient( linear, left top, left bottom, from(#333333), to(#262626));
 		height: auto;
+		background-color: #333333;
 		position: relative;
 		margin: 0 0 10px 0;
 		padding: 0;
@@ -715,7 +715,31 @@ table tr {
 		min-width: 320px;
 		left: auto;
 		bottom: auto;
+		margin: 0;
 	}
+		
+		#header h3 {
+			padding-top: 3px;
+		}
+	
+		#sidebar-footer p {
+   			display: inline;
+   			text-align: center;
+   		}
+   		
+   		#header ul li {
+   			padding: 0;
+   			font-size: 14px;
+   		}
+   		
+   			#header ul li a {
+   				display: block;
+   				padding: 7px 0;
+   			}
+   			
+   		#header-content {
+   			text-align: center;
+   		}
 	
 	.open {
 		display: block; 
@@ -723,7 +747,7 @@ table tr {
 	}
 	
 		#logo {
-			padding: 5px 0 5px 50px;
+			padding: 5px 0 5px 10px;
 		}
 	
 	.galleria-info {
@@ -746,7 +770,20 @@ table tr {
 		min-width: 320px;
 	}
 	
-	#pageslide { width: 200px; }
+	#solofolio-social {
+		 margin: 0 auto;
+		 width: 120px;
+	}
+	
+	#solofolio-social li {
+		overflow: hidden;
+	}
+	
+/* menu icon */
+#menu-icon {
+	display: block; /* show menu icon */
+}
+
 }
 
 /* Phone */

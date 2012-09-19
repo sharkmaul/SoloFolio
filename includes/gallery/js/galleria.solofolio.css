@@ -278,4 +278,16 @@
 
 .galleria-controls a {
 	cursor: pointer;
+	padding: 10px;
+}
+
+.galleria-exit {
+	color: white;
+	cursor: pointer;
+    display: block;
+    padding: 20px;
+    position: absolute;
+    right: 0;
+    top: 0;
+    z-index: 100000;
 }
