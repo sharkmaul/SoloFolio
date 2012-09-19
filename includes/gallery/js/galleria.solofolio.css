@@ -275,3 +275,7 @@
 	float: right;
 	padding-left: 10px;
 }
+
+.galleria-controls a {
+	cursor: pointer;
+}

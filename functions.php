@@ -99,7 +99,6 @@ include_once("includes/design-editor.php");		// Include design editor code (depr
 include_once("includes/options.php");			// Include admin option menu
 include_once("includes/options-arrays.php");	// Include admin options lists
 include_once("includes/social-widget.php");		// Include social media widget
-include_once("includes/map/map.php");			// Include gallery map plugin
 
 // Add WP2.9 thumbnail support
 if ( function_exists( 'add_theme_support' ) )

@@ -25,12 +25,12 @@ foreach ( $attachments as $id => $attachment ) {
 	
 	$output .= "<div class=\"galleriabar\">";
 		$output .= "<div class=\"galleria-controls\">
-						<a id=\"prev\" href\"#\">Prev</a>
+						<a id=\"prev\" href\"#\">< prev</a>
 						<div class=\"galleria-counter\">
 							<span id=\"index\"></span> of 
 							<span id=\"total\"></span>
 						</div>
-						<a id=\"next\" href\"#\">Next</a> 
+						<a id=\"next\" href\"#\">next ></a> 
 						<a id=\"fullscreen\" href\"#\">Fullscreen</a>
 						<a id=\"play\">Slideshow</a>
 						<a class=\"galleria-thumblink\"></a>

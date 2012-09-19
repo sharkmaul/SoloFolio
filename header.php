@@ -64,6 +64,8 @@ if (get_option('sl_maintenance_mode') == 'true') {
 		$('img').retina();
 		$('#wrapper img').jknav();
 		$.jknav.init();
+		$("p:has(img)").css('margin' , '0');
+		$("p:has(img)").css('padding' , '0');
 		$('img').each(function(){ 
         	$(this).removeAttr('width')
         	$(this).removeAttr('height');

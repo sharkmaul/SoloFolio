@@ -599,12 +599,11 @@ table tr {
 	
 	#header {
 		background: -webkit-gradient( linear, left top, left bottom, from(#333333), to(#262626));
-		border-bottom: 1px solid #333333;
 		height: auto;
 		position: relative;
-		margin: 0;
+		margin: 0 0 10px 0;
 		padding: 0;
-		width: 100%;
+		width: auto;
 	}
 	
 		#logo-img {
@@ -718,6 +717,11 @@ table tr {
 		bottom: auto;
 	}
 	
+	.open {
+		display: block; 
+		position: fixed;
+	}
+	
 		#logo {
 			padding: 5px 0 5px 50px;
 		}
@@ -729,14 +733,17 @@ table tr {
 	.galleria-controls {
 		padding-right: 10px;
 	}
+	
+	.entry {
+		padding: 0 0 5px 0;
+	}
+	
+		.post-meta, .wp-caption-text, .entry p {
+			padding: 0 10px;
+		}
 		
 	#wrapper {
 		min-width: 320px;
-	}
-	
-	.open {
-		display: block; 
-		position: fixed;
 	}
 	
 	#pageslide { width: 200px; }
