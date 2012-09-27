@@ -652,7 +652,7 @@ table tr {
 		/*overflow: hidden;*/
 	}
 	
-		#content-index, #content-single {
+		#content-index, #content-single, #content-search {
 			padding: 10px 0 0;
 		}
 		
