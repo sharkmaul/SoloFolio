@@ -45,5 +45,4 @@
 
 <div class="clear"></div>
 
-<?php include ("includes/footer-widgets.php"); ?>
 <?php get_footer(); ?>	

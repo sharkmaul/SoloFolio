@@ -40,7 +40,5 @@
 <?php if (get_option('sl_sidebar_layout') != 'yes') { ?>
 <?php get_sidebar(); ?>
 
-<?php include ("includes/footer-widgets.php"); ?>
-
 <?php } ?>
 <?php get_footer(); ?>	

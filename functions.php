@@ -26,30 +26,6 @@ if(function_exists('register_sidebar')){
 		'before_title' => '<h3>',
 		'after_title' => '</h3>',
 	));
-	register_sidebar(array('name' => 'Bottom Left',
-		'before_widget' => '<div>',
-		'after_widget' => '</div>',
-		'before_title' => '<h3>',
-		'after_title' => '</h3>',
-	));
-	register_sidebar(array('name' => 'Bottom Center-Left',
-		'before_widget' => '<div>',
-		'after_widget' => '</div>',
-		'before_title' => '<h3>',
-		'after_title' => '</h3>',
-	));
-	register_sidebar(array('name' => 'Bottom Center-Right',
-		'before_widget' => '<div>',
-		'after_widget' => '</div>',
-		'before_title' => '<h3>',
-		'after_title' => '</h3>',
-	));
-	register_sidebar(array('name' => 'Bottom Right',
-		'before_widget' => '<div>',
-		'after_widget' => '</div>',
-		'before_title' => '<h3>',
-		'after_title' => '</h3>',
-	));
 }
 }
 

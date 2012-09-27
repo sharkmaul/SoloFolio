@@ -66,6 +66,10 @@ if (get_option('sl_maintenance_mode') == 'true') {
 		$.jknav.init();
 		$("p:has(img)").css('margin' , '0');
 		$("p:has(img)").css('padding' , '0');
+    	$('img').each(function() {
+    		var mwidth = $(this).attr('width');
+			$(this).attr('style', 'max-width:' + mwidth + 'px');
+		});
 		$('img').each(function(){ 
         	$(this).removeAttr('width')
         	$(this).removeAttr('height');

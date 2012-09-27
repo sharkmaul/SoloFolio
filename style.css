@@ -282,35 +282,6 @@ p {
 		#footer ul li a {
 			text-decoration: none;
 		}
-	
-/* Footer Widgets */
-#footer-widgets {
-	margin: 10px auto;	
-	padding-top: 10px;
-	width: 900px;
-	}
-	
-.footer-column {
-	display: block;
-	float: left;
-	}
-
-#footer-left {
-	width: 25%;
-	}
-
-#footer-middle-left {
-	width: 25%;
-	}
-	
-#footer-middle-right {
-	width: 25%;
-	}
-	
-#footer-right {
-	text-align: right;
-	width: 25%;
-	}
 
 /* Header */
 
