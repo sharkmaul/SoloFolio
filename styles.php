@@ -79,7 +79,7 @@ body {
 	font-size: <?php echo get_option('sl_body_font_size'); ?>;
 }
 	
-h2 {
+h2, h3 {
 	color: #<?php echo get_option('sl_page_h2_color'); ?>;
 }
 	
@@ -117,7 +117,7 @@ a:hover, a:active {
 
 /* Sidebar */
 
-h3 {
+#header h3 {
 	color: #<?php echo get_option('sl_sidebar_h2_color'); ?>;
 }
 
@@ -155,6 +155,9 @@ a:hover, a:active {
 
 img {
 	border: 1px solid #<?php echo get_option('sl_image_border_color'); ?>;	
+	box-sizing:border-box;
+	-moz-box-sizing:border-box; /* Firefox */
+	-webkit-box-sizing:border-box; /* Safari */
 }
 
 a img { 
@@ -539,7 +542,7 @@ table tr {
 }
 
 #navigation {
-	margin-top: 50px;
+	margin-top: 30px;
 }
 
 #wrapper {
@@ -593,6 +596,11 @@ table tr {
 		border: none;
 	}
 	
+	img {
+		border-left: none;
+		border-right: none;
+	}
+	
 	/*#outerWrap {
 		overflow: hidden;
 	}*/
@@ -643,6 +651,10 @@ table tr {
 		width: 100%;
 		/*overflow: hidden;*/
 	}
+	
+		#content-index, #content-single {
+			padding: 10px 0 0;
+		}
 		
 		.entry {
 			border-bottom: medium none;
@@ -650,12 +662,8 @@ table tr {
 			padding: 10px;
 			margin-bottom: 0;
 		}
-	
-			.meta-cat {
-				display: none;
-			}
 		
-		#content-page p, #content-page h2 {
+		p, h2, h4, h6, .commentlist .date {
 			padding: 0 10px;
 		}
 				

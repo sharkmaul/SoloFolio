@@ -62,8 +62,11 @@ body {
 	float: right;
 }
 	
-.clear {
+div.clear {
 	clear: both;
+	height: 0;
+	margin: 0 !important;
+	padding: 0;
 }
 
 /* Links */
@@ -124,8 +127,8 @@ h2 {
 
 h3 {
 	font-size: 18px;
-	margin: 5px 0;
-	padding: 0 0 3px 0;
+	margin: 5px 0 0;
+	padding: 0;
 }
 
 h4 {
@@ -214,12 +217,10 @@ p {
 
 #content-index {
 	float: left;
-	width: 600px;
 }
 
 #content-single {
 	float: left;
-	width: 600px;
 	text-align: left;
 }
 	
@@ -229,19 +230,16 @@ p {
 
 #content-search {
 	float: left;
-	width: 600px;
 }
 
 .commentbox {
 	font-size: 11px;
 	margin-bottom: 10px;
 	padding: 2px 5px 2px 5px;
-	width: 520px;
 }
 
 #comments {
 	padding: 0px;
-	width: 600px;
 }
 
 #comments .comment {
@@ -413,11 +411,15 @@ h1.blog-title a:hover {
 	margin: 0 0 .7em;
 }
 
+.meta-cat {
+	margin: 0 0 0 1em;
+}
+
 .post-cat {
 	text-transform: uppercase;
 }
 
-.date, .post-cat {	
+.date, .post-cat, .meta-cat {	
 	font-size: 10px;
 	padding: 0;
 	color: #ccc;
