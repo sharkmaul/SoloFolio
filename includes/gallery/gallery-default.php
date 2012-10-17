@@ -30,10 +30,10 @@ foreach ( $attachments as $id => $attachment ) {
 							<span id=\"index\"></span> of 
 							<span id=\"total\"></span>
 						</div>
-						<a id=\"next\" href\"#\">next ></a> 
-						<a id=\"fullscreen\" href\"#\">Fullscreen</a>
-						<a id=\"play\">Slideshow</a>
-						<a class=\"galleria-thumblink\"></a>
+						<a id=\"next\" href=\"#\">next ></a> 
+						<a id=\"fullscreen\" href=\"#\">Fullscreen</a>
+						<a id=\"play\" href=\"#\">Slideshow</a>
+						<a id=\"toggle\" href=\"#\">Thumbs</a>
 					</div>";
 		$output .= "<div class=\"galleria-info\"></div>";
 	$output .= "</div>";
@@ -84,6 +84,9 @@ function test() {
 				});
 				$('#play').click(function() {
 					gallery.playToggle();
+				});
+				$('#toggle').click(function() {
+					gallery.$('thumblink').click();
 				});
 				this.bind('image', function(e) {
 					data = e.galleriaData;
