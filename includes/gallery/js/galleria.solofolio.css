@@ -63,43 +63,40 @@
     -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=50)";
     filter: alpha(opacity=50);
 }
-.galleria-thumblink,
-.galleria-fullscreen,
-.galleria-play,
-.galleria-popout {
+.toggle,
+.fullscreen,
+.play,
+.popout {
     width: 29px;
     height: 29px;
+    display: block;
     float: right;
-    top: 1px;
-    background: url(thumbs.png) no-repeat 50% 50%;
+    padding: 0;
+    background: url(thumbs.png) no-repeat;
+    background-position: 8px 8px;
     cursor: pointer;
 }
-.galleria-fullscreen,
-.galleria-popout {
+.fullscreen {
     left: auto;
-    right: 0;
     background-image: url(fullscreen.png);
     background-position: 8px 8px;
 }
 .galleria-popout {
     background-image: url(popout.png);
-    right: 30px;
     background-position: 50% 50%;
 }
-.galleria-play {
-    right: 60px;
+.play {
     background-image: url(playpause.png);
     background-position: 10px 9px;
 }
-.galleria-play.playing { background-position: 10px -91px }
-.galleria-fullscreen.open { background-position: 8px -93px }
-.galleria-thumblink:hover,
-.galleria-thumblink.open,
-.galleria-fullscreen:hover,
-.galleria-play:hover,
-.galleria-popout:hover { background-color: #000 }
+.playing { background-position: 10px -91px }
+
+.toggle:hover,
+.fullscreen:hover,
+.play:hover { background-color: #000 }
+
 .galleria-thumbnails-container {
-    position: absolute;
+	position: absolute;
     background: #000;
     z-index: 2;
 }
@@ -276,7 +273,7 @@
 	padding-left: 10px;
 }
 
-.galleria-controls a {
+.galleria-controls.prev .galleria-controls.next {
 	cursor: pointer;
 	padding: 10px;
 }

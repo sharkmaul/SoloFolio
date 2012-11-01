@@ -154,19 +154,8 @@ a:hover, a:active {
 /* Images */
 
 img {
-	border: 1px solid #<?php echo get_option('sl_image_border_color'); ?>;	
-	box-sizing:border-box;
-	-moz-box-sizing:border-box; /* Firefox */
-	-webkit-box-sizing:border-box; /* Safari */
+	border: none; 
 }
-
-a img { 
-	border: 1px solid #<?php echo get_option('sl_image_border_color'); ?>;	
-}
-
-	a:hover img { 
-		border: 1px solid <?php echo get_option('sl_image_border_color'); ?>; 
-	}
 
 /* Posts */
 

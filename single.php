@@ -1,6 +1,5 @@
 <?php get_header(); ?>       
 <div id="content-single"><!-- Begin Content (Single) -->
-	<div id="content-single">
 	<?php if (have_posts()) : ?>	
 	<?php while (have_posts()) : the_post(); ?>
 		<div class="entry">
@@ -33,9 +32,7 @@
 		<h2>Not Found</h2>
 		<p>Sorry, but you are looking for something that isn't here.</p>
 		<?php include (TEMPLATEPATH . "/searchform.php"); ?>	
-	<?php endif; ?>
-
-	 </div>   
+	<?php endif; ?> 
 	 
 	 <div class="clear"></div>
 

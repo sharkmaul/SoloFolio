@@ -78,6 +78,18 @@ if (get_option('sl_maintenance_mode') == 'true') {
 		$("#header-content").slideToggle();
 			$(this).toggleClass("active");
 		});
+		var setResponsive = function () {
+		  // Is the window taller than the #adminmenuwrap by 50px or more?
+		  if ($(window).height() > $("#header-content").height() + $("#logo").height() + 50) {
+			 // ...if so, make the #adminmenuwrap fixed
+			 $('#header').css('position', 'fixed'); 
+		  } else {
+			 //...otherwise, leave it relative        
+			 $('#header').css('position', 'absolute'); 
+		  }
+		}
+		$(window).resize(setResponsive);
+		setResponsive();
 	});
 	
 	// Scroll past iOS address bar

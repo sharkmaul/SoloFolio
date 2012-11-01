@@ -1,6 +1,6 @@
 <?php
 
-$output .="<div class=\"galleria\" class=\"galleria-container notouch\">";
+$output .="<div class=\"galleria-wrap\"><div class=\"galleria\" class=\"galleria-container notouch\">";
 
 $i = 0;
 	
@@ -25,18 +25,18 @@ foreach ( $attachments as $id => $attachment ) {
 	
 	$output .= "<div class=\"galleriabar\">";
 		$output .= "<div class=\"galleria-controls\">
-						<a id=\"prev\" href\"#\">< prev</a>
+						<a class=\"prev\" href\"#\">< prev</a>
 						<div class=\"galleria-counter\">
-							<span id=\"index\"></span> of 
-							<span id=\"total\"></span>
+							<span class=\"index\"></span> of 
+							<span class=\"total\"></span>
 						</div>
-						<a id=\"next\" href=\"#\">next ></a> 
-						<a id=\"fullscreen\" href=\"#\">Fullscreen</a>
-						<a id=\"play\" href=\"#\">Slideshow</a>
-						<a id=\"toggle\" href=\"#\">Thumbs</a>
+						<a class=\"next\" href=\"#\">next ></a> 
+						<a class=\"fullscreen\" href=\"#\" title=\"Fullscreen\"></a>
+						<a class=\"play\" href=\"#\" title=\"Slideshow\"></a>
+						<a class=\"toggle\" href=\"#\" title=\"Thumbnails\"></a>
 					</div>";
 		$output .= "<div class=\"galleria-info\"></div>";
-	$output .= "</div>";
+	$output .= "</div></div>";
 
 add_action('wp_footer', 'test');
  
@@ -73,19 +73,20 @@ function test() {
 				this.bind('fullscreen_exit', function() {
 					btn.hide();
 				});
-				$('#prev').click(function() {
+				$('.prev').click(function() {
 					gallery.prev();
 				});
-				$('#next').click(function() {
+				$('.next').click(function() {
 					gallery.next();
 				});
-				$('#fullscreen').click(function() {
+				$('.fullscreen').click(function() {
 					gallery.toggleFullscreen();
 				});
-				$('#play').click(function() {
+				$('.play').click(function() {
 					gallery.playToggle();
+					$('.play').toggleClass(\"playing\");
 				});
-				$('#toggle').click(function() {
+				$('.toggle').click(function() {
 					gallery.$('thumblink').click();
 				});
 				this.bind('image', function(e) {
@@ -94,13 +95,13 @@ function test() {
 				});
 				this.bind('image', function(e) {
 					data = e.index;
-					$('#index').html(data + 1);
+					$('.index').html(data + 1);
 				});
 				this.bind('image', function(e) {
 					data = e.index;
-					$('#index').html(data + 1);
+					$('.index').html(data + 1);
 				});
-				$('#total').append(this.getDataLength());
+				$('.total').append(this.getDataLength());
 			});";
 	
 	$output.= "</script>";
