@@ -2,7 +2,7 @@ SoloFolio
 =========
 http://www.solofolio.net/
 
-SoloFolio is a currently a developer theme, meaning you're going to need some programming experience to deploy it properly. Many of its features are not documented. To see a site utilizing the latest build, visit http://www.joelhawksley.com.
+SoloFolio is currently a developer theme, meaning you're going to need some programming experience to deploy it properly. Many of its features are not documented. To see a site utilizing the latest build, visit http://www.joelhawksley.com.
 
 INSTALLATION
 
