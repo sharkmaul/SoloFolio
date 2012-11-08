@@ -23,12 +23,19 @@ USING THE GALLERY
 SoloFolio piggy-backs on the built-in WordPress gallery manager. The [gallery] shortcode will accept the following variables:
 
 captions : true, false (default: true)
+
 transition : fade, flash, pulse, slide, fadeslide (default: none)
+
 speed : slide duration in ms (default: 9000)
+
 shownav : true, false (default: true)
+
 showcounter : true, false (default: true)
+
 autoplay : true, false (default: false)
+
 width : width in px (default: 900px, responsive)
+
 height : height in px (default: .667, responsive)
 fullscreen : true, false (default: true)
 	
