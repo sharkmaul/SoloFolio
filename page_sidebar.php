@@ -1,6 +1,9 @@
 <?php
-/*
-Template Name: Page w/ Sidebar
+/* 
+SoloFolio
+Template - Page w/ Sidebar 
+
+Probably needs to go. Doesn't work with sidebar layout, which most people are using these days.
 */
 ?>
 <?php get_header(); ?>        

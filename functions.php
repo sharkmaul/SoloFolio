@@ -1,5 +1,10 @@
 <?php
 
+/* 
+SoloFolio
+Core functions
+*/
+
 if (get_option('sl_sidebar_layout') == 'yes') { 
 if(function_exists('register_sidebar')){
 

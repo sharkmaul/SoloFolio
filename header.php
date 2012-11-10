@@ -1,4 +1,9 @@
 <?php
+/* 
+SoloFolio
+Theme - Header
+*/
+
 // allows the theme to get info from the theme options page
 global $options;
 foreach ($options as $value) {

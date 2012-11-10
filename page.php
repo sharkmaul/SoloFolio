@@ -1,3 +1,12 @@
+<?php
+
+/* 
+SoloFolio
+Theme - Single page
+*/
+
+?>
+
 <?php get_header(); ?>        
 <div id="content-page"><!-- Begin Content -->
 	<?php if (have_posts()) : ?>

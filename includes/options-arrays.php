@@ -1,5 +1,12 @@
 <?php
 
+/* 
+SoloFolio
+Admin - options array
+
+This is effectively a flat-file database, but I don't see a need to put this in SQL at this point.
+*/
+
 $themename = "SoloFolio";
 $shortname = "sl";
 

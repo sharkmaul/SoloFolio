@@ -1,3 +1,12 @@
+<?php
+
+/* 
+SoloFolio
+Theme - Search form
+*/
+
+?>
+
 <?php $search_text = "Search"; ?> 
 <form method="get" id="searchform"  
 action="<?php bloginfo('home'); ?>/"> 

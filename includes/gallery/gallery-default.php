@@ -1,4 +1,12 @@
 <?php
+/* 
+SoloFolio
+Gallery Template: Default (Galleria Slideshow)
+*/
+?>
+
+
+<?php
 
 $output .="<div class=\"galleria-wrap\"><div class=\"galleria\" class=\"galleria-container notouch\">";
 

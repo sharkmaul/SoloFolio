@@ -1,6 +1,7 @@
 <?php 
-
-/* SoloFolio Design Editor
+/* 
+SoloFolio
+Admin - Design options
 */
 
 function solofolio_design_editor() {

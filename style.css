@@ -1,19 +1,20 @@
 /*
 Theme Name: SoloFolio
 Theme URI: http://www.solofolio.net/
-Description: A portfolio-centric platform for creatives.
-Version: 4.0 Alpha - Rough Development
+Description: A portfolio platform for creatives.
+Version: 4.0 Testing
 Author: Joel Hawksley
 Author URI: http://www.joelhawksley.com/
 
+PLEASE PLEASE PLEASE Read the README file and follow all the directions in their entirety.
 
-LICENSE:
 In plain english:
 
 1. SoloFolio can be used for both personal and commercial projects.
-2. You can NOT publish, redistribute, or otherwise disseminate any component of SoloFolio, including the gallery components used in the theme.
-3. Attribution is appreciated, but not required.
 
+2. You can NOT publish, redistribute, or otherwise disseminate any component of SoloFolio, including the gallery components used in the theme.
+
+3. Attribution is appreciated, but not required. You can toggle this setting under SoloFolio > General.
  
 Now for the legalese:
 
@@ -73,7 +74,7 @@ div.clear {
 a:link, a:visited {
 	font-weight: bold;
 	text-decoration: none;
-	outline: none !important; /* Bug courtesy of Julia D. */
+	outline: none !important;
 }
 
 a:hover, a:active { 

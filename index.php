@@ -1,3 +1,9 @@
+<?php
+/* 
+SoloFolio
+Theme - Blog Index
+*/
+?>
 <?php get_header(); ?>        
 <div id="content-index"><!-- Begin Content - Index -->
 <?php if (have_posts()) : ?>

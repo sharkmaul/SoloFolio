@@ -1,12 +1,11 @@
 <?php
+/* 
+SoloFolio
+Gallery shortcodes
 
-/**
- * Modified gallery shortcode. 
- * SoloFolio
- *
- *
- */
- 
+This probably needs to be trimmed/eliminated. 
+*/
+
 add_shortcode('gallery', 'gallery_shortcode');
 
 //deactivate WordPress function

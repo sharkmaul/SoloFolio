@@ -1,4 +1,15 @@
 <?php
+/* 
+SoloFolio
+Gallery Template: vert-scroll
+
+Let's just say that most browsers don't take too kindly to display more than one Galleria slideshow on a single page. In addition to mobile usage, this theme is used as a safety-override on all blog posts to prevent otherwise disastrous results.
+
+*/
+?>
+
+
+<?php	
 	
 	$i = 0;
 		

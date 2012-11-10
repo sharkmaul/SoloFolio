@@ -1,6 +1,13 @@
 <?php 
-/* SoloFolio PhotoShelter integration */	
+/* 
+SoloFolio
+Admin - PhotoShelter integration
+
+Who knows if this still works. Code was written by request of a client in 2010, and hasn't seen much use since. 
+*/
+
 function solofolio_photoshelter() {
+
 ?>
 
 <div id="solo-photoshelter"><!-- Begin Wrapper -->

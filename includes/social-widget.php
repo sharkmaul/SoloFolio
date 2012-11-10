@@ -1,8 +1,11 @@
 <?php
 
-/**
- * Solofolio Social Media widget
- */
+/* 
+SoloFolio
+Widget - Social media icons
+*/
+
+
 class pippin_simple_authors_widget extends WP_Widget {
  
     /** constructor */

@@ -1,3 +1,12 @@
+<?php
+
+/* 
+SoloFolio
+Theme - Search results
+*/
+
+?>
+
 <?php get_header(); ?>
 <div id="content-search">
 	<h2>Search Results</h2>

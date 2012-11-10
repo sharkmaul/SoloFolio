@@ -1,5 +1,12 @@
 <?php 
 
+/* 
+SoloFolio
+Admin - Option element templates
+
+Loads option arrays from options-arrays and builds the admin menus based on these templates.
+*/
+
 function solofolio_options($input) {
 
 foreach ($input as $value) {
