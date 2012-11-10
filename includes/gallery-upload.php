@@ -1,12 +1,5 @@
 <?php
 
-/**
- * Modified gallery shortcode. 
- * SoloFolio
- *
- *
- */
- 
 add_filter('media_upload_gallery_form', 'solo_media_upload_gallery_form', 11);
  
 function solo_media_upload_gallery_form($errors) {

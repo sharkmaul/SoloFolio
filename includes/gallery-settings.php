@@ -1,10 +1,3 @@
-<?php
-/* 
-SoloFolio
-Administration - Gallery Settings
-*/
-?>
-
 <?php 
 function solofolio_gallery_settings() {
 

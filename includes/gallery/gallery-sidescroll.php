@@ -1,10 +1,4 @@
 <?php
-/* 
-SoloFolio
-Gallery Template: side-scroll
-*/
-?>
-<?php
 
 
 $output .= "<script type=\"text/javascript\" charset=\"utf-8\">
