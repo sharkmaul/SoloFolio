@@ -11,8 +11,6 @@
 	$oddcomment = 'class="alt" '; /* This variable is for alternating comment background */
 ?>
 
-<!-- You can start editing here. -->
-
 <?php if ($comments) : ?>
 	<ol class="commentlist">
 	<?php foreach ($comments as $comment) : ?>

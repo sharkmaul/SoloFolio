@@ -182,10 +182,6 @@ function solofolio_gallery_shortcode($attr) {
 	if ($type == "vert-scroll") {
 		include("gallery/gallery-vertscroll.php");
 	}
-	
-	if ($type == "scaler") {
-		include("gallery/gallery-scaler.php");
-	}
 		
 	return $output;
 }
