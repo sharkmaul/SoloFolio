@@ -596,8 +596,7 @@ table tr {
 	
 	#header {
 		height: auto;
-		background-color: #333333;
-		position: relative;
+		position: relative !important;
 		margin: 0 0 10px 0;
 		padding: 0;
 		width: auto;
@@ -749,10 +748,6 @@ table tr {
 	
 	.galleria-info {
 		padding: 7px 10px 0;
-	}
-	
-	.galleria-controls {
-		padding-right: 10px;
 	}
 	
 	.entry {

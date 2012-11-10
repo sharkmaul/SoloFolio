@@ -24,6 +24,10 @@ SoloFolio piggy-backs on the built-in WordPress gallery manager. The [gallery] s
 
 captions : true, false (default: true)
 
+fullscreen : true, false (default: true)
+
+showthumbnails : true, false (default: true)
+
 transition : fade, flash, pulse, slide, fadeslide (default: none)
 
 speed : slide duration in ms (default: 9000)

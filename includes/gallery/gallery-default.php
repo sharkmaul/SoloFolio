@@ -30,11 +30,11 @@ foreach ( $attachments as $id => $attachment ) {
 							<span class=\"index\"></span> of 
 							<span class=\"total\"></span>
 						</div>
-						<a class=\"next\" href=\"#\">next ></a> 
-						<a class=\"fullscreen\" href=\"#\" title=\"Fullscreen\"></a>
-						<a class=\"play\" href=\"#\" title=\"Slideshow\"></a>
-						<a class=\"toggle\" href=\"#\" title=\"Thumbnails\"></a>
-					</div>";
+						<a class=\"next\" href=\"#\">next ></a>";
+						if ($fullscreen != "false"){$output.= "<a class=\"fullscreen\" href=\"#\" title=\"Fullscreen\"></a>";}
+						if ($showplay != "false"){$output.= "<a class=\"play\" href=\"#\" title=\"Slideshow\"></a>";}
+						if ($showthumbnails != "false"){$output.= "<a class=\"toggle\" href=\"#\" title=\"Thumbnails\"></a>";}
+					$output .= "</div>";
 		$output .= "<div class=\"galleria-info\"></div>";
 	$output .= "</div></div>";
 
