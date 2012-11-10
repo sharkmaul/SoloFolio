@@ -47,6 +47,7 @@ class fixImageMargins{
     return '<div ' . $id . 'class="wp-caption ' . $align . '">' . $content . '<p class="wp-caption-text">' . $caption . '</p></div>';
     }
 }
+$fixImageMargins = new fixImageMargins();
 
 // Load GPS data from EXIF before it is wiped
 function add_geo_exif($meta,$file,$sourceImageType) {
@@ -61,17 +62,15 @@ function add_geo_exif($meta,$file,$sourceImageType) {
 				$meta['longitude_ref'] = trim( $exif['GPSLongitudeRef'] );
 	return $meta;
 }
-
-
 add_filter('wp_read_image_metadata', 'add_geo_exif','',3);
-$fixImageMargins = new fixImageMargins();
+
 
 
 include_once("includes/gallery.php");			// Include gallery shortcode replacement
 include_once("includes/gallery-settings.php");	// Include gallery settings page
 include_once("includes/gallery-upload.php");	// Include gallery upload filter
-include_once("includes/photoshelter.php");		// Include photoshelter code
-include_once("includes/design-editor.php");		// Include design editor code (deprecated now)
+include_once("includes/photoshelter.php");		// Include photoshelter tool
+include_once("includes/design-editor.php");		// Include design editor
 include_once("includes/options.php");			// Include admin option menu
 include_once("includes/options-arrays.php");	// Include admin options lists
 include_once("includes/social-widget.php");		// Include social media widget
@@ -219,6 +218,7 @@ solofolio_options($options);
 <?php
 }
 ?>
+
 <?php
 add_action('admin_init', 'solofolio_add_init');
 add_action('admin_menu', 'solofolio_add_admin');

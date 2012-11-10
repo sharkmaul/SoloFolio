@@ -1,3 +1,8 @@
+/* 
+SoloFolio
+Galleria Theme - JS
+*/
+
 (function($) {
 
 Galleria.addTheme({
