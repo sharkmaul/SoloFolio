@@ -173,6 +173,10 @@ function solofolio_gallery_shortcode($attr) {
 	if ($type == "slideshow") { 
 		include("gallery/gallery-default.php");
 	}
+	
+	if ($type == "super") { 
+		include("gallery/gallery-super.php");
+	}
 			
 	if ($type == "side-scroll") {
 		include("gallery/gallery-sidescroll.php");

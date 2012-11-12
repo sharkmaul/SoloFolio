@@ -12,7 +12,7 @@ $output .="<script type=\"text/javascript\" src=\"";
 $insurl = get_bloginfo('template_url');
 $output .= $insurl;
 
-$output .="/includes/gallery/js/galleria.solofolio.js\"></script>";
+$output .="/includes/gallery/js/galleria.super.js\"></script>";
 
 $output .="<div class=\"galleria-wrap\"><div class=\"galleria\" class=\"galleria-container notouch\">";
 
