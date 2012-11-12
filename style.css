@@ -63,7 +63,7 @@ body {
 	float: right;
 }
 	
-div.clear {
+.clear {
 	clear: both;
 	height: 0;
 	margin: 0 !important;
@@ -85,12 +85,11 @@ a:hover, a:active {
 a img { 
 	margin: 0;
 	padding: 0;
+	border: none;
 	text-decoration: none; 	
 }
 
 	a:hover img { 
-		margin: 0; 
-		padding: 0;
 		text-decoration: none; 
 	}
 
@@ -155,10 +154,9 @@ p {
 
 /* Structure */
 #header {
-	margin: 0 auto;
-	position: relative;
-	width: 900px;
-	padding: 0 20px;
+	position: fixed;
+	width: 250px;
+	padding: 20px 0 0 20px;
 	}
 	
 	#header a img {
@@ -169,13 +167,10 @@ p {
 		
 		#header a:hover {
 			border: none;
-	}
+		}
 	
 	
 	#logo {
-		position: absolute;
-		bottom: 5px;
-		width: 450px;
 	}
 	
 		#logo h1 {
@@ -191,11 +186,6 @@ p {
 		}
 		
 	#header-content {
-		bottom: 0;
-		right: 20px;
-		position: absolute;
-		text-align: right;
-		width: 450px;
 	}
 		
 		#header-phone, #header-email {
@@ -207,9 +197,9 @@ p {
 		}
 
 #wrapper {
-	margin: 0 auto;
-	padding: 20px;
-	width: 900px;
+	margin: 0 0 0 270px;
+	padding: 20px 10px 0 0;
+	max-width: 900px;
 }
 
 #content-page {
@@ -284,81 +274,7 @@ p {
 
 /* Header */
 
-#suckerfishnav {
-}
-
-#suckerfishnav, #suckerfishnav ul {
-    float: right;
-    list-style:none;
-    padding:0;
-    margin:0;
-}
-
-#suckerfishnav a {
-    display:block;
-    font-weight: normal;
-    text-decoration:none;
-    margin: 5px 0 0 10px;
-}
-
-#suckerfishnav li {
-    float:left;
-    padding:0;
-}
-
-#suckerfishnav ul {
-    position:absolute;
-    left: -999em;
-    height: auto;
-    margin: 0;
-    padding: 0;
-    border: 0;
-}
-
-#suckerfishnav li li {
-	display: block;
-	float: none;
-	text-align: left;
-    position: relative;
-    z-index: 10;
-}
-
-#suckerfishnav li li a {
-	display: block;
-	margin: 0;
-    padding: 0 10px 4px 10px;
-}
-
-#suckerfishnav li ul ul {
-    margin:-23px 0 0 100px;
-}
-
-#suckerfishnav li:hover a, #suckerfishnav li.sfhover a {
-}
-
-#suckerfishnav li:hover li a, #suckerfishnav li li:hover li a, #suckerfishnav li li li:hover li a, #suckerfishnav li li li li:hover li a {
-}
-    
-#suckerfishnav li:hover ul ul, #suckerfishnav li:hover ul ul ul, #suckerfishnav li:hover ul ul ul ul, #suckerfishnav li.sfhover ul ul, #suckerfishnav li.sfhover ul ul ul, #suckerfishnav li.sfhover ul ul ul ul {
-    left:-999em;
-    }
-#suckerfishnav li:hover ul, #suckerfishnav li li:hover ul, #suckerfishnav li li li:hover ul, #suckerfishnav li li li li:hover ul, #suckerfishnav li.sfhover ul, #suckerfishnav li li.sfhover ul, #suckerfishnav li li li.sfhover ul, #suckerfishnav li li li li.sfhover ul {
-    left:auto;
-    background:#000000;
-    padding: 3px 0 6px;
-    z-index: 7;
-    }
-
-.solo-nav a {
-	font-weight: normal;
-	}
-
-.solo-nav li {
-	padding: 0 0 0 8px;
-}
-
 #header h1 {
-	display: inline;
 	font-weight: bold;
 	margin: 0;
 	padding: 0;
@@ -374,34 +290,34 @@ p {
 		background-color: transparent;
 	}
 
-.description {
-	display: inline;
-}
+	.description {
+		display: inline;
+	}
+	
+	h1.blog-title {
+		display: inline;
+	}
+	
+	h1.blog-title a {	
+		font-size: 36px;
+		border-bottom: none;
+	}
+	
+	h1.blog-title a:hover {
+		text-decoration: none;
+		background: transparent;
+	}
+	
+	.tagline {	
+		font-weight: normal;
+		font-size: 18px;
+		text-align: right;
+		margin-left: 3px;
+		padding: 0;
+		display: inline;
+	}
 
-h1.blog-title {
-	display: inline;
-}
-
-h1.blog-title a {	
-	font-size: 36px;
-	border-bottom: none;
-}
-
-h1.blog-title a:hover {
-	text-decoration: none;
-	background: transparent;
-}
-
-.tagline {	
-	font-weight: normal;
-	font-size: 18px;
-	text-align: right;
-	margin-left: 3px;
-	padding: 0;
-	display: inline;
-}
-
-/* Content */
+/* Blog Posts */
 .entry {
 	border-bottom: 1px solid #666666;
 	margin: 0 0 20px;
@@ -421,13 +337,9 @@ h1.blog-title a:hover {
 }
 
 .date, .post-cat, .meta-cat {	
+	color: #ccc;
 	font-size: 10px;
 	padding: 0;
-	color: #ccc;
-}
-
-.post-cat {
-	text-transform: uppercase;
 }
 
 h2.post-title {
@@ -443,7 +355,7 @@ h2.post-title a {
 
 	h2.post-title a:hover {
 		text-decoration: none;
-}
+	}
 
 /* Sidebar */
 

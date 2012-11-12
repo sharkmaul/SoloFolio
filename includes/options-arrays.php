@@ -68,13 +68,6 @@ array( "name" => "Personalize",
 
 array( "name" => "Layout",
 	"type" => "section"),
-	
-	/*array( "name" => "Sidebar Position",
-		"desc" => "",
-		"id" => $shortname."_sl_layout_index_sidebar",
-		"type" => "select",
-		"options" => array("Side", "Bottom"),
-		"std" => "sans"),*/
 		
 	array( "name" => "Header Width",
 		"desc" => "Format: XXpx",
@@ -183,8 +176,15 @@ array( "name" => "Advanced",
 		"desc" => "",
 		"id" => $shortname."_sidebar_layout",
 		"type" => "select",
-		"options" => array("no", "yes"),
+		"options" => array(/*"no", */"yes"),
 		"std" => "yes"),
+		
+	array( "name" => "Layout",
+		"desc" => "",
+		"id" => $shortname."_layout_mode",
+		"type" => "select",
+		"options" => array("sidebar", /* "horizontal" */),
+		"std" => "sidebar"),
 		
 	array( "name" => "Header in wrapper",
 		"desc" => "",
