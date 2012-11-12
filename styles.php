@@ -119,7 +119,6 @@ a:hover, a:active {
 
 #wrapper {
 	background-color: #<?php echo get_option('sl_color_wrapper_bg'); ?>;
-	border: 1px solid #<?php echo get_option('sl_color_wrapper_border'); ?>;
 }
 
 /* Sidebar */
@@ -179,11 +178,7 @@ img {
 }
 
 .entry {
-	border-bottom: 1px solid #<?php echo get_option('sl_entry_divider'); ?>;
-}
-
-.commentlist li {
-	border-bottom: 1px solid #<?php echo get_option('sl_entry_divider'); ?>;
+	border-bottom: 1px dotted #<?php echo get_option('sl_entry_divider'); ?>;
 }
 	
 .wp-caption p.wp-caption-text {
@@ -191,7 +186,7 @@ img {
 }
 	
 .wp-caption img {
-	border: 1px solid# <?php echo get_option('sl_image_border_color'); ?>;
+	border: 1px solid #<?php echo get_option('sl_image_border_color'); ?>;
 }
 
 /* Navigation */

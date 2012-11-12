@@ -1,7 +1,7 @@
 <?php
 /* 
 SoloFolio
-Gallery Template: Default (Galleria Slideshow)
+Gallery Template: Super (Responsive Galleria Slideshow)
 */
 ?>
 

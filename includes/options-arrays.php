@@ -251,21 +251,14 @@ array(  "name" => "General", "type" => "section"),
 			"target" => "de-preview",
 			"attribute" => "backgroundColor",
 			"type" => "color",
-			"std" => "1a1a1a"),
+			"std" => "222222"),
 			
 		array( "name" => "Wrapper BG",
 			"id" => $shortname."_color_wrapper_bg",
 			"target" => "wrapper",
 			"attribute" => "backgroundColor",
 			"type" => "color",
-			"std" => "1a1a1a"),	
-			
-		array( "name" => "Border",
-			"id" => $shortname."_color_wrapper_border",
-			"target" => "wrapper",
-			"attribute" => "borderColor",
-			"type" => "color",
-			"std" => "1A1A1A"),
+			"std" => "222222"),	
 			
 		array( "type" => "clear"),
 			
@@ -493,11 +486,6 @@ array( "name" => "Images / Gallery", "type" => "section"),
 			"attribute" => "borderColor",
 			"type" => "color",
 			"std" => "333333"),
-		
-		/*array( "name" => "Gallery Border",
-			"id" => $shortname."_sologallery_border",
-			"type" => "color",
-			"std" => "000000"),*/
 			
 		array( "name" => "Gallery BG",
 			"id" => $shortname."_gallery_bg",

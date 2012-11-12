@@ -22,13 +22,58 @@ THE SOFTWARE IS PROVIDED “AS IS”, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR I
 
 */
 
-*, html {
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
 	margin: 0;
 	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
 }
 
 body {
 	font-family: Helvetica, Verdana, Arial, Utkal, sans-serif;
+	background-color: #222222;
 	color: #000000;
 	-webkit-text-size-adjust: 100%;
 	font-size: 12px;
@@ -319,7 +364,7 @@ p {
 
 /* Blog Posts */
 .entry {
-	border-bottom: 1px solid #666666;
+	border-bottom: 1px dotted #424242;
 	margin: 0 0 20px;
 	overflow: hidden;
 }
@@ -365,62 +410,6 @@ h2.post-title a {
 	width: 175px;
 }
 
-.sidebar {
-	font-size: 11px;
-	line-height: 1.5em;
-	text-align: left;
-}
-
-.sidebar h3 {
-	font-size: 18px;
-	margin: 0;
-}
-	
-.sidebar a {
-	font-weight: normal;
-}
-	
-.widgettitle {
-	font-size: 18px;
-	color: #5b5c5c;
-}
-
-.sidebar ul	{
-	/*line-height: 1.6em;*/
-	list-style-type: none;
-	margin: 0 0 1em;
-	padding: 0;
-}
-
-.sidebar ul li {
-	padding: 0 0 0 5px;
-}
-	
-.sidebar ul li:hover {
-}
-
-.sidebar ul li .title {
-	display: block;
-	font-weight: bold;
-}
-
-.sidebar ul li .date {
-	display: block;
-	font-size: smaller;
-}
-
-sidebar ul li .content {
-	display: block;
-}
-
-.sidebar ul li a {	
-	display: block;
-}
-
-select#cat {
-    width: 150px;
-}
-
 /* Comments */
 .commentlist {
 	padding: 0;
@@ -452,6 +441,7 @@ select#cat {
 }
 
 .commentlist li {
+	padding-bottom: 10px;
 }
 	
 #commentform input, #commentform textarea {
@@ -464,8 +454,6 @@ select#cat {
 	width: 500px;
 }
 
-.commentlist li {
-}
 
 .commentlist p {
 	font-weight: normal;
