@@ -2,7 +2,42 @@ SoloFolio
 =========
 http://www.solofolio.net/
 
-SoloFolio is currently a developer theme, meaning you're going to need some programming experience to deploy it properly. Many of its features are not documented. To see a site utilizing the latest build, visit http://www.joelhawksley.com.
+SoloFolio is currently a developer theme, meaning you're going to need some programming experience to deploy it properly. Many of its features are not currently documented. 
+
+To see a site utilizing the latest public release (v4), visit http://www.joelhawksley.com.
+
+This repository contains my "nightly" builds. It is NOT production-ready. I've uploaded stable builds for deployment.
+
+
+ABOUT
+
+SoloFolio is more than a theme. The core components drastically modify the way WordPress works in order to shape its output into a professional portfolio design. 
+
+Because of this, some things aren't the easiest to set up. Once properly configured, there is no additional work to build out a SoloFolio site compared to any other WordPress theme.
+
+
+SUPPORT
+
+SoloFolio is provided as a public service on an AS-IS basis. 
+
+To submit a feature request/bug report, go to: https://solofolio.uservoice.com/
+
+If you’re looking for custom design and/or hands-on support, feel free to contact me for a consultation at joel@joelhawksley.com.
+
+
+FEATURES TO NOTE
+
+SoloFolio does a lot of work behind the scenes to present your work in the best way possible on all platforms. In order to do this, there are a few behavioral overrides you should keep in mind. 
+
+They include (but are not limited to):
+
+-Galleries inserted into blog posts will be forced into the vertical scroll template.
+
+-Mobile devices are fed the side-scroll gallery by default.
+
+-Phones/small screens are assigned a mobile-friendly header with collapsable menu, in addition to vertically scrolling galleries.
+
+-JPG quality is locked at 90, instead of the Wordpress default of 60. This sacrifices some speed, to the benefit of image quality.
 
 INSTALLATION
 
@@ -16,7 +51,7 @@ INSTALLATION
 
 5. Under Settings > Media, set the Thumbnail size to 150 (w) 100 (h), Medium size to 300 (w) 200 (h), and Large size to 900 (w) 600 (h).
 
-6. Upload images at least 1800x1200 in size at full JPG quality, not to exceed 2mb. SoloFolio will handle the rest. 
+6. Upload images at least 1800x1200 in size at full JPG quality in sRGB, not to exceed 2mb. SoloFolio will handle the rest. 
 
 USING THE GALLERY
 
