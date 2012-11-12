@@ -14,13 +14,15 @@ INSTALLATION
 
 4. Under Appearance > Menus, make a menu and assign it to the home container.
 
-5. Under Settings > Media, set the Large size to 900 x 600. This is the default size for galleries and blog posts.
+5. Under Settings > Media, set the Thumbnail size to 150 (w) 100 (h), Medium size to 300 (w) 200 (h), and Large size to 900 (w) 600 (h).
 
-6. When uploading images, size to fit 1800x1200 and ~450kb file size. This image will be used in full screen mode and on supported retina devices.
+6. Upload images at least 1800x1200 in size at full JPG quality, not to exceed 2mb. SoloFolio will handle the rest. 
 
 USING THE GALLERY
 
 SoloFolio piggy-backs on the built-in WordPress gallery manager. The [gallery] shortcode will accept the following variables:
+
+type: slideshow, super, side-scroll, vert-scroll (default: slideshow)
 
 captions : true, false (default: true)
 
@@ -49,6 +51,8 @@ RECOMMENDED PLUGINS
 -Akismet
 -All-in-one SEO
 -Fast Secure Contact Form
+-Wordfence
+-Regenerate Thumbnails
 
 THANKS
 

@@ -29,6 +29,22 @@ if(function_exists('register_sidebar')){
 }
 }
 
+
+// Force WP to make high-quality images
+function solo_jpg_quality_callback($arg)
+{
+return (int)90;
+}
+
+add_filter('jpeg_quality', 'solo_jpg_quality_callback');
+
+// Additional image size for huge res
+function solo_add_xlarge() {
+	add_image_size('xlarge',1800,1200, false);
+}
+add_action( 'after_setup_theme', 'solo_add_xlarge' );
+
+
 // Remove image margins automatically added by WordPress. 
 // From: http://wordpress.org/support/topic/10px-added-to-width-in-image-captions
 class fixImageMargins{
