@@ -185,6 +185,10 @@ function solofolio_gallery_shortcode($attr) {
 	if ($type == "vert-scroll") {
 		include("gallery/gallery-vertscroll.php");
 	}
+	
+	if ($type == "react") {
+		include("gallery/gallery-react.php");
+	}
 		
 	return $output;
 }

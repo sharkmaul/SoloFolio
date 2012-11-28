@@ -441,7 +441,7 @@ h2.post-title a {
 }
 
 .commentlist li {
-	padding-bottom: 10px;
+	padding-bottom: 10px;	
 }
 	
 #commentform input, #commentform textarea {
@@ -651,4 +651,8 @@ display: none !important;
 	display: none;
 }
 
+/* React Gallery css */
+.sl-react img {
+	max-width:100%;
+}
 

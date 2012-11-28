@@ -689,16 +689,15 @@ table tr {
 @media (min-width: <?php echo (get_option('sl_wrapper_width') + get_option('sl_header_width') + 200); ?>px) {
 
 	#outerWrap {
-		margin: 0 auto;
 		position: relative;
-		width: <?php echo (get_option('sl_wrapper_width') + get_option('sl_header_width') + 80); ?>px;
+		width: 100%;
 	}
 	
-	#header {
-		left: auto;
-	}
-
+		#wrapper {
+			max-width: 100%;
+			}
 }
+
 
 /* Pageslide magic menu */
 

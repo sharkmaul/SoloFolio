@@ -98,6 +98,7 @@ THANKS
 	-Galleria
 	-jQuery.Retina
 	-JQuery.jknav
+	-Picturefill
 
 -To the fine folks at StackOverflow, for having a solution to every bug on the planet.
 
