@@ -656,3 +656,6 @@ display: none !important;
 	max-width:100%;
 }
 
+.galleria-wrap {
+	max-width: 900px;
+}

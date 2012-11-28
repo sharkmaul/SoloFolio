@@ -696,6 +696,16 @@ table tr {
 		#wrapper {
 			max-width: 100%;
 			}
+	
+	#post #outerWrap {
+		margin: 0 auto;
+		position: relative;
+		width: <?php echo (get_option('sl_wrapper_width') + get_option('sl_header_width') + 80); ?>px;
+	}
+	
+	#post #header {
+		left: auto;
+	}
 }
 
 
