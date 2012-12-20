@@ -92,15 +92,34 @@ include_once("includes/options.php");			// Include admin option menu
 include_once("includes/options-arrays.php");	// Include admin options lists
 include_once("includes/social-widget.php");		// Include social media widget
 
-// Add WP2.9 thumbnail support
-if ( function_exists( 'add_theme_support' ) )
-add_theme_support( 'post-thumbnails' );
-add_theme_support( 'automatic-feed-links' );
-
 register_nav_menus( array(
 		'primary' => __( 'Main Navigation', 'solofolio' ),
 	) );
 
+function solofolio_customize_register( $wp_customize )
+{
+	$wp_customize->add_section( 'solofolio_logo_section' , array(
+		'title'       => __( 'Logo', 'solofolio' ),
+		'priority'    => 30,
+		'description' => 'Upload a logo to replace the default site name and description in the header',
+	) );
+	
+	$wp_customize->add_setting( 'solofolio_logo' );
+	
+	$wp_customize->add_control( new WP_Customize_Image_Control( $wp_customize, 'solofolio_logo', array(
+    	'label'    => __( 'Logo', 'solofolio' ),
+    	'section'  => 'solofolio_logo_section',
+	    'settings' => 'solofolio_logo',
+	) ) );
+}
+add_action( 'customize_register', 'solofolio_customize_register' );
+
+
+add_action ('admin_menu', 'solofolio_customize');
+function solofolio_customize() {
+    // add the Customize link to the admin menu
+    add_theme_page( 'Customize', 'Customize', 'edit_theme_options', 'customize.php' );
+}
 
 $themename = "SoloFolio";
 $shortname = "sl";
@@ -187,7 +206,6 @@ global $themename, $shortname, $options, $options_design, $options_gallery;
 		}
 	}
 
-	//add_menu_page($themename, 'SoloFolio', 'administrator', 'solofolio', 'solofolio_admin', '', 28);
 	add_menu_page($themename, 'SoloFolio', 'administrator', 'functions.php', 'solofolio_admin', '', 28);
 	add_submenu_page('functions.php', 'General Settings', 'General', 'administrator', 'functions.php', 'solofolio_admin');
 	add_submenu_page('functions.php', 'Design Editor', 'Design', 'administrator', 'solofolio-design-editor', 'solofolio_design_editor');

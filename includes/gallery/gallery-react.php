@@ -36,11 +36,13 @@ foreach ( $attachments as $id => $attachment ) {
 		<div class=\"sl-react\" data-picture data-alt=\"" .  wptexturize($attachment->post_excerpt) . "\">
 			<div data-src=\"" . $link6[0] . "\"></div>
 			<div data-src=\"" . $link4[0] . "\" data-media=\"(min-width: 320px)\"></div>
-			<div data-src=\"" . $link5[0] . "\" data-media=\"(min-width: 1000px)\"></div>
+			<div data-src=\"" . $link5[0] . "\" data-media=\"(min-width: 920px)\"></div>
 
 			<!-- Fallback content for non-JS browsers. Same img src as the initial, unqualified source element. -->
-			<noscript><img src=\"" . $link6[0] . "\" alt=\"A giant stone face at The Bayon temple in Angkor Thom, Cambodia\"></noscript>
+			<noscript><img src=\"" . $link6[0] . "\" alt=\"" .  wptexturize($attachment->post_excerpt) . "\"></noscript>
 		</div>
+		
+		<p class=\"sl-react-caption\">" .  wptexturize($attachment->post_excerpt) . "</p>
 		
 		";
 } // End ForEach
@@ -56,8 +58,8 @@ function sl_react() {
 	$(window).load(function(){
 		var setResponsive = function () {
 		  var pageHeight = jQuery(window).height();
-		  var blockHeight = $(\"#block\").outerHeight();
-		  $('img').css('max-height', pageHeight - blockHeight); 
+		  var blockHeight = $(\".sl-react-caption\").outerHeight();
+		  $('img').css('max-height', pageHeight - blockHeight - 20 - 20); 
 		}
 		$(window).resize(setResponsive);
 		setResponsive();
