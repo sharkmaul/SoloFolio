@@ -26,11 +26,6 @@ foreach ($options_gallery as $value) {
 	}
 	
 ?>
-
-#wrapper {
-	padding: <?php echo get_option('sl_wrapper_padding'); ?>px;
-	width: <?php echo get_option('sl_wrapper_width'); ?>px;
-}
 	
 #header {
 	margin: <?php echo get_option('sl_header_margin'); ?>;
@@ -45,27 +40,6 @@ foreach ($options_gallery as $value) {
 #content-index, #content-single, #content-page-sidebar {
 	width: <?php echo get_option('sl_entry_width'); ?>px;
 }
-
-#myInfoContainer {
-	width: <?php echo get_option('sl_infocontainer_width'); ?>px;
-	}
-	
-.outerNavLeft {
-	margin-left: -<?php echo (get_option('sl_wrapper_padding') + 60); ?>px;
-	}
-	
-.outerNavRight {
-	margin-right: -<?php echo (get_option('sl_wrapper_padding') + 60); ?>px;
-	} 
-	
-a.outPause, a.outThumbs, a.outLeft, a.outRight {
-	opacity: <?php echo get_option('sl_gallery_outside_controls_opacity'); ?>;
-	}
-	
-	a.outPause:hover, a.outThumbs:hover, a.outLeft:hover, a.outRight:hover {
-		opacity: <?php echo get_option('sl_gallery_outside_controls_opacity_hover'); ?>;
-		background-color: #<?php echo get_option('sl_gallery_outside_controls_bg'); ?>;
-		}
 		
 .galleria-image-nav-left, .galleria-image-nav-right {
 	opacity: <?php echo get_option('sl_gallery_outside_controls_opacity'); ?>;
@@ -132,7 +106,6 @@ a:hover, a:active {
 #footer {
 	color: #<?php echo get_option('sl_footer_font_color'); ?>;
 	font-size: <?php echo get_option('sl_footer_font_size'); ?>;
-	width: <?php echo get_option('sl_footer_width'); ?>px;
 }
 	
 	#footer a {
@@ -326,102 +299,7 @@ input:focus, textarea:focus {
 
 <?php } ?>
 
-<?php if (get_option('sl_sidebar_layout') == 'no') { ?>
-/* 
-SoloFolio
-Default Navigation for normal layout only
-*/
 
-#navigation {
-	width: 450px;
-	}
-
-#suckerfishnav {
-	float: right;
-}
-
-#suckerfishnav, #suckerfishnav ul {
-    list-style:none;
-    padding:0;
-    margin:0;
-}
-
-#suckerfishnav a {
-    display:block;
-    font-weight: normal;
-    text-decoration:none;
-    margin: 5px 0 2px 10px;
-}
-
-#suckerfishnav li {
-    float:left;
-    padding:0;
-}
-
-#suckerfishnav ul {
-    position:absolute;
-    left: -999em;
-    height: auto;
-    margin: 0;
-    padding: 0;
-    border: 0;
-}
-
-#suckerfishnav li li {
-	display: block;
-	float: none;
-	text-align: left;
-    position: relative;
-    z-index: 10;
-}
-
-#suckerfishnav li li a {
-	display: block;
-	margin: 0;
-    padding: 0 10px 4px 10px;
-}
-
-#suckerfishnav li ul ul {
-    margin:-23px 0 0 100px;
-}
-
-#suckerfishnav li:hover a, #suckerfishnav li.sfhover a {
-}
-
-#suckerfishnav li:hover li a, #suckerfishnav li li:hover li a, #suckerfishnav li li li:hover li a, #suckerfishnav li li li li:hover li a {
-}
-    
-#suckerfishnav li:hover ul ul, #suckerfishnav li:hover ul ul ul, #suckerfishnav li:hover ul ul ul ul, #suckerfishnav li.sfhover ul ul, #suckerfishnav li.sfhover ul ul ul, #suckerfishnav li.sfhover ul ul ul ul {
-    left:-999em;
-    }
-#suckerfishnav li:hover ul, #suckerfishnav li li:hover ul, #suckerfishnav li li li:hover ul, #suckerfishnav li li li li:hover ul, #suckerfishnav li.sfhover ul, #suckerfishnav li li.sfhover ul, #suckerfishnav li li li.sfhover ul, #suckerfishnav li li li li.sfhover ul {
-    left:auto;
-    background:#000000;
-    padding: 3px 0 6px;
-    z-index: 7;
-    }
-
-.solo-nav a {
-	font-weight: normal;
-	}
-
-.solo-nav li {
-	padding: 0 0 0 8px;
-}
-
-<?php } ?>
-	
-<?php if (get_option('sl_logo') != '') { ?>
-#logo-noimg {
-	display: none;
-	}
-<?php } else { ?>
-#logo-img {
-	display: none;
-	}
-<?php } ?>
-
-<?php if (get_option('sl_sidebar_layout') == 'yes') { ?>
 /*
 SoloFolio
 Sidebar layout
@@ -832,5 +710,3 @@ table tr {
 	}
 	
 }
-
-<?php } ?>

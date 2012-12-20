@@ -18,43 +18,6 @@ array( "name" => $themename." Options",
 
 array( "name" => "Personalize",
 	"type" => "section"),
-	
-	array( "name" => "Phone Number",
-		"desc" => "Phone number above navigation.",
-		"id" => $shortname."_phone",
-		"type" => "text",
-		"icon" => "phone",
-		"std" => ""),
-		
-	array( "name" => "Email address",
-		"desc" => "Email address above navigation.",
-		"id" => $shortname."_email",
-		"type" => "text",
-		"icon" => "email",
-		"std" => ""),	
-		
-	array( "name" => "Logo URL",
-		"desc" => "Enter the link to your logo image. Max width: 350px",
-		"id" => $shortname."_logo",
-		"type" => "text",
-		"icon" => "picture",
-		"std" => ""),
-		
-	array( "name" => "Retina Logo URL",
-		"desc" => "Enter the link to your logo image. Max width: 350px",
-		"id" => $shortname."_logo_retina",
-		"type" => "text",
-		"icon" => "picture",
-		"std" => ""),
-		
-	array( "name" => "Footer Text",
-		"desc" => "Enter text used in footer.",
-		"id" => $shortname."_footer_text",
-		"type" => "text",
-		"icon" => "textfield_rename",
-		"std" => "&copy; 2012 Your Name Here"),
-		
-	array( "type" => "clear"),
 		
 	array( "name" => "Tracking Code",
 		"id" => $shortname."_tracking_code",
@@ -86,18 +49,6 @@ array( "name" => "Layout",
 		"id" => $shortname."_header_margin",
 		"type" => "text",
 		"std" => "10px auto 0"),
-	
-	array( "name" => "Wrapper Width",
-		"desc" => "Format: XXpx",
-		"id" => $shortname."_wrapper_width",
-		"type" => "text",
-		"std" => "900"),
-	
-	array( "name" => "Wrapper Padding",
-		"desc" => "Format: X X X X",
-		"id" => $shortname."_wrapper_padding",
-		"type" => "text",
-		"std" => "0"),
 		
 	array( "name" => "Sidebar Width",
 		"desc" => "Format: XXXpx",
@@ -108,18 +59,6 @@ array( "name" => "Layout",
 	array( "name" => "Entry Width",
 		"desc" => "Format: XXXpx",
 		"id" => $shortname."_entry_width",
-		"type" => "text",
-		"std" => "900"),
-		
-	/*array( "name" => "Caption Width",
-		"desc" => "Format: XXXpx",
-		"id" => $shortname."_infocontainer_width",
-		"type" => "text",
-		"std" => ""),*/
-		
-	array( "name" => "Footer Width",
-		"desc" => "Format: XXXpx",
-		"id" => $shortname."_footer_width",
 		"type" => "text",
 		"std" => "900"),
 	
@@ -143,20 +82,6 @@ array( "name" => "Advanced",
 		"std" => ""),
 	
 	array( "type" => "clear"),
-		
-	array( "name" => "Show footer",
-		"desc" => "Show the footer?",
-		"id" => $shortname."_show_footer",
-		"type" => "select",
-		"options" => array("yes", "no"),
-		"std" => "yes"),
-		
-	array( "name" => "SoloFolio Link",
-		"desc" => "",
-		"id" => $shortname."_show_att",
-		"type" => "select",
-		"options" => array("yes", "no"),
-		"std" => "yes"),
 		
 	array( "name" => "Show Author on Posts",
 		"desc" => "",
@@ -206,14 +131,6 @@ array( "type" => "clear"),
 		"type" => "text",
 		"icon" => "picture",
 		"std" => ""),
-		
-array( "type" => "clear"),
-
-		array( "name" => "Maintenance Mode",
-		"desc" => "",
-		"id" => $shortname."_maintenance_mode",
-		"type" => "checkbox",
-		"std" => "false"),
 
 array( "type" => "clear"),
 	

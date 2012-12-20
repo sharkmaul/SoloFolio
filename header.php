@@ -11,12 +11,6 @@ foreach ($options as $value) {
 	else { $$value['id'] = get_option( $value['id'] ); }
 	}
 global $current_user; get_currentuserinfo(); 
-if (get_option('sl_maintenance_mode') == 'true') {
-	if ($current_user->user_level == 10 ) { 
-	} else {
-	die("Coming Soon.");
-	}
-}
 ?>	
 
 <!DOCTYPE html>
@@ -123,16 +117,20 @@ if (get_option('sl_maintenance_mode') == 'true') {
 	<a id='menu-icon'>Menu</a>
 	
 	<div id="logo">
-		<div id="logo-noimg">
-			<h1><a href="<?php echo get_option('home'); ?>/"><?php bloginfo('name'); ?></a></h1>
-		</div>
+	
+		<?php if ( get_theme_mod( 'solofolio_logo' ) ) : ?>
+			<div id="logo-img">
+				<a href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home"><img src="<?php echo get_theme_mod( 'solofolio_logo' ); ?>" alt="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" data-retina="<?php echo get_theme_mod( 'solofolio_logo_retina' ); ?>" /></a>
+			</div>
+		<?php else : ?>
+			<div id="logo-noimg">
+				<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
+				<p class="site-description"><?php bloginfo( 'description' ); ?></p>
+			</div>
+		<?php endif; ?>
 		
-		<div id="logo-img">
-			<a href="<?php bloginfo('url'); ?>" title="<?php bloginfo('name'); ?>"><img src="<?php echo get_option('sl_logo'); ?>" alt="<?php bloginfo('description'); ?>" data-retina="<?php echo get_option('sl_logo_retina'); ?>"/></a>	
-		</div>
-		
-		<div id="header-phone" class="<?php echo get_option('sl_header_font'); ?> "><span><?php echo get_option('sl_phone'); ?></span></div>
-			<div id="header-email" class="<?php echo get_option('sl_header_font'); ?> "><a href="mailto:<?php echo get_option('sl_email'); ?>"><?php echo get_option('sl_email'); ?></a></div>  
+		<div id="header-phone"><span><?php echo get_theme_mod( 'solofolio_phone' ); ?></span></div>
+		<div id="header-email"><a href="mailto:<?php echo get_theme_mod( 'solofolio_email' ); ?>"><?php echo get_theme_mod( 'solofolio_email' ); ?></a></div>  
 		
 	</div>
 	<div id="header-content">
@@ -158,18 +156,12 @@ if (get_option('sl_maintenance_mode') == 'true') {
 		<?php } ?>
 		<?php } ?>
 		
-	<?php if (get_option('sl_sidebar_layout') == 'yes') { ?>
 		<div id="sidebar-footer">
 				<!--<p id="help-footer"><strong>j</strong>:prev <strong>k</strong>:next</p>-->
-			<?php if (get_option('sl_show_footer') == 'yes') {?>
-				<p id="info-footer"><?php echo get_option('sl_footer_text'); ?></p>
-			<?php }; ?>
-			<?php if (get_option('sl_show_att') == 'yes') {?>
+				<p id="info-footer"><?php echo get_theme_mod( 'solofolio_footer_text' ); ?></p>
 				<p id="attr-footer">Powered by <a title="Powered by SoloFolio. The ultimate WordPress portfolio and blog." href="http://www.solofolio.net" target="_blank">SoloFolio</a></p>
-			<?php }; ?>
 			
 		</div>
-	<?php }; ?>	
 		
 	</div><!-- End Header-Content -->
 	

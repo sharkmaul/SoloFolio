@@ -2,6 +2,8 @@ SoloFolio
 =========
 http://www.solofolio.net/
 
+PLEASE, PLEASE read this first before downloading/installing SoloFolio.
+
 SoloFolio is currently a developer theme, meaning you're going to need some programming experience to deploy it properly. Many of its features are not currently documented. 
 
 To see a site utilizing the latest public release (v4), visit http://www.joelhawksley.com.
@@ -45,13 +47,11 @@ INSTALLATION
 
 2. Activate theme in WordPress dashboard.
 
-3. Navigate to SoloFolio > General and click "update" to write initial settings to your WordPress installation. Do the same for SoloFolio > Design and SoloFolio > Gallery.
+3. Under Appearance > Menus, make a menu and assign it to the home container.
 
-4. Under Appearance > Menus, make a menu and assign it to the home container.
+4. Under Settings > Media, set the Thumbnail size to 150 (w) 100 (h), Medium size to 300 (w) 200 (h), and Large size to 900 (w) 600 (h).
 
-5. Under Settings > Media, set the Thumbnail size to 150 (w) 100 (h), Medium size to 300 (w) 200 (h), and Large size to 900 (w) 600 (h).
-
-6. Upload images at least 1800x1200 in size at full JPG quality in sRGB, not to exceed 2mb. SoloFolio will handle the rest. 
+5. Upload images at least 1800x1200 in size at full JPG quality in sRGB, not to exceed 2mb. SoloFolio will handle the rest. 
 
 USING THE GALLERY
 

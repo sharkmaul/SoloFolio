@@ -91,29 +91,11 @@ include_once("includes/design-editor.php");		// Include design editor code (depr
 include_once("includes/options.php");			// Include admin option menu
 include_once("includes/options-arrays.php");	// Include admin options lists
 include_once("includes/social-widget.php");		// Include social media widget
+include_once("includes/customize.php");			// Include customize stuff
 
 register_nav_menus( array(
 		'primary' => __( 'Main Navigation', 'solofolio' ),
 	) );
-
-function solofolio_customize_register( $wp_customize )
-{
-	$wp_customize->add_section( 'solofolio_logo_section' , array(
-		'title'       => __( 'Logo', 'solofolio' ),
-		'priority'    => 30,
-		'description' => 'Upload a logo to replace the default site name and description in the header',
-	) );
-	
-	$wp_customize->add_setting( 'solofolio_logo' );
-	
-	$wp_customize->add_control( new WP_Customize_Image_Control( $wp_customize, 'solofolio_logo', array(
-    	'label'    => __( 'Logo', 'solofolio' ),
-    	'section'  => 'solofolio_logo_section',
-	    'settings' => 'solofolio_logo',
-	) ) );
-}
-add_action( 'customize_register', 'solofolio_customize_register' );
-
 
 add_action ('admin_menu', 'solofolio_customize');
 function solofolio_customize() {
