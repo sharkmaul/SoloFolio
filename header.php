@@ -41,15 +41,9 @@ global $current_user; get_currentuserinfo();
 	<link rel="alternate" type="application/atom+xml" title="Atom 0.3" href="<?php bloginfo('atom_url'); ?>" />
 	<link rel="pingback" href="<?php bloginfo('pingback_url'); ?>" />
 	
-<?php if (get_option('sl_favicon_url') != '') { ?>
-	<link href="<?php echo get_option('sl_favicon_url'); ?>" rel="shortcut icon" />
-<?php } else { ?>
-	<link href="<?php echo (bloginfo('template_url').'/img/favicon.ico'); ?>" rel="shortcut icon" />
-<?php } ?>
-	
-<?php if (get_option('sl_ios_url') != '') { ?>
+<?php if (get_theme_mod( 'solofolio_ios' ) != '') { ?>
 	<link href="" rel="shortcut icon" />
-	<link rel="apple-touch-icon-precomposed" href="<?php echo get_option('sl_ios_url'); ?>" />
+	<link rel="apple-touch-icon-precomposed" href="<?php echo get_theme_mod( 'solofolio_ios' ); ?>" />
 <?php } else { ?>
 	<link rel="apple-touch-icon-precomposed" href="<?php echo (bloginfo('template_url').'/img/favicon.ico'); ?>" />
 <?php } ?>
@@ -100,9 +94,9 @@ global $current_user; get_currentuserinfo();
 	});
 	</script>
 	
-<?php if (get_option('sl_custom_css') != '') { ?>
+<?php if (get_theme_mod( 'solofolio_css' ) != '') { ?>
 	<style type="text/css">
-	<?php echo get_option('sl_custom_css'); ?>
+	<?php echo get_theme_mod( 'solofolio_css' ) ?>
 	</style>
 <?php } ?>
 	
@@ -118,16 +112,12 @@ global $current_user; get_currentuserinfo();
 	
 	<div id="logo">
 	
-		<?php if ( get_theme_mod( 'solofolio_logo' ) ) : ?>
 			<div id="logo-img">
 				<a href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home"><img src="<?php echo get_theme_mod( 'solofolio_logo' ); ?>" alt="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" data-retina="<?php echo get_theme_mod( 'solofolio_logo_retina' ); ?>" /></a>
 			</div>
-		<?php else : ?>
 			<div id="logo-noimg">
 				<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
-				<p class="site-description"><?php bloginfo( 'description' ); ?></p>
 			</div>
-		<?php endif; ?>
 		
 		<div id="header-phone"><span><?php echo get_theme_mod( 'solofolio_phone' ); ?></span></div>
 		<div id="header-email"><a href="mailto:<?php echo get_theme_mod( 'solofolio_email' ); ?>"><?php echo get_theme_mod( 'solofolio_email' ); ?></a></div>  

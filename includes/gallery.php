@@ -33,31 +33,34 @@ function solofolio_gallery_shortcode($attr) {
 	}
 
 	extract(shortcode_atts(array(
-		'order'      => 'DSC',
-		'orderby'    => 'menu_order ID',
-		'id'         => $post->ID,
-		'itemtag'    => 'dl',
-		'icontag'    => 'dt',
+		'autoplay' => '',
+		'captions' => '',
 		'captiontag' => 'dd',
 		'columns'    => 3,
-		'size'       => 'full-size',
-		'include'    => '',
-		'type'    => '',
-		'width'    => '',
+		'fullscreen'    => '',
 		'height'    => '',
-		'captions' => '',
-		'autoplay' => '',
+		'height'    => '',
+		'icontag'    => 'dt',
+		'id'         => $post->ID,
+		'include'    => '',
+		'itemtag'    => 'dl',
+		'order'      => 'DSC',
+		'orderby'    => 'menu_order ID',
 		'showcounter'    => '',
 		'shownav'    => '',
-		'width'    => '',
-		'height'    => '',
-		'speed'    => '',
-		'transition'    => '',
-		'fullscreen'    => '',
 		'showplay'    => '',
 		'showthumbnails'    => '',
+		'size'       => 'full-size',
+		'speed'    => '',
+		'transition'    => '',
+		'type'    => '',
+		'width'    => '',
+		'width'    => '',
 		'exclude'    => ''
 	), $attr));
+
+	$GLOBALS['solofolio_autoplay'] = $autoplay;
+	$GLOBALS['solofolio_transition'] = $transition;
 
 	$id = intval($id);
 	if ( 'RAND' == $order )
@@ -97,11 +100,7 @@ function solofolio_gallery_shortcode($attr) {
 	$selector = "solofolio";
 	
 	// Parse out settings
-	if (get_option('sl_gallery_autoplay'))	{$bool_autoplay = "true";} else {$bool_autoplay = "false";}
-	if (get_option('sl_gallery_thumbnails'))	{$bool_thumbnails = "true";} else {$bool_thumbnails = "false";}
-	if (get_option('sl_gallery_captions'))	{$bool_captions = "true";} else {$bool_captions = "false";}
-	if ($type == "") {$type = get_option('sl_gallery_type');}
-	if ($shownav == "") {$shownav = get_option('sl_gallery_image_nav');}
+	if ($type == "") {$type = get_theme_mod('solofolio_gallery_default');}
 	
 	function detect_mobile()
 	{
@@ -160,7 +159,6 @@ function solofolio_gallery_shortcode($attr) {
 	{
 		$type = "side-scroll";
 	} 
-	
 	
 	if ( is_home() || is_single()) {
 		$type = "vert-scroll";

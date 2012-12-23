@@ -7,6 +7,7 @@ Gallery Template: Default (Galleria Slideshow)
 
 
 <?php
+
 $output .="<script type=\"text/javascript\" src=\"";
 
 $insurl = get_bloginfo('template_url');
@@ -38,36 +39,33 @@ foreach ( $attachments as $id => $attachment ) {
 	$output .= "</div>";
 	
 	$output .= "<div class=\"galleriabar\">";
-		$output .= "<div class=\"galleria-controls\">
-						<a class=\"prev\" href=\"#\">< prev</a>
-						<div class=\"galleria-counter\">
+		$output .= "<div class=\"galleria-controls\">";
+						if ($shownav != "false"){$output.= "<a class=\"prev\" href=\"#\">< prev</a>";}
+						if ($showcounter != "false"){$output.= "<div class=\"galleria-counter\">
 							<span class=\"index\"></span> of 
 							<span class=\"total\"></span>
-						</div>
-						<a class=\"next\" href=\"#\">next ></a>";
+						</div>";}
+						if ($shownav != "false"){$output.= "<a class=\"next\" href=\"#\">next ></a>";}
 						if ($fullscreen != "false"){$output.= "<a class=\"fullscreen\" href=\"#\" title=\"Fullscreen\"></a>";}
 						if ($showplay != "false"){$output.= "<a class=\"play\" href=\"#\" title=\"Slideshow\"></a>";}
 						if ($showthumbnails != "false"){$output.= "<a class=\"toggle\" href=\"#\" title=\"Thumbnails\"></a>";}
 					$output .= "</div>";
-		$output .= "<div class=\"galleria-info\"></div>";
+					if ($captions != "false"){$output.= "<div class=\"galleria-info\"></div>";}
 	$output .= "</div></div>";
 
-add_action('wp_footer', 'test');
+add_action('wp_footer', 'solofolio_slideshow_footer');
  
-function test() {
-     
+function solofolio_slideshow_footer() {
+    
+    global $solofolio_autoplay;
+    global $solofolio_transition;
+    
     $output .= " <script type=\"text/javascript\">$('.galleria').galleria({";
-
-		if ($captions == "false"){$output.= "showInfo: false,";}
-		if ($transition != ""){$output.= "transition: '" .  $transition . "',";}
-		if ($speed != ""){$output.= "transitionSpeed: " .  $speed . ",";}
-		if ($shownav != ""){$output.= "showImagenav: " .  $shownav . ",";}
-		if ($showcounter != ""){$output.= "showCounter: " .  $showcounter . ",";}
-		if ($autoplay == "true"){$output.= "autoplay: true,";}
-		if ($width != ""){$output.= "width: " .  $width . ",";}
+		if ($solofolio_transition != ""){$output.= "transition: '" .  $solofolio_transition . "',";}
+		if ($solofolio_autoplay == "true"){$output.= "autoplay: true,";}
+		//if ($width != ""){$output.= "width: " .  $width . ",";} // Just going to force responsive for now
 		if ($height != ""){$output.= "height: " .  $height . ",";} else {$output.= "height: .667,";}
-		if ($fullscreen== "false"){$output.= "_showFullscreen: false,";}
-	
+		$output .= $transition;
 		$output.="swipe: true,";
 		$output.="responsive: true,";
 		$output.="maxScaleRatio: 1,";

@@ -33,11 +33,11 @@ SoloFolio does a lot of work behind the scenes to present your work in the best 
 
 They include (but are not limited to):
 
--Galleries inserted into blog posts will be forced into the vertical scroll template.
+-Galleries inserted into blog posts will be forced in to the vertical scroll template.
 
--Mobile devices are fed the side-scroll gallery by default.
+-Tablet devices are fed the side-scroll gallery by default.
 
--Phones/small screens are assigned a mobile-friendly header with collapsable menu, in addition to vertically scrolling galleries.
+-Phones/small screens are assigned a mobile-friendly header with collapsable menu and vertically scrolling galleries.
 
 -JPG quality is locked at 90, instead of the Wordpress default of 60. This sacrifices some speed, to the benefit of image quality.
 
@@ -57,28 +57,22 @@ USING THE GALLERY
 
 SoloFolio piggy-backs on the built-in WordPress gallery manager. The [gallery] shortcode will accept the following variables:
 
+
 type: slideshow, super, react, side-scroll, vert-scroll (default: slideshow)
 
-captions : true, false (default: true)
-
-fullscreen : true, false (default: true)
-
-showthumbnails : true, false (default: true)
-
-transition : fade, flash, pulse, slide, fadeslide (default: none)
-
-speed : slide duration in ms (default: 9000)
-
-shownav : true, false (default: true)
-
-showcounter : true, false (default: true)
-
+SLIDESHOW
 autoplay : true, false (default: false)
-
-width : width in px (default: 900px, responsive)
-
-height : height in px (default: .667, responsive)
+captions : true, false (default: true)
 fullscreen : true, false (default: true)
+showcounter : true, false (default: true)
+shownav : true, false (default: true)
+showthumbnails : true, false (default: true)
+speed : slide duration in ms (default: 9000)
+transition : none, fade, flash, pulse, slide, fadeslide (default: none)
+
+SLIDESHOW - FUTURE
+height : height in px (default: .667, responsive) 
+width : width in px (default: 900px, responsive)
 	
 
 RECOMMENDED PLUGINS
