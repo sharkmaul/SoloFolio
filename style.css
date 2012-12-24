@@ -1,5 +1,5 @@
 /*
-Theme Name: SoloFolio
+Theme Name: SoloFolio 5
 Theme URI: http://www.solofolio.net/
 Description: A portfolio platform for creatives.
 Version: 4.5 Dev
@@ -74,8 +74,8 @@ table {
 
 body {
 	font-family: Helvetica, Verdana, Arial, Utkal, sans-serif;
-	background-color: #222222;
-	color: #000000;
+	background-color: #282828;
+	color: #AAAAAA;
 	-webkit-text-size-adjust: 100%;
 	font-size: 12px;
 	margin: 0;
@@ -124,13 +124,14 @@ img {
 
 /* Links */
 a:link, a:visited {
-	font-weight: bold;
+	color: #7a7a7a;
+	font-weight: normal;
 	text-decoration: none;
 	outline: none !important;
 }
 
 a:hover, a:active { 
-	text-decoration: none;
+	color: #FFFFFF;
 	outline: none !important;
 }
 
@@ -144,17 +145,6 @@ a img {
 	a:hover img { 
 		text-decoration: none; 
 	}
-
-h3 a:link {
-	text-decoration: none;
-}
-
-h3 a:visited {
-	text-decoration: none;
-}
-
-h3 a:hover, a:active {
-}
 
 /* Typography */
 h1, h2, h3, h4, h5, h6 {
@@ -183,6 +173,13 @@ h3 {
 	padding: 0;
 }
 
+	#header-content h3 {
+		color: #FFFFFF;
+		font-size: 14px;
+		padding: 0 0 4px;
+		text-transform: uppercase;
+	}
+
 h4 {
 	font-size: 16px;
 }
@@ -206,19 +203,54 @@ p {
 
 /* Structure */
 #header {
-	position: fixed;
-	width: 250px;
-	padding: 20px 0 0 20px;
+	bottom: 40px;
+	height: 100%;
+	left: 0;
 	margin: 0;
+	padding: 20px 0 0 20px;
+	position: fixed;
+	top: 0;
+	width: 250px;
+	z-index: 5;
 	}
 	
-	#header a img {
+	#header #logo {
+		position: static;
+		bottom: 0px;
+		margin-bottom: 30px;
+		width: auto;
+	}
+	
+	#header-content {
+		position: relative;
+		text-align: left;
+		right: 0;
+		width: auto;
+	}
+
+	#header-content ul li {
+		font-size: 12px;
+		font-weight: normal;
+		letter-spacing: 1px;
+		list-style-type: none;
+		padding: 0 0 5px;
+	}
+	
+	#header-phone, #header-email {
+		display: inline;
+	}
+	
+	#header-content div {
+		margin-bottom: 15px;
+	}
+	
+	#logo a img {
 		border: none;
 		font-weight: normal;
 		text-decoration: none;
 	}
 		
-		#header a:hover {
+		#logo a img:hover {
 			border: none;
 		}
 	
@@ -299,32 +331,28 @@ p {
 	
 /* Footer */
 
-#footer	{
-	font-size: 10px;
-	margin: 0;
-	padding: 10px 0;
+#sidebar-footer {
+	position: absolute;
+	bottom: 30px;
 }
 
-	#footer p {
+	#sidebar-footer p {
+		font-size: 11px;
+		opacity: 0.5;
 		margin: 0;
 	}
-		
-	#footer-nav {
-		font-size: 1.2em;
-	}
 
-	#footer ul {
-		margin: 5px 0 1em 0;
-		padding: 0;
+	#sidebar-footer a {
+		text-decoration: underline;
+		}
+		
+	#sidebar-footer #help-footer {
+		margin-bottom: 5px;
+		}
+
+	#sidebar-footer strong {
+		color: #ffffff;
 	}
-	
-		#header-nav ul li, #footer ul li {
-			display: inline;
-		}
-			
-		#footer ul li a {
-			text-decoration: none;
-		}
 
 /* Header */
 
@@ -345,7 +373,7 @@ p {
 	}
 
 	.description {
-		display: inline;
+		display: block;
 	}
 	
 	h1.blog-title {
@@ -520,62 +548,6 @@ div.aligncenter {
 	padding: 3px;
 }
 
-/* Photoshelter styles - to be loaded remotely */
-
-ul.thumbs {
-	width: auto;
-}
-
-.gallery_thumbs .gallery_thumbs a {
-	display: none;
-}
-
-ul.thumbs.gallery_thumbs li {
-	height: 160px !important;
-}
-
-UL.thumbs LI {
-	width: 160px;
-	height: 160px;
-}
-
-UL.thumbs LI TABLE TD {
-	width: 150px;
-}
-
-UL.thumbs LI TABLE TD.slide {
-	width: 150px;
-	height: 150px;
-}
-
-#feature_galleries li {
-	list-style-type: none;
-	padding-bottom: 10px;
-}
-
-#feature_galleries li img {
-	margin-bottom: 3px;
-}
-
-ul.my_recent_galleries li {
-	list-style-type: none;
-	padding-bottom: 5px;
-}
-
-.actionbarLeft {
-	display: block;
-	float: left;
-}
-
-.actionbarRight {
-	display: block;
-	float: right;
-}
-
-.addthis_toolbox {
-    display: inline;
-}
-
 /* Social Media Widget */
 
 #solofolio-social {
@@ -640,10 +612,10 @@ ul.my_recent_galleries li {
 /* Disable Admin Bar - More trouble than it's worth */
 
 #wpadminbar {
-display: none !important;
+	display: none !important;
 }
 
-/* menu icon */
+/* Phone view menu */
 #menu-icon {
 	color: #000;
 	width: 50px;
@@ -659,7 +631,13 @@ display: none !important;
 	display: none;
 }
 
-/* React Gallery css */
+/* Side scroll gallery */
+
+table tr {
+	vertical-align: top;
+}
+
+/* React gallery  */
 .sl-react img {
 	max-width:100%;
 }
@@ -668,6 +646,12 @@ display: none !important;
 	max-width: 600px;
 }
 
+/* Slideshow gallery */
+
 .galleria-wrap {
 	max-width: 900px;
+}
+
+.galleria-stage {
+	background-color: inherit;
 }

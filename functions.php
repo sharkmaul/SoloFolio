@@ -72,10 +72,6 @@ include_once("includes/gallery.php");			// Include gallery shortcode replacement
 include_once("includes/social-widget.php");		// Include social media widget
 include_once("includes/customize.php");			// Include WP_customize structure
 
-register_nav_menus( array(
-		'primary' => __( 'Main Navigation', 'solofolio' ),
-	) );
-
 add_action ('admin_menu', 'solofolio_customize');
 function solofolio_customize() {
     // add the Customize link to the admin menu

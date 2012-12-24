@@ -21,9 +21,9 @@ include "../../../wp-load.php"; // Pull into the loop
 <?php } ?>
 
 body {
-	background-color: #<?php echo get_option('sl_color_body_bg'); ?>;
-	color: #<?php echo get_option('sl_body_font_color'); ?>;
-	font-size: <?php echo get_option('sl_body_font_size'); ?>;
+	background-color: <?php echo get_theme_mod('solofolio_background_color'); ?>;
+	color: <?php echo get_theme_mod('solofolio_body_font_color'); ?>;
+	font-size: <?php echo get_theme_mod('solofolio_body_font_size'); ?>;
 }
 	
 h2, h3 {
@@ -33,33 +33,31 @@ h2, h3 {
 /* Links */
 
 a:link, a:visited {
-	color: #<?php echo get_option('sl_body_link_color'); ?>;
-	text-decoration: none;
+	color: <?php echo get_theme_mod('solofolio_body_link_color'); ?>;
 }
 
 a:hover, a:active { 
-	color: #<?php echo get_option('sl_body_link_color_hover'); ?>;
-	text-decoration: none;
+	color: <?php echo get_theme_mod('solofolio_body_link_color_hover'); ?>;
 }
 
-/* Header / Sidebar */
-	
-#header {
-	background-color: #<?php echo get_option('sl_header_bg'); ?>;
-	color: #<?php echo get_option('sl_header_font_color'); ?>;
-	font-size: <?php echo get_option('sl_header_font_size'); ?>;
+
+/* Navigation */
+
+#header-content li a {
+	font-size: <?php echo get_theme_mod('solofolio_navigation_font_size'); ?>;
 }
 
-/* Wrapper */
-
-#wrapper {
-	background-color: #<?php echo get_option('sl_color_wrapper_bg'); ?>;
+#header-content h3 {
+	color: <?php echo get_theme_mod('solofolio_navigation_header_color'); ?>;
+	font-size: <?php echo get_theme_mod('solofolio_navigation_header_font_size'); ?>;
 }
 
-/* Sidebar */
+#header-content li a:link, #header-content li a:visited {
+	color: <?php echo get_theme_mod('solofolio_navigation_link_color'); ?>;
+}
 
-#header h3 {
-	color: #<?php echo get_option('sl_sidebar_h2_color'); ?>;
+#header-content li a:hover, #header-content li a:active { 
+	color: <?php echo get_theme_mod('solofolio_navigation_link_color_hover'); ?>;
 }
 
 /* Footer */
@@ -102,12 +100,12 @@ a:hover, a:active {
 
 /* Highlight current page item */
 
-#header .current_page_item a, #header .current_page_parent a, #footer .current_page_parent a, #footer .current_page_item a {
-	color: #<?php echo get_option('sl_menu_a_hover_color'); ?>;
+#header #header-content .current_page_item a, #header #header-content .current_page_parent a {
+	color: <?php echo get_theme_mod('solofolio_navigation_link_color_hover'); ?>;
 	}
 	
 #footer ul li a:hover {
-	color: #<?php echo get_option('sl_menu_a_hover_color'); ?>;
+	color: <?php echo get_theme_mod('solofolio_body_link_color_hover'); ?>;
 }
 
 /* Forms */
@@ -123,21 +121,15 @@ input:focus, textarea:focus {
 
 /* Gallery Styles */
 
-.galleria-bar {
-	background-color: #<?php echo get_option('sl_gallery_caption_bg'); ?>;
-}
-
 .galleria-info {
 	color: #<?php echo get_option('sl_gallery_caption_color'); ?>;
-}
-
-.galleria-stage {
-	background-color: #<?php echo get_option('sl_gallery_bg'); ?>;
 }
 
 .sl-sidescroll-container {
 	margin-right: <?php echo get_theme_mod('solofolio_gallery_sidescroll_padding'); ?>px;
 }
+
+/* Slideshow cursor settings */
 
 <?php if (get_theme_mod('solofolio_gallery_cursor_color') == 'light') {?>
 
@@ -163,6 +155,7 @@ input:focus, textarea:focus {
 	
 
 <?php if (get_theme_mod('solofolio_gallery_icon_color') == 'dark') {?>
+/* Dark slideshow controls (For light backgrounds) */
 
 .galleria-controls .play {
     background-image: url(includes/gallery/js/b-playpause.png);
@@ -192,117 +185,6 @@ input:focus, textarea:focus {
 
 <?php } ?>
 
-
-/* Sidebar layout */
-
-a:link, a:visited {
-	font-weight: normal;
-}
-
-#header {
-	background-color: #fffffff;
-	position: fixed;
-	z-index: 5;
-	left: 0;
-	top: 0;
-	bottom: 0;
-	bottom: 40px;
-	height: 100%;
-	padding: 20px 0 0 20px;
-}
-
-.description {
-	display: block;
-}
-
-#header div {
-	margin-bottom: 15px;
-}
-
-#header h3 {
-	margin: 0 0 5px 0;
-	font-size: 14px;
-	padding: 0;
-	text-transform: uppercase;
-}
-
-#logo {
-	position: static;
-	bottom: 0px;
-	margin-bottom: 5px;
-	width: auto;
-}
-
-#header-content {
-	position: relative;
-	text-align: left;
-	right: 0;
-	width: auto;
-}
-
-#header ul li {
-	list-style-type: none;
-	font-weight: normal;
-	padding: 0 0 5px;
-	/*text-transform: uppercase;*/
-	letter-spacing: 1px;
-}
-
-#suckerfishnav li {
-	float: none;
-}
-
-#suckerfishnav a {
-	margin: 0;
-}
-
-#suckerfishnav, #suckerfishnav ul {
-	float: none;
-}
-
-#header-phone, #header-email {
-	display: inline;
-}
-
-#footer {
-	text-align: left;
-	position: fixed;
-	bottom: 10px;
-	left: 20px;
-	padding: 0;
-	z-index: 99;
-}
-
-#sidebar-footer {
-
-}
-
-	#sidebar-footer p {
-		font-size: 11px;
-		opacity: 0.5;
-		margin: 0;
-	}
-
-	#sidebar-footer a {
-		text-decoration: underline;
-		}
-		
-#sidebar-footer #help-footer {
-	margin-bottom: 5px;
-	}
-
-#sidebar-footer strong {
-	color: #ffffff;
-}
-
-table tr {
-	vertical-align: top;
-}
-
-#navigation {
-	margin-top: 30px;
-}
-
 #wrapper {
 	margin-left: <?php echo (get_theme_mod( 'solofolio_header_width' ) + 40); ?>px;
 	padding: 20px 20px 0 0;
@@ -318,7 +200,31 @@ table tr {
 	}
 
 
-/* Responsive sizing for blog */
+
+/* LARGE DESKTOP SCREENS - Build a custom wrapper to center blog on big screens */
+@media (min-width: <?php echo (get_option('sl_wrapper_width') + get_theme_mod( 'solofolio_header_width' ) + 200); ?>px) {
+
+	#outerWrap {
+		position: relative;
+		width: 100%;
+	}
+	
+		#wrapper {
+			max-width: 100%;
+			}
+	
+	#post #outerWrap {
+		margin: 0 auto;
+		position: relative;
+		width: <?php echo (get_theme_mod( 'solofolio_header_width' ) + 900 + 80); ?>px;
+	}
+	
+	#post #header {
+		left: auto;
+	}
+}
+
+/* Responsive design */
 
 #content-index, #content-single {
 	width: 100%;
@@ -338,13 +244,7 @@ table tr {
     width: 100%;
 }
 
-
-#pageslide {
-    /* Specify the width of pageslide here */
-    padding: 10px 10px 10px 0;
-}
-
-/* Time for some responsive design fun. Let's just target screens smaller than 760px for now and give them something nice and clean. */
+/* First break point - Tablet portrait view */
 
 @media only screen and (max-width: 770px) {
 
@@ -400,6 +300,14 @@ table tr {
 			margin: 0;
 			padding: 0;
 		}
+		
+		#sidebar-footer {
+			display: none;
+		}
+		
+		#header #logo {
+			margin: 0;
+		}
 
 	#wrapper {
 		border: none;
@@ -452,32 +360,7 @@ table tr {
 
 }
 
-/* LARGE DESKTOP SCREENS */
-@media (min-width: <?php echo (get_option('sl_wrapper_width') + get_theme_mod( 'solofolio_header_width' ) + 200); ?>px) {
-
-	#outerWrap {
-		position: relative;
-		width: 100%;
-	}
-	
-		#wrapper {
-			max-width: 100%;
-			}
-	
-	#post #outerWrap {
-		margin: 0 auto;
-		position: relative;
-		width: <?php echo (get_option('sl_wrapper_width') + get_theme_mod( 'solofolio_header_width' ) + 80); ?>px;
-	}
-	
-	#post #header {
-		left: auto;
-	}
-}
-
 /* Mobile and iPad Portrait */
-
-/* Mobile Landscape and Portrait */
 @media only screen and (max-width: 770px) {
 	#content h1 { font-size: 22px; line-height: 30px; background-color: #000; color: #FFF; padding: 10px; }
 	#header-content { display: none; }
@@ -546,10 +429,10 @@ table tr {
 		overflow: hidden;
 	}
 	
-/* menu icon */
-#menu-icon {
-	display: block; /* show menu icon */
-}
+	/* Menu icon */
+	#menu-icon {
+		display: block; /* show menu icon */
+	}
 
 }
 
