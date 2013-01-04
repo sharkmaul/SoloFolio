@@ -25,9 +25,9 @@ body {
 	color: <?php echo get_theme_mod('solofolio_body_font_color'); ?>;
 	font-size: <?php echo get_theme_mod('solofolio_body_font_size'); ?>;
 }
-	
-h2, h3 {
-	color: #<?php echo get_option('sl_page_h2_color'); ?>;
+
+#header {
+	background-color: <?php echo get_theme_mod('solofolio_background_color'); ?>;
 }
 	
 /* Links */
@@ -60,42 +60,26 @@ a:hover, a:active {
 	color: <?php echo get_theme_mod('solofolio_navigation_link_color_hover'); ?>;
 }
 
-/* Footer */
+/* Blog */
 
-#footer {
-	color: #<?php echo get_option('sl_footer_font_color'); ?>;
-	font-size: <?php echo get_option('sl_footer_font_size'); ?>;
+h2.post-title {
+	font-size: <?php echo get_theme_mod('solofolio_blog_entry_title_size'); ?>;
 }
-	
-	#footer a {
-		color: #<?php echo get_option('sl_footer_link_color'); ?>;
+
+	h2.post-title a {
+		color: <?php echo get_theme_mod('solofolio_blog_entry_title_color'); ?>;
 	}
-		
-	#footer a:hover {
-		color: #<?php echo get_option('sl_footer_link_color_hover'); ?>;
-	}
-
-
-/* Posts */
-
-.post-title a {
-	color: #<?php echo get_option('sl_entry_header_color'); ?>;
-}
 	
 	.post-title a:hover {
-		color: #<?php echo get_option('sl_entry_header_color_hover'); ?>;
+		color: <?php echo get_theme_mod('solofolio_blog_entry_title_color_hover'); ?>;
 	}
 		
 .date, .post-cat {
-	color: #<?php echo get_option('sl_entry_date_color'); ?>;
+	color: <?php echo get_theme_mod('solofolio_blog_entry_byline_color'); ?>;
 }
 	
 .wp-caption p.wp-caption-text {
 	color: #<?php echo get_option('sl_sologallery_caption'); ?>;
-}
-	
-.wp-caption img {
-	border: 1px solid #<?php echo get_option('sl_image_border_color'); ?>;
 }
 
 /* Highlight current page item */
@@ -112,11 +96,9 @@ a:hover, a:active {
 
 input, textarea {
 	background-color: inherit;
-	border: 1px solid #<?php echo get_option('sl_input_border_color'); ?>;
 }
 	
 input:focus, textarea:focus {
-	border: 1px solid #<?php echo get_option('sl_input_border_color'); ?>;
 }	
 
 /* Gallery Styles */
@@ -190,10 +172,6 @@ input:focus, textarea:focus {
 	padding: 20px 20px 0 0;
 	width: auto;
 }
-
-	#wrapper {
-		max-width: <?php echo get_option('sl_wrapper_width'); ?>px;	
-	}
 	
 	#content-page p img {
     	max-width: <?php echo get_option('sl_wrapper_width'); ?>px;
@@ -244,9 +222,10 @@ input:focus, textarea:focus {
     width: 100%;
 }
 
-/* First break point - Tablet portrait view */
+/* Break point - Tablet view */
 
-@media only screen and (max-width: 770px) {
+@media only screen and (max-width: 1024px) {
+
 
 	* {
 		margin: 0;
@@ -258,10 +237,6 @@ input:focus, textarea:focus {
 		border-left: none;
 		border-right: none;
 	}
-	
-	/*#outerWrap {
-		overflow: hidden;
-	}*/
 	
 	#header {
 		height: auto;
@@ -328,7 +303,7 @@ input:focus, textarea:focus {
 			margin-bottom: 0;
 		}
 		
-		p, h2, h4, h6, .commentlist .date {
+		p, h2, h4, h6, .commentlist .date, #wrapper li {
 			padding: 0 10px;
 		}
 				
@@ -358,10 +333,6 @@ input:focus, textarea:focus {
 		display: none;
 	}
 
-}
-
-/* Mobile and iPad Portrait */
-@media only screen and (max-width: 770px) {
 	#content h1 { font-size: 22px; line-height: 30px; background-color: #000; color: #FFF; padding: 10px; }
 	#header-content { display: none; }
 	
@@ -441,10 +412,6 @@ input:focus, textarea:focus {
 	
 	#content h1 {
 		font-size: 14px;
-	}
-	
-	#outerWrap {
-		overflow: hidden;
 	}
 	
 	/* Make mobile galleries scroll vertically. */

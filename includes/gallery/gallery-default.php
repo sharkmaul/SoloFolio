@@ -3,25 +3,88 @@
 SoloFolio
 Gallery Template: Default (Galleria Slideshow)
 */
-?>
+
+$id = intval($id);
+
+if ( ! empty( $attr['ids'] ) ) {
+        if ( empty( $attr['orderby'] ) )
+            $attr['orderby'] = 'post__in';
+        $attr['include'] = $attr['ids'];
+    }
+
+    $output = apply_filters('post_gallery', '', $attr);
+    if ( $output != '' )
+        return $output;
+
+    if ( isset( $attr['orderby'] ) ) {
+        $attr['orderby'] = sanitize_sql_orderby( $attr['orderby'] );
+        if ( !$attr['orderby'] )
+            unset( $attr['orderby'] );
+    }
+
+    extract(shortcode_atts(array(
+        'order'      => 'ASC',
+        'orderby'    => 'menu_order ID',
+        'itemtag'    => '',
+        'icontag'    => 'li',
+        'captiontag' => 'p',
+        'columns'    => 0,
+        'size'       => 'thumbnail',
+        'include'    => '',
+        'exclude'    => ''
+    ), $attr));
+
+    $id = intval($id);
+    if ( 'RAND' == $order )
+        $orderby = 'none';
+
+    if ( !empty($include) ) {
+        $_attachments = get_posts( array('include' => $include, 'post_status' => 'inherit', 'post_type' => 'attachment', 'post_mime_type' => 'image', 'order' => $order, 'orderby' => $orderby) );
+
+        $attachments = array();
+        foreach ( $_attachments as $key => $val ) {
+            $attachments[$val->ID] = $_attachments[$key];
+        }
+    } elseif ( !empty($exclude) ) {
+        $attachments = get_children( array('post_parent' => $id, 'exclude' => $exclude, 'post_status' => 'inherit', 'post_type' => 'attachment', 'post_mime_type' => 'image', 'order' => $order, 'orderby' => $orderby) );
+    } else {
+        $attachments = get_children( array('post_parent' => $id, 'post_status' => 'inherit', 'post_type' => 'attachment', 'post_mime_type' => 'image', 'order' => $order, 'orderby' => $orderby) );
+    }
+
+    if ( empty($attachments) )
+        return '';
+
+    if ( is_feed() ) {
+        $output = "\n";
+        foreach ( $attachments as $att_id => $attachment )
+            $output .= wp_get_attachment_link($att_id, $size, true) . "\n";
+        return $output;
+    }
+
+    $itemtag = tag_escape($itemtag);
+    $captiontag = tag_escape($captiontag);
 
 
-<?php
+if ( !empty($include) ) {
+	$include = preg_replace( '/[^0-9,]+/', '', $include );
+	$_attachments = get_posts( array('include' => $include, 'post_status' => 'inherit', 'post_type' => 'attachment', 'post_mime_type' => 'image', 'order' => $order, 'orderby' => $orderby) );
 
-$output .="<script type=\"text/javascript\" src=\"";
+	$attachments = array();
+	foreach ( $_attachments as $key => $val ) {
+		$attachments[$val->ID] = $_attachments[$key];
+	}
+} else {
+	$attachments = get_children( array('post_parent' => $id, 'post_status' => 'inherit', 'post_type' => 'attachment', 'post_mime_type' => 'image', 'order' => $order, 'orderby' => $orderby) );
+}
 
-$insurl = get_bloginfo('template_url');
-$output .= $insurl;
-
-$output .="/includes/gallery/js/galleria.solofolio.js\"></script>";
-
-$output .="<div class=\"galleria-wrap\"><div class=\"galleria\" class=\"galleria-container notouch\">";
-
+if ( empty($attachments) )
+	return '';
+	
+$output .="<div class=\"galleria-wrap\"><div class=\"galleria galleria-container notouch\">";
 $i = 0;
-	
+
 foreach ( $attachments as $id => $attachment ) {
-	$link = isset($attr['link']) && 'file' == $attr['link'] ? wp_get_attachment_link($id, $size, false, false) : wp_get_attachment_link($id, $size, true, false);
-	
+
 	$link2 = wp_get_attachment_url($id);
 	$link3 = wp_get_attachment_image_src($id, 'thumbnail');
 	$link4 = wp_get_attachment_image_src($id, 'large');
@@ -30,11 +93,11 @@ foreach ( $attachments as $id => $attachment ) {
 		
 		<a href=\"" . $link4[0] . "\" rel=\"" . $link2 . "\">
 			<img  class=\"full\" alt=\"" .  wptexturize($attachment->post_excerpt) . "\" src=\"". $link3[0] . "\"/>			
-		</a>
-		
-		
-		";
-} // End ForEach
+		</a>";
+	$i++;
+
+}
+
 
 	$output .= "</div>";
 	
@@ -53,12 +116,16 @@ foreach ( $attachments as $id => $attachment ) {
 					if ($captions != "false"){$output.= "<div class=\"galleria-info\"></div>";}
 	$output .= "</div></div>";
 
+
+
 add_action('wp_footer', 'solofolio_slideshow_footer');
  
 function solofolio_slideshow_footer() {
     
     global $solofolio_autoplay;
     global $solofolio_transition;
+    
+    $output .="<script type=\"text/javascript\" src=\"" . get_bloginfo('template_url') . "/includes/gallery/js/galleria.solofolio.js\"></script>";
     
     $output .= " <script type=\"text/javascript\">$('.galleria').galleria({";
 		if ($solofolio_transition != ""){$output.= "transition: '" .  $solofolio_transition . "',";}

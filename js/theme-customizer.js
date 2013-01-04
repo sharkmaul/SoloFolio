@@ -86,9 +86,21 @@
 		} );
 	} );
 	
-	wp.customize( 'solofolio_navigation_header_color', function( value ) {
+	wp.customize( 'solofolio_blog_entry_title_size', function( value ) {
 		value.bind( function( newval ) {
-			$('#header-content h3').css('color', newval );
+			$('h2.post-title').css('font-size', newval );
+		} );
+	} );
+	
+	wp.customize( 'solofolio_blog_entry_title_color', function( value ) {
+		value.bind( function( newval ) {
+			$('h2.post-title a').css('color', newval );
+		} );
+	} );
+	
+	wp.customize( 'solofolio_blog_entry_byline_color', function( value ) {
+		value.bind( function( newval ) {
+			$('.date').css('color', newval );
 		} );
 	} );
 	

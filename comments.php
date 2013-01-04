@@ -25,11 +25,12 @@ Theme - Comments
 	<?php foreach ($comments as $comment) : ?>
 		<li <?php echo $oddcomment; ?>id="comment-<?php comment_ID() ?>">
 			<h6><?php comment_author_link() ?></h6>
+			<span class="date sans"><?php comment_date('F j, Y') ?> <?php comment_time() ?></span>
 			<?php if ($comment->comment_approved == '0') : ?>
 			Your comment is awaiting moderation.</em>
 			<?php endif; ?>
 			<?php comment_text() ?>
-			<span class="date sans"><?php comment_date('F jS') ?> at <?php comment_time() ?></span>
+			
 			
 		</li>
 	<?php /* Changes every other comment to a different class */

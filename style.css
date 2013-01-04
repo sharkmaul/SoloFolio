@@ -158,7 +158,7 @@ h1 {
 }
 
 h2 {
-	font-size: 28px;
+	font-size: 26px;
 	margin: 0 0 10px 0;
 	padding: 0 0 3px 0; 
 }
@@ -191,18 +191,17 @@ h5 {
 h6 { 
 	font-size: 12px;
 }	
-	#comments h6 {
-		font-weight: bold;
-	}
 
 p {
 	line-height: 1.5em;
 	margin: 0 0 1em;
 	padding: 0;
+	max-width: 500px;
 }
 
 /* Structure */
 #header {
+	background-color: #282828;
 	bottom: 40px;
 	height: 100%;
 	left: 0;
@@ -285,11 +284,10 @@ p {
 #wrapper {
 	margin: 0 0 0 270px;
 	padding: 20px 10px 0 0;
-	max-width: 900px;
 }
 
 #content-page {
-	margin: 0 auto;
+	position: relative;
 }
 
 #content-index {
@@ -418,35 +416,37 @@ p {
 }
 
 .date, .post-cat, .meta-cat {	
-	color: #ccc;
+	color: #CCCCCC;
 	font-size: 10px;
 	padding: 0;
 }
 
 h2.post-title {
+	
+	font-size: 24px;
 	font-weight: normal;
 	margin: 0;
 	padding: 0;
 }
 
-h2.post-title a {
-	border-bottom: none;
-	font-size: 24px;
-}
+	h2.post-title a {
+		border-bottom: none;
+		color: #FFFFFF;	
+	}
 
 	h2.post-title a:hover {
+		color: #aaaaaa;
 		text-decoration: none;
 	}
 
-/* Sidebar */
+/* Comments */
 
-#sidebar {
-	float: right;
-	min-width: 100px;
-	width: 175px;
+#comments h6 {
+	font-weight: normal;
+	font-size: 12px;
+	margin-bottom: 5px;
 }
 
-/* Comments */
 .commentlist {
 	padding: 0;
 }
@@ -458,7 +458,7 @@ h2.post-title a {
 }
 
 .commentlist p {
-	margin: 10px 5px 10px 0;
+	margin: 5px 5px 10px 0;
 }
 
 #commentform p {
@@ -483,11 +483,11 @@ h2.post-title a {
 #commentform input, #commentform textarea {
 	font-family: Helvetica,Verdana,Arial,Utkal,sans-serif;
 	padding: 3px;
-	font-size: 11px;
+	font-size: 12px;
 }
 
 #commentform textarea {
-	width: 500px;
+	max-width: 500px;
 }
 
 
@@ -604,8 +604,7 @@ div.aligncenter {
 
 	/* Make sidescroll images retina-friendly! */
 	.sl-sidescroll-container img {
-		width: 100%;
-		height: auto;
+		width: auto;
 	}
 
 
@@ -639,11 +638,67 @@ table tr {
 
 /* React gallery  */
 .sl-react img {
-	max-width:100%;
+	max-width: 100%;
 }
 
 .sl-react-caption {
 	max-width: 600px;
+}
+
+/* CycleReact gallery  */
+
+#solofolio-cyclereact-wrap {
+	position: relative;
+}
+
+#solofolio-cyclereact-stage {
+	position: relative;
+}
+
+#solofolio-cyclereact-images {
+	z-index: 2;
+}
+
+.solofolio-cycelereact-fill {
+    text-align: center;
+}
+
+.solofolio-cycelereact-fill img {
+	max-width: 100%;
+	width: 100%;
+}
+
+.solofolio-cyclereact-nav-left {
+	cursor: url("img/prev.dark.cur"), move;
+    left: 0;
+    width: 50%;
+}
+
+.solofolio-cyclereact-nav-right {
+	cursor: url("img/next.dark.cur"), move;
+    right: 0;
+    width: 50%;
+}
+.solofolio-cyclereact-nav-left, .solofolio-cyclereact-nav-right {
+    height: 100%;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    z-index: 5;
+}
+
+.solofolio-cyclereact-caption {
+	margin: 0 auto;
+}
+
+#solofolio-cyclereact-controls {
+	background-color: yellow;
+	bottom: 0;
+	margin: 0;
+	position: absolute;
+	left: 0;
+	z-index: 8;
+	width: 300px;
 }
 
 /* Slideshow gallery */

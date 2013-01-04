@@ -62,7 +62,7 @@ function solofolio_customize_register( $wp_customize )
 			'priority' => '30',
 		) );
 		
-		$wp_customize->add_setting( 'solofolio_header_width', array('default' => '280') );
+		$wp_customize->add_setting( 'solofolio_header_width', array('default' => '200', 'transport'   => 'postMessage',) );
 		
 		$wp_customize->add_control( 'solofolio_header_width', array(
 			'label' => 'Width',
@@ -218,7 +218,7 @@ function solofolio_customize_register( $wp_customize )
         ));
 	
 		$wp_customize->add_control( 'solofolio_navigation_header_font_size', array(
-			'label' => 'Section Title Font Size',
+			'label' => 'Section Title Size',
 			'settings' => 'solofolio_navigation_header_font_size',
 			'section' => 'solofolio_navigation_section',
 			'type' => 'text',
@@ -231,35 +231,10 @@ function solofolio_customize_register( $wp_customize )
         ));
  
 		$wp_customize->add_control( new WP_Customize_Color_Control($wp_customize, 'solofolio_navigation_header_color', array(
-			'label'    => __('Section Header Color', 'solofolio'),
+			'label'    => __('Section Title Color', 'solofolio'),
 			'section'  => 'solofolio_navigation_section',
 			'settings' => 'solofolio_navigation_header_color',
 		)));
-		
-	// Tracking & CSS	
-	$wp_customize->add_section( 'solofolio_tracking_css' , array(
-		'title'       => __( 'Tracking & CSS', 'solofolio' ),
-		'priority'    => 80,
-		'description' => 'Tracking code and CSS settings',
-	) );
-	
-		$wp_customize->add_setting( 'solofolio_tracking' );
-
-		$wp_customize->add_control( new Customizer_Textarea_Control( $wp_customize, 'solofolio_tracking', array(
-			'label' => 'Tracking code',
-			'settings' => 'solofolio_tracking',
-			'section' => 'solofolio_tracking_css',
-			'priority' => '', // Default is 10.
-		) ) );
-		
-		$wp_customize->add_setting( 'solofolio_css' );
-
-		$wp_customize->add_control( new Customizer_Textarea_Control( $wp_customize, 'solofolio_css', array(
-			'label' => 'Custom CSS',
-			'settings' => 'solofolio_css',
-			'section' => 'solofolio_tracking_css',
-			'priority' => '', // Default is 10.
-		) ) );
 	
 	// Blog	
 	$wp_customize->add_section( 'solofolio_blog_section' , array(
@@ -267,6 +242,54 @@ function solofolio_customize_register( $wp_customize )
 		'priority'    => 90,
 		'description' => 'Blog display settings',
 	) );
+	
+		$wp_customize->add_setting( 'solofolio_blog_entry_title_size', array(
+			'default' => '24px',
+			'transport'   => 'postMessage',
+        ));
+	
+		$wp_customize->add_control( 'solofolio_blog_entry_title_size', array(
+			'label' => 'Entry Title Size',
+			'settings' => 'solofolio_blog_entry_title_size',
+			'section' => 'solofolio_blog_section',
+			'type' => 'text',
+		) );
+		
+		$wp_customize->add_setting('solofolio_blog_entry_title_color', array(
+			'default'           => 'FFFFFF',
+			'sanitize_callback' => 'sanitize_hex_color',
+			'transport'   => 'postMessage',
+        ));
+ 
+		$wp_customize->add_control( new WP_Customize_Color_Control($wp_customize, 'solofolio_blog_entry_title_color', array(
+			'label'    => __('Section Title Color', 'solofolio'),
+			'section'  => 'solofolio_blog_section',
+			'settings' => 'solofolio_blog_entry_title_color',
+		)));
+		
+		$wp_customize->add_setting('solofolio_blog_entry_title_color_hover', array(
+			'default'           => 'AAAAAA',
+			'sanitize_callback' => 'sanitize_hex_color',
+			'transport'   => 'postMessage',
+        ));
+ 
+		$wp_customize->add_control( new WP_Customize_Color_Control($wp_customize, 'solofolio_blog_entry_title_color_hover', array(
+			'label'    => __('Section Title Color (Hover)', 'solofolio'),
+			'section'  => 'solofolio_blog_section',
+			'settings' => 'solofolio_blog_entry_title_color_hover',
+		)));	
+	
+		$wp_customize->add_setting('solofolio_blog_entry_byline_color', array(
+			'default'           => 'FFFFFF',
+			'sanitize_callback' => 'sanitize_hex_color',
+			'transport'   => 'postMessage',
+        ));
+ 
+		$wp_customize->add_control( new WP_Customize_Color_Control($wp_customize, 'solofolio_blog_entry_byline_color', array(
+			'label'    => __('Byline Color', 'solofolio'),
+			'section'  => 'solofolio_blog_section',
+			'settings' => 'solofolio_blog_entry_byline_color',
+		)));
 	
 		$wp_customize->add_setting( 'solofolio_blog_showauthor' );
 
@@ -344,6 +367,31 @@ function solofolio_customize_register( $wp_customize )
 			'priority' => '20', // Default is 10.
 		) );
 
+	 // Tracking & CSS	
+	$wp_customize->add_section( 'solofolio_tracking_css' , array(
+		'title'       => __( 'Tracking & CSS', 'solofolio' ),
+		'priority'    => 200,
+		'description' => 'Tracking code and CSS settings',
+	) );
+	
+		$wp_customize->add_setting( 'solofolio_tracking' );
+
+		$wp_customize->add_control( new Customizer_Textarea_Control( $wp_customize, 'solofolio_tracking', array(
+			'label' => 'Tracking code',
+			'settings' => 'solofolio_tracking',
+			'section' => 'solofolio_tracking_css',
+			'priority' => '', // Default is 10.
+		) ) );
+		
+		$wp_customize->add_setting( 'solofolio_css' );
+
+		$wp_customize->add_control( new Customizer_Textarea_Control( $wp_customize, 'solofolio_css', array(
+			'label' => 'Custom CSS',
+			'settings' => 'solofolio_css',
+			'section' => 'solofolio_tracking_css',
+			'priority' => '', // Default is 10.
+		) ) );
+	 
 	 $wp_customize->add_control('blogdescription')->theme_supports=false;
 
 }
