@@ -14,9 +14,13 @@ include "../../../wp-load.php"; // Pull into the loop
 	width: <?php echo get_theme_mod( 'solofolio_header_width' ); ?>px;
 }
 
-<?php if (get_option('solofolio_logo') == '') {?>
+<?php if (get_theme_mod('solofolio_logo') == '') {?>
 #logo-noimg {
 	display: block;
+}
+
+#logo-img {
+	display: none;
 }
 <?php } ?>
 
@@ -78,8 +82,8 @@ h2.post-title {
 	color: <?php echo get_theme_mod('solofolio_blog_entry_byline_color'); ?>;
 }
 	
-.wp-caption p.wp-caption-text {
-	color: #<?php echo get_option('sl_sologallery_caption'); ?>;
+.wp-caption p.wp-caption-text, .solofolio-caption {
+	color: <?php echo get_theme_mod('solofolio_body_caption_color'); ?>;
 }
 
 /* Highlight current page item */
@@ -104,7 +108,7 @@ input:focus, textarea:focus {
 /* Gallery Styles */
 
 .galleria-info {
-	color: #<?php echo get_option('sl_gallery_caption_color'); ?>;
+	color: <?php echo get_theme_mod('solofolio_body_caption_color'); ?>;
 }
 
 .sl-sidescroll-container {
@@ -172,15 +176,9 @@ input:focus, textarea:focus {
 	padding: 20px 20px 0 0;
 	width: auto;
 }
-	
-	#content-page p img {
-    	max-width: <?php echo get_option('sl_wrapper_width'); ?>px;
-	}
-
-
 
 /* LARGE DESKTOP SCREENS - Build a custom wrapper to center blog on big screens */
-@media (min-width: <?php echo (get_option('sl_wrapper_width') + get_theme_mod( 'solofolio_header_width' ) + 200); ?>px) {
+@media (min-width: <?php echo (get_theme_mod( 'solofolio_header_width' ) + 900 + 50); ?>px) {
 
 	#outerWrap {
 		position: relative;
@@ -194,7 +192,7 @@ input:focus, textarea:focus {
 	#post #outerWrap {
 		margin: 0 auto;
 		position: relative;
-		width: <?php echo (get_theme_mod( 'solofolio_header_width' ) + 900 + 80); ?>px;
+		max-width: <?php echo (get_theme_mod( 'solofolio_header_width' ) + 920 + 50); ?>px;
 	}
 	
 	#post #header {
@@ -390,6 +388,10 @@ input:focus, textarea:focus {
 	#wrapper {
 		min-width: 320px;
 	}
+	
+	#post #outerWrap {
+		width: 100%;
+		}
 	
 	#solofolio-social {
 		 margin: 0 auto;

@@ -93,20 +93,23 @@ Header
 	
 	<div id="logo">
 	
+			
 			<div id="logo-img">
 				<a href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home"><img src="<?php echo get_theme_mod( 'solofolio_logo' ); ?>" alt="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" data-retina="<?php echo get_theme_mod( 'solofolio_logo_retina' ); ?>" /></a>
 			</div>
+			
 			<div id="logo-noimg">
 				<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
 			</div>
 		
-		<div id="header-phone"><span><?php echo get_theme_mod( 'solofolio_phone' ); ?></span></div>
+		<div id="header-phone"><a href="tel:<?php echo get_theme_mod( 'solofolio_phone' ); ?>"><?php echo get_theme_mod( 'solofolio_phone' ); ?></a></div>
 		<div id="header-email"><a href="mailto:<?php echo get_theme_mod( 'solofolio_email' ); ?>"><?php echo get_theme_mod( 'solofolio_email' ); ?></a></div>  
 		
 	</div>
 	<div id="header-content">
-		<?php if (get_option('sl_sidebar_layout') == 'yes') { ?>
 			<?php if ( !function_exists('dynamic_sidebar') || !dynamic_sidebar("Sidebar Layout - Main Navigation") ) : ?>
+			Your site does not have any menus! Add one using the Custom Menu widget in Appearance > Widgets.
+			
 			<?php endif; ?>
 		<?php if (is_home()){ ?>
 			<?php if ( !function_exists('dynamic_sidebar') || !dynamic_sidebar("Sidebar Layout - Under Nav on Blog") ) : ?>
@@ -122,14 +125,13 @@ Header
 			<?php if ( !function_exists('dynamic_sidebar') || !dynamic_sidebar("Sidebar Layout - Under Nav on Blog") ) : ?>
 			<?php endif; ?>
 		<?php } ?>
-		<?php } ?>
 		
 	</div><!-- /#header-content -->
 	
 	<div id="sidebar-footer">
 		<!--<p id="help-footer"><strong>j</strong>:prev <strong>k</strong>:next</p>-->
 		<p id="info-footer"><?php echo get_theme_mod( 'solofolio_footer_text' ); ?></p>
-		<p id="attr-footer">Powered by <a title="Powered by SoloFolio. The ultimate WordPress portfolio and blog." href="http://www.solofolio.net" target="_blank">SoloFolio</a>.</p>
+		<p id="attr-footer">Powered by <a title="Powered by SoloFolio. The ultimate WordPress portfolio and blog." href="http://www.solofolio.net" target="_blank">SoloFolio</a></p>
 	</div>
 	
 </div><!-- /head -->

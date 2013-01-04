@@ -16,6 +16,15 @@ if(function_exists('register_sidebar')){
 	));
 }
 
+/* Disable Admin Bar from frontent - More trouble than it's worth */
+function hide_admin_bar_from_front_end(){
+  if (is_blog_admin()) {
+    return true;
+  }
+  return false;
+}
+add_filter( 'show_admin_bar', 'hide_admin_bar_from_front_end' );
+
 // Force WP to make high-quality images
 function solo_jpg_quality_callback($arg)
 {

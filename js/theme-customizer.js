@@ -104,4 +104,10 @@
 		} );
 	} );
 	
+	wp.customize( 'solofolio_body_caption_color', function( value ) {
+		value.bind( function( newval ) {
+			$('.solofolio-caption').css('color', newval );
+		} );
+	} );
+	
 } )( jQuery );

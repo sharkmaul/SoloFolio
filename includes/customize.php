@@ -167,6 +167,18 @@ function solofolio_customize_register( $wp_customize )
 			'section'  => 'solofolio_design_section',
 			'settings' => 'solofolio_body_link_color_hover',
 		)));
+		
+		$wp_customize->add_setting('solofolio_body_caption_color', array(
+			'default'           => 'AAAAAA',
+			'sanitize_callback' => 'sanitize_hex_color',
+			'transport'   => 'postMessage',
+        ));
+ 
+		$wp_customize->add_control( new WP_Customize_Color_Control($wp_customize, 'solofolio_body_caption_color', array(
+			'label'    => __('Caption Font Color', 'solofolio'),
+			'section'  => 'solofolio_design_section',
+			'settings' => 'solofolio_body_caption_color',
+		)));
 	
 	// Navigation
 	

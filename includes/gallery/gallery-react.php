@@ -101,7 +101,7 @@ foreach ( $attachments as $id => $attachment ) {
 			<noscript><img src=\"" . $link6[0] . "\" alt=\"" .  wptexturize($attachment->post_excerpt) . "\"></noscript>
 		</div>
 		
-		<p class=\"sl-react-caption\">" .  wptexturize($attachment->post_excerpt) . "</p>
+		<p class=\"solofolio-caption sl-react-caption\">" .  wptexturize($attachment->post_excerpt) . "</p>
 		
 		";
 } // End ForEach
