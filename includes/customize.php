@@ -40,6 +40,7 @@ function solofolio_customize_register( $wp_customize )
 
 		$wp_customize->add_setting( 'solofolio_phone', array(
 			'transport'   => 'postMessage',
+			'default'           => '555-555-5555',
         ));
 	
 		$wp_customize->add_control( 'solofolio_phone', array(
@@ -52,6 +53,7 @@ function solofolio_customize_register( $wp_customize )
 	
 		$wp_customize->add_setting( 'solofolio_email', array(
 			'transport'   => 'postMessage',
+			'default'           => 'john@johndoe.com',
         ));
 	
 		$wp_customize->add_control( 'solofolio_email', array(
@@ -274,7 +276,7 @@ function solofolio_customize_register( $wp_customize )
         ));
  
 		$wp_customize->add_control( new WP_Customize_Color_Control($wp_customize, 'solofolio_blog_entry_title_color', array(
-			'label'    => __('Section Title Color', 'solofolio'),
+			'label'    => __('Post Title Color', 'solofolio'),
 			'section'  => 'solofolio_blog_section',
 			'settings' => 'solofolio_blog_entry_title_color',
 		)));
@@ -286,7 +288,7 @@ function solofolio_customize_register( $wp_customize )
         ));
  
 		$wp_customize->add_control( new WP_Customize_Color_Control($wp_customize, 'solofolio_blog_entry_title_color_hover', array(
-			'label'    => __('Section Title Color (Hover)', 'solofolio'),
+			'label'    => __('Post Title Color (Hover)', 'solofolio'),
 			'section'  => 'solofolio_blog_section',
 			'settings' => 'solofolio_blog_entry_title_color_hover',
 		)));	

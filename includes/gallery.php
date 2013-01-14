@@ -44,7 +44,7 @@ function solofolio_gallery_shortcode($attr) {
 		'id'         => $post->ID,
 		'include'    => '',
 		'itemtag'    => 'dl',
-		'order'      => 'DSC',
+		'order'      => 'ASC',
 		'orderby'    => 'menu_order ID',
 		'showcounter'    => '',
 		'shownav'    => '',
@@ -93,6 +93,24 @@ function solofolio_gallery_shortcode($attr) {
 
 	$itemtag = tag_escape($itemtag);
 	$captiontag = tag_escape($captiontag);
+	
+	if ( !empty($include) ) {
+	$include = preg_replace( '/[^0-9,]+/', '', $include );
+	$_attachments = get_posts( array('include' => $include, 'post_status' => 'inherit', 'post_type' => 'attachment', 'post_mime_type' => 'image', 'order' => $order, 'orderby' => $orderby) );
+
+	$attachments = array();
+	foreach ( $_attachments as $key => $val ) {
+		$attachments[$val->ID] = $_attachments[$key];
+	}
+} else {
+	$attachments = get_children( array('post_parent' => $id, 'post_status' => 'inherit', 'post_type' => 'attachment', 'post_mime_type' => 'image', 'order' => $order, 'orderby' => $orderby) );
+}
+
+if ( empty($attachments) )
+	return '';
+	
+	
+	
 	$columns = intval($columns);
 	$itemwidth = $columns > 0 ? floor(100/$columns) : 100;
 	$float = is_rtl() ? 'right' : 'left';
@@ -155,10 +173,10 @@ function solofolio_gallery_shortcode($attr) {
 	
 	$mobile = detect_mobile();
 	
-	/*if($mobile === true)
+	if($mobile === true)
 	{
 		$type = "side-scroll";
-	} */
+	}
 	
 	if ( is_home() || is_single()) {
 		$type = "vert-scroll";

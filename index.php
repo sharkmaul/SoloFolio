@@ -37,13 +37,6 @@ Theme - Blog Index
 
 </div>
 
-
-
 <div class="clear"></div>
 
-
-<?php if (get_option('sl_sidebar_layout') != 'yes') { ?>
-<?php get_sidebar(); ?>
-
-<?php } ?>
 <?php get_footer(); ?>	

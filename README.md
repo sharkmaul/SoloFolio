@@ -2,11 +2,13 @@ SoloFolio
 =========
 http://www.solofolio.net/
 
-PLEASE, PLEASE read this first before downloading/installing SoloFolio.
+PLEASE, PLEASE read this first before downloading/installing SoloFolio. Due to the highly customized nature of this platform, it is highly advised that all plugins be disabled during setup, then enabled one at a time to test compatibility. 
+
+For best results, deploy using a fresh install of WordPress.
 
 SoloFolio is currently a developer theme, meaning you're going to need some programming experience to deploy it properly. Many of its features are not currently documented. 
 
-To see a site utilizing the latest public release (v4), visit http://www.joelhawksley.com.
+To see a site utilizing the latest public release (v4), visit my portfolio/blog at http://www.joelhawksley.com.
 
 This repository contains my "nightly" builds. It is NOT production-ready. I've uploaded stable builds for deployment.
 
@@ -77,11 +79,12 @@ width : width in px (default: 900px, responsive)
 
 RECOMMENDED PLUGINS
 
+-Regenerate Thumbnails (you'll need this if you aren't starting fresh)
 -Akismet
 -All-in-one SEO
 -Fast Secure Contact Form
 -Wordfence
--Regenerate Thumbnails
+
 
 THANKS
 
@@ -93,6 +96,7 @@ THANKS
 	-jQuery.Retina
 	-JQuery.jknav
 	-Picturefill
+	-cycle2
 
 -To the fine folks at StackOverflow, for having a solution to every bug on the planet.
 

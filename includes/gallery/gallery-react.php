@@ -95,6 +95,7 @@ foreach ( $attachments as $id => $attachment ) {
 		
 		<div class=\"sl-react\" data-picture data-alt=\"" .  wptexturize($attachment->post_excerpt) . "\">
 			<div data-src=\"" . $link4[0] . "\"></div>
+			<div data-src=\"" . $link5[0] . "\"      data-media=\"(min-width: 800px) and (min-device-pixel-ratio: 2.0)\"></div> 
 			<div data-src=\"" . $link5[0] . "\" data-media=\"(min-width: " . $helper . "px)\"></div>
 
 			<!-- Fallback content for non-JS browsers. Same img src as the initial, unqualified source element. -->
@@ -111,7 +112,7 @@ add_action('wp_footer', 'sl_react');
  
 function sl_react() {
      
-     	// Output necessary JS. This can't be mobile friendly.
+    // Output necessary JS. This can't be mobile friendly.
 	$output .="<script type=\"text/javascript\" src=\"" . get_bloginfo('template_url') . "/includes/gallery/js/matchmedia.js\"></script>";
 
 	$output .="<script type=\"text/javascript\" src=\"" . get_bloginfo('template_url') . "/includes/gallery/js/picturefill.js\"></script>";
@@ -122,13 +123,28 @@ function sl_react() {
 		var setResponsive = function () {
 		  var pageHeight = jQuery(window).height();
 		  var blockHeight = $(\".sl-react-caption\").outerHeight();
-		  $('img').css('max-height', pageHeight - blockHeight - 20 - 20); 
+		  $('img').css('max-height', pageHeight - blockHeight - 40); 
 		}
 		$(window).resize(setResponsive);
 		setResponsive();
 	});
 
 	</script>";
+	
+	/* Works for Mobile, not for desktop. Needs to be adapted.
+	$output.="<script type=\"text/javascript\"> 
+	$(window).load(function(){
+		var setResponsive = function () {
+		  var pageHeight = jQuery(window).height();
+		  var blockHeight = $(\".sl-react-caption\").outerHeight();
+		  var headerHeight = $(\"#header\").outerHeight();
+		  $('img').css('max-height', pageHeight - headerHeight - blockHeight - 20); 
+		}
+		$(window).resize(setResponsive);
+		setResponsive();
+	});
+
+	</script>";*/
 
 
      

@@ -18,7 +18,7 @@ Header
 <head>
 	<meta charset="<?php bloginfo( 'charset' ); ?>" />
 	<meta name="viewport" content="width=device-width" />
-	<meta id="extViewportMeta" name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no">
+	<meta content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport" />
 	<meta name="apple-mobile-web-app-capable" content="yes">
 	<meta name="apple-mobile-web-app-status-bar-style" content="black" />
 	<link rel="profile" href="http://gmpg.org/xfn/11" />
@@ -26,7 +26,7 @@ Header
 	
 	<title><?php bloginfo('name'); ?> <?php wp_title(); ?></title>			
 	
-	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
 	<script type="text/javascript" src="<?php echo bloginfo('template_url'); ?>/includes/gallery/js/galleria-1.2.7.min.js"></script> 
 	<script type="text/javascript" src="<?php echo bloginfo('template_url'); ?>/includes/gallery/js/galleria.history.min.js"></script> 
 	<script type="text/javascript" src="<?php echo bloginfo('template_url'); ?>/js/jquery.retina.min.js"></script>
@@ -43,10 +43,14 @@ Header
 		$.jknav.init();
 		$("p:has(img)").css('margin' , '0');
 		$("p:has(img)").css('padding' , '0');
-    	$('img').each(function() {
-    		var mwidth = $(this).attr('width');
-			$(this).attr('style', 'max-width:' + mwidth + 'px');
-		});
+    	/* Fallback support for older images that were not uploaded with the SoloFolio format filter */
+    	if($(this).attr('width')){
+			$('img').each(function() {
+				var mwidth = $(this).attr('width');
+				$(this).attr('style', 'max-width:' + mwidth + 'px');
+			});
+		} else {}
+
 		$('img').each(function(){ 
         	$(this).removeAttr('width')
         	$(this).removeAttr('height');
@@ -55,6 +59,7 @@ Header
 		$("#header-content").slideToggle();
 			$(this).toggleClass("active");
 		});
+		
 		var setResponsive = function () {
 		  // Is the window taller than the #adminmenuwrap by 50px or more?
 		  if ($(window).height() > $("#header-content").height() + $("#logo").height() + 100) {
@@ -102,8 +107,8 @@ Header
 				<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
 			</div>
 		
-		<div id="header-phone"><a href="tel:<?php echo get_theme_mod( 'solofolio_phone' ); ?>"><?php echo get_theme_mod( 'solofolio_phone' ); ?></a></div>
-		<div id="header-email"><a href="mailto:<?php echo get_theme_mod( 'solofolio_email' ); ?>"><?php echo get_theme_mod( 'solofolio_email' ); ?></a></div>  
+		<div id="header-phone"><a href="tel:<?php echo get_theme_mod( 'solofolio_phone' ); ?>"><?php echo get_theme_mod( 'solofolio_phone', '555-555-5555' ); ?></a></div>
+		<div id="header-email"><a href="mailto:<?php echo get_theme_mod( 'solofolio_email' ); ?>"><?php echo get_theme_mod( 'solofolio_email', 'john@johndoe.com' ); ?></a></div>  
 		
 	</div>
 	<div id="header-content">
@@ -128,12 +133,11 @@ Header
 		
 	</div><!-- /#header-content -->
 	
-	<div id="sidebar-footer">
-		<!--<p id="help-footer"><strong>j</strong>:prev <strong>k</strong>:next</p>-->
-		<p id="info-footer"><?php echo get_theme_mod( 'solofolio_footer_text' ); ?></p>
-		<p id="attr-footer">Powered by <a title="Powered by SoloFolio. The ultimate WordPress portfolio and blog." href="http://www.solofolio.net" target="_blank">SoloFolio</a></p>
-	</div>
-	
-</div><!-- /head -->
+</div><!-- /#header -->
+
+<div id="sidebar-footer">
+	<p id="info-footer"><?php echo get_theme_mod( 'solofolio_footer_text' ); ?></p>
+	<p id="attr-footer"><a title="Powered by SoloFolio. The ultimate WordPress portfolio and blog." href="http://www.solofolio.net" target="_blank">SoloFolio</a> / <a href="http://www.wordpress.org/">Wordpress</a></p>
+</div>
 
 <div id="wrapper"><!-- Begin Wrapper -->

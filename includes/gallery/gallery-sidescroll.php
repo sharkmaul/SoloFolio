@@ -1,5 +1,8 @@
 <?php
-
+/* 
+SoloFolio
+Gallery Template: Sidescroll
+*/
 
 $output .= "<script type=\"text/javascript\" charset=\"utf-8\">
 		$(function(){
@@ -8,9 +11,9 @@ $output .= "<script type=\"text/javascript\" charset=\"utf-8\">
 		});
 		
 		$( document ).ready( function(){
-    		setMaxWidth();
-    		$( window ).bind(\"resize\", setMaxWidth );
-    		function setMaxWidth() {
+    		setMax();
+    		$( window ).bind(\"resize\", setMax );
+    		function setMax() {
     			$(\".sl-sidescroll-container\").css(\"maxWidth\", ($(\"#wrapper\").innerWidth() - 30));
     		}
 
@@ -31,7 +34,7 @@ $output .= "<script type=\"text/javascript\" charset=\"utf-8\">
 		$link3 = wp_get_attachment_image_src($id, 'thumbnail');
 		$link4 = wp_get_attachment_image_src($id, 'large');
 
-		$output .= "\n\n<div class=\"sl-sidescroll-container\" style=\"width:" . $link4[1] . "px; height:" . $link4[2] . "px \">";
+		$output .= "\n\n<div class=\"sl-sidescroll-container\" style=\"max-width:" . $link4[1] . "px; max-height:" . $link4[2] . "px \">";
 		
 		$output .= "
 			

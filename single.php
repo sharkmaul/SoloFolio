@@ -11,7 +11,7 @@
 			<span class="date sans"><?php the_time('l, F jS Y') ?> 
 			<?php if (get_option('sl_show_author') != 'no') {?>by <?php the_author() ?><?php } ?>
 			</span>
-			<span class="meta-cat sans"><?php comments_popup_link('No Comments &#187;', '1 Comment &#187;', '% Comments &#187;'); ?><?php the_tags('| Tags: ', ', ', '<br />'); ?></span>
+			<span class="meta-cat sans"><?php comments_popup_link('', '1 Comment &#187;', '% Comments &#187;'); ?><?php the_tags('| Tags: ', ', ', '<br />'); ?></span>
 		</div>
 			<?php the_content('Read the rest of this entry &raquo;'); ?>
 			<div class="clear"></div>

@@ -34,6 +34,7 @@
 	wp.customize( 'solofolio_background_color', function( value ) {
 		value.bind( function( newval ) {
 			$('body').css('background-color', newval );
+			$('#header').css('background-color', newval );
 		} );
 	} );
 	
@@ -63,13 +64,13 @@
 	
 	wp.customize( 'solofolio_navigation_font_size', function( value ) {
 		value.bind( function( newval ) {
-			$('#header-content li a').css('font-size', newval );
+			$('#header-content a').css('font-size', newval );
 		} );
 	} );
 	
 	wp.customize( 'solofolio_navigation_link_color', function( value ) {
 		value.bind( function( newval ) {
-			$('#header-content li a').css('color', newval );
+			$('#header-content a').css('color', newval );
 		} );
 	} );
 	
@@ -83,6 +84,12 @@
 	wp.customize( 'solofolio_navigation_header_font_size', function( value ) {
 		value.bind( function( newval ) {
 			$('#header-content h3').css('font-size', newval );
+		} );
+	} );
+	
+	wp.customize( 'solofolio_navigation_header_color', function( value ) {
+		value.bind( function( newval ) {
+			$('#header-content h3').css('color', newval );
 		} );
 	} );
 	

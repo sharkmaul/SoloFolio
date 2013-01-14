@@ -11,7 +11,7 @@ include "../../../wp-load.php"; // Pull into the loop
 ?>
 
 #header {
-	width: <?php echo get_theme_mod( 'solofolio_header_width' ); ?>px;
+	width: <?php echo get_theme_mod( 'solofolio_header_width', '200'); ?>px;
 }
 
 <?php if (get_theme_mod('solofolio_logo') == '') {?>
@@ -56,11 +56,11 @@ a:hover, a:active {
 	font-size: <?php echo get_theme_mod('solofolio_navigation_header_font_size'); ?>;
 }
 
-#header-content li a:link, #header-content li a:visited {
+#header-content a:link, #header-content a:visited {
 	color: <?php echo get_theme_mod('solofolio_navigation_link_color'); ?>;
 }
 
-#header-content li a:hover, #header-content li a:active { 
+#header-content a:hover, #header-content a:active { 
 	color: <?php echo get_theme_mod('solofolio_navigation_link_color_hover'); ?>;
 }
 
@@ -172,13 +172,13 @@ input:focus, textarea:focus {
 <?php } ?>
 
 #wrapper {
-	margin-left: <?php echo (get_theme_mod( 'solofolio_header_width' ) + 40); ?>px;
+	left: <?php echo (get_theme_mod( 'solofolio_header_width', '200' ) + 40); ?>px;
 	padding: 20px 20px 0 0;
 	width: auto;
 }
 
 /* LARGE DESKTOP SCREENS - Build a custom wrapper to center blog on big screens */
-@media (min-width: <?php echo (get_theme_mod( 'solofolio_header_width' ) + 900 + 50); ?>px) {
+@media (min-width: <?php echo (get_theme_mod( 'solofolio_header_width', '200' ) + 900 + 50); ?>px) {
 
 	#outerWrap {
 		position: relative;
@@ -192,7 +192,7 @@ input:focus, textarea:focus {
 	#post #outerWrap {
 		margin: 0 auto;
 		position: relative;
-		max-width: <?php echo (get_theme_mod( 'solofolio_header_width' ) + 920 + 50); ?>px;
+		max-width: <?php echo (get_theme_mod( 'solofolio_header_width', '200' ) + 920 + 40); ?>px;
 	}
 	
 	#post #header {
@@ -288,6 +288,11 @@ input:focus, textarea:focus {
 		padding: 0;
 		width: 100%;
 		/*overflow: hidden;*/
+		position:fixed; 
+		top:50px;
+		left: 0;
+		bottom:0px; 
+	  	overflow:auto;
 	}
 	
 		#content-index, #content-single, #content-search {
@@ -325,10 +330,6 @@ input:focus, textarea:focus {
 		
 	#wrapper #content-index {
 		width: 100%;
-	}
-	
-	#sidebar-footer #help-footer {
-		display: none;
 	}
 
 	#content h1 { font-size: 22px; line-height: 30px; background-color: #000; color: #FFF; padding: 10px; }
@@ -410,7 +411,7 @@ input:focus, textarea:focus {
 }
 
 /* Phone */
-@media only screen and (max-width: 480px) {
+@media only screen and (max-width: 440px) {
 	
 	#content h1 {
 		font-size: 14px;
