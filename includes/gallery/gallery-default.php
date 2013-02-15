@@ -13,6 +13,7 @@ foreach ( $attachments as $id => $attachment ) {
 	$link3 = wp_get_attachment_image_src($id, 'thumbnail');
 	$link4 = wp_get_attachment_image_src($id, 'large');
 	
+	
 	$output .= "
 		
 		<a href=\"" . $link4[0] . "\" rel=\"" . $link2 . "\">

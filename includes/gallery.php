@@ -55,7 +55,6 @@ function solofolio_gallery_shortcode($attr) {
 		'transition'    => '',
 		'type'    => '',
 		'width'    => '',
-		'width'    => '',
 		'exclude'    => ''
 	), $attr));
 
