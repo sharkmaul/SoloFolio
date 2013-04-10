@@ -36,6 +36,14 @@ Header
 	<link rel="stylesheet" type="text/css" media="all" href="<?php bloginfo( 'stylesheet_url' ); ?>" />
 	<link rel="stylesheet" href="<?php echo (bloginfo('template_url').'/styles.php'); ?>" type="text/css" media="screen" />
 	
+	<link rel="stylesheet" type="text/css" media="all" href="<?php echo (bloginfo('template_url').'/fonts/font-awesome.min.css'); ?>" />
+	<link rel="stylesheet" type="text/css" media="all" href="<?php echo (bloginfo('template_url').'/fonts/font-awesome-social.css'); ?>" />
+	
+	<!--[if IE 7]>
+	<link rel="stylesheet" href="<?php echo (bloginfo('template_url').'/onts/font-awesome-ie7.min.css'); ?>">
+	<link rel="stylesheet" href="<?php echo (bloginfo('template_url').'/onts/font-awesome-more-ie7.min.css'); ?>">
+	<![endif]-->
+	
 	<script type="text/javascript"> 
 	$(window).load(function(){
 		$('img').retina();
@@ -64,10 +72,10 @@ Header
 		  // Is the window taller than the #adminmenuwrap by 50px or more?
 		  if ($(window).height() > $("#header-content").height() + $("#logo").height() + 100) {
 			 // ...if so, make the #adminmenuwrap fixed
-			 $('#header').css('position', 'fixed');
+			$('#header').css('position', 'relative');
 		  } else {
 			 //...otherwise, leave it relative        
-			 $('#header').css('position', 'absolute');
+			 $('#header').css('position', 'relative');
 			 $('#sidebar-footer').css('position', 'static'); 
 		  }
 		}
@@ -94,7 +102,7 @@ Header
 <div id="outerWrap">
 
 <div id="header" class="sans"><!-- Begin Header -->
-	<a id='menu-icon'>Menu</a>
+	<a id='menu-icon'><i class="icon-reorder"></i></a>
 	
 	<div id="logo">
 	

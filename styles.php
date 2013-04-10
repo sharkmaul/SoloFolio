@@ -143,18 +143,6 @@ input:focus, textarea:focus {
 <?php if (get_theme_mod('solofolio_gallery_icon_color') == 'dark') {?>
 /* Dark slideshow controls (For light backgrounds) */
 
-.galleria-controls .play {
-    background-image: url(includes/gallery/js/b-playpause.png);
-}
-
-.galleria-controls .fullscreen {
-    background-image: url(includes/gallery/js/b-fullscreen.png);
-}
-
-.galleria-controls .toggle {
-    background: url(includes/gallery/js/b-thumbs.png) no-repeat 50% 50%;
-}
-
 .galleria-controls .galleria-counter, .galleria-controls a {
 	color: #000000;
 }
@@ -162,12 +150,6 @@ input:focus, textarea:focus {
 .galleria-thumbnails-container {
 	background-color: #ffffff;
 }
-
-.galleria-thumblink:hover,
-.galleria-thumblink.open,
-.galleria-fullscreen:hover,
-.galleria-play:hover,
-.galleria-popout:hover { background-color: #eee }
 
 <?php } ?>
 
@@ -228,7 +210,6 @@ input:focus, textarea:focus {
 	* {
 		margin: 0;
 		padding: 0;
-		border: none;
 	}
 	
 	img {
@@ -257,7 +238,7 @@ input:focus, textarea:focus {
 			}
 	
 		#header-content {
-			padding: 0 0 10px 10px;
+			padding: 0 0 10px 0;
 		}
 		
 		#header #header-phone, #header #header-email {
@@ -288,8 +269,8 @@ input:focus, textarea:focus {
 		padding: 0;
 		width: 100%;
 		/*overflow: hidden;*/
-		position:fixed; 
-		top:50px;
+		position: relative; 
+		top: 0;
 		left: 0;
 		bottom:0px; 
 	  	overflow:auto;
@@ -309,6 +290,10 @@ input:focus, textarea:focus {
 		p, h2, h4, h6, .commentlist .date, #wrapper li {
 			padding: 0 10px;
 		}
+			
+			#comments .commentlist li {
+				padding: 0;
+			}
 				
 		img.alignnone {
 			width: 100%;

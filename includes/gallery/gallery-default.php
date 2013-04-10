@@ -28,15 +28,15 @@ foreach ( $attachments as $id => $attachment ) {
 	
 	$output .= "<div class=\"galleriabar\">";
 		$output .= "<div class=\"galleria-controls\">";
-						if ($shownav != "false"){$output.= "<a class=\"prev\" href=\"#\">< prev</a>";}
+						if ($shownav != "false"){$output.= "<a class=\"prev\" href=\"#\"> <i class=\"icon-angle-left\"></i> prev</a>";}
 						if ($showcounter != "false"){$output.= "<div class=\"galleria-counter\">
 							<span class=\"index\"></span> of 
 							<span class=\"total\"></span>
 						</div>";}
-						if ($shownav != "false"){$output.= "<a class=\"next\" href=\"#\">next ></a>";}
-						if ($fullscreen != "false"){$output.= "<a class=\"fullscreen\" href=\"#\" title=\"Fullscreen\"></a>";}
-						if ($showplay != "false"){$output.= "<a class=\"play\" href=\"#\" title=\"Slideshow\"></a>";}
-						if ($showthumbnails != "false"){$output.= "<a class=\"toggle\" href=\"#\" title=\"Thumbnails\"></a>";}
+						if ($shownav != "false"){$output.= "<a class=\"next\" href=\"#\">next <i class=\"icon-angle-right\"></i></a>";}
+						if ($fullscreen != "false"){$output.= "<a class=\"fullscreen\" href=\"#\" title=\"Fullscreen\"><i class=\"icon-fullscreen\"></i></a>";}
+						if ($showplay != "false"){$output.= "<a class=\"play\" href=\"#\" title=\"Slideshow\"><i class=\"icon-play\"></i></a>";}
+						if ($showthumbnails != "false"){$output.= "<a class=\"toggle\" href=\"#\" title=\"Thumbnails\"><i class=\"icon-th-large\"></i></a>";}
 					$output .= "</div>";
 					if ($captions != "false"){$output.= "<div class=\"galleria-info\"></div>";}
 	$output .= "</div></div>";

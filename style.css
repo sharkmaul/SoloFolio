@@ -1,8 +1,8 @@
 /*
-Theme Name: SoloFolio 5
+Theme Name: SoloFolio5
 Theme URI: http://www.solofolio.net/
 Description: A portfolio platform for creatives.
-Version: 4.5 Dev
+Version: 4.6 Dev
 Author: Joel Hawksley
 Author URI: http://www.joelhawksley.com/
 
@@ -439,6 +439,10 @@ h2.post-title {
 
 /* Comments */
 
+input, textarea {
+	border: 1px solid #AAAAAA;
+}
+
 #comments h6 {
 	font-weight: normal;
 	font-size: 12px;
@@ -479,6 +483,7 @@ h2.post-title {
 }
 	
 #commentform input, #commentform textarea {
+	color: #AAAAAA;
 	font-family: Helvetica,Verdana,Arial,Utkal,sans-serif;
 	padding: 3px;
 	font-size: 12px;
@@ -566,35 +571,8 @@ div.aligncenter {
     height: 24px; 
     width: 24px; 
     margin-right: 5px;
+    text-align: center;
     display: block;
-}
-
-#solofolio-twitter {
-	background: url("img/twitter.png") no-repeat;
-}
-
-#solofolio-facebook {
-	background: url("img/facebook.png") no-repeat;
-}
-
-#solofolio-vimeo {
-	background: url("img/vimeo.png") no-repeat;
-}
-
-#solofolio-linkedin {
-	background: url("img/linkedin.png") no-repeat;
-}
-
-#solofolio-rss {
-	background: url("img/rss.png") no-repeat;
-}
-
-#solofolio-twitter, #solofolio-facebook, #solofolio-vimeo, #solofolio-linkedin, #solofolio-rss {
-	background-position: 0 -24px;
-}
-
-#solofolio-twitter:hover, #solofolio-facebook:hover, #solofolio-vimeo:hover, #solofolio-linkedin:hover, #solofolio-rss:hover {
-	background-position: 0 0;
 }
 
 /* Side scroll gallery */
@@ -610,17 +588,17 @@ div.aligncenter {
 
 /* Phone view menu */
 #menu-icon {
-	color: #000;
-	width: 50px;
+	width: 60px;
 	height: 40px;
-	background: url("img/menu.png") center center no-repeat;
-	text-indent: -999999px;
+	line-height: 40px;
+	font-size: 20px;
 	border: 0;
 	padding: 0;
 	position: absolute;
-	right: 10px;
+	right: 0;
 	top: 5px;
 	cursor: pointer;
+	text-align: center;
 	display: none;
 }
 

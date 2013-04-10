@@ -24,11 +24,11 @@ class pippin_simple_authors_widget extends WP_Widget {
         ?>
               <?php echo $before_widget; 
               		echo "<ul id=\"solofolio-social\">";   
-                        if ($twitter !="") {echo "<li><a target=\"_blank\" id=\"solofolio-twitter\" href=\"" . $twitter . "\"></a></li>";}
-                        if ($facebook !="") {echo "<li><a target=\"_blank\" id=\"solofolio-facebook\" href=\"" . $facebook . "\"></a></li>";}
-                        if ($vimeo !="") {echo "<li><a target=\"_blank\" id=\"solofolio-vimeo\" href=\"" . $vimeo . "\"></a></li>";}
-                        if ($linkedin !="") {echo "<li><a target=\"_blank\" id=\"solofolio-linkedin\" href=\"" . $linkedin . "\"></a></li>";}
-                        if ($rss !="") {echo "<li><a target=\"_blank\" id=\"solofolio-rss\" href=\"" . $rss . "\"></a></li>";}
+                        if ($twitter !="") {echo "<li><a target=\"_blank\" id=\"solofolio-twitter\" href=\"" . $twitter . "\"><i class=\"icon-twitter\"></i></a></li>";}
+                        if ($facebook !="") {echo "<li><a target=\"_blank\" id=\"solofolio-facebook\" href=\"" . $facebook . "\"><i class=\"icon-facebook\"></i></a></li>";}
+                        if ($vimeo !="") {echo "<li><a target=\"_blank\" id=\"solofolio-vimeo\" href=\"" . $vimeo . "\"><i class=\"icon-vimeo\"></i></a></li>";}
+                        if ($linkedin !="") {echo "<li><a target=\"_blank\" id=\"solofolio-linkedin\" href=\"" . $linkedin . "\"><i class=\"icon-linkedin\"></i></a></li>";}
+                        if ($rss !="") {echo "<li><a target=\"_blank\" id=\"solofolio-rss\" href=\"" . $rss . "\"><i class=\"icon-rss\"></i></a></li>";}
                 	echo "</ul>";
                 	echo "<div class=\"clear\"></div>";
         		echo $after_widget; ?>

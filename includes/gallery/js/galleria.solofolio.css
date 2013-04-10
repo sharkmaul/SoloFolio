@@ -19,6 +19,7 @@ Galleria Theme - CSS
     overflow: hidden;
     background: #000000;
     position: absolute;
+    text-align: center;
     top: 0;
     left: 0;
     right: 0;
@@ -31,7 +32,6 @@ Galleria Theme - CSS
     position: absolute;
     bottom: 0px;
     left: 0;
-    /*background: url(bar.png) repeat-x;*/
     background-color: #000000;
     z-index: 3;
 }
@@ -39,7 +39,6 @@ Galleria Theme - CSS
 .galleria-s2,
 .galleria-s3,
 .galleria-s4 {
-    background: url(separator.png);
     display: none;
     height: 29px;
     width: 2px;
@@ -77,28 +76,21 @@ Galleria Theme - CSS
     display: block;
     float: right;
     padding: 0;
-    background: url(thumbs.png) no-repeat;
-    background-position: 8px 8px;
-    cursor: pointer;
+	text-align: center;
 }
+
 .fullscreen {
     left: auto;
-    background-image: url(fullscreen.png);
-    background-position: 8px 8px;
 }
-.galleria-popout {
-    background-image: url(popout.png);
-    background-position: 50% 50%;
-}
-.play {
-    background-image: url(playpause.png);
-    background-position: 10px 9px;
-}
-.playing { background-position: 10px -91px }
 
-.toggle:hover,
-.fullscreen:hover,
-.play:hover { background-color: #000 }
+.play {
+}
+
+.playing i {
+}
+
+.toggle {
+}
 
 .galleria-thumbnails-container {
 	position: absolute;
@@ -207,33 +199,6 @@ Galleria Theme - CSS
 	width: 50%;
 }
 
-.galleria-image-nav-left:hover { }
-.galleria-image-nav-right:hover { }
-
-/*
-.galleria-image-nav-left,
-.galleria-image-nav-right {
-    cursor: pointer;
-    width: 36px;
-    height: 36px;
-    top: 50%;
-    
-    left: 20px;
-    
-    background: url(nav.png); 
-}
-.galleria-image-nav-right {
-    left: auto;
-    right: 20px;
-    top: 50%;
-    background-position: -36px 0;
-    z-index: 2;
-}
-
-.galleria-image-nav-left:hover { background-position: 0 -36px }
-.galleria-image-nav-right:hover { background-position: -36px -36px }*/
-
-
 .galleria-thumb-nav-left,
 .galleria-thumb-nav-right {
     cursor: pointer;
@@ -265,7 +230,6 @@ Galleria Theme - CSS
 }
 .galleria-carousel .galleria-thumb-nav-left,
 .galleria-carousel .galleria-thumb-nav-right { display: block }
-.galleria-lightbox-content { background: url(loader_pos.gif) no-repeat 50% 50% }
 
 .galleria-clear {
 	clear:both;
