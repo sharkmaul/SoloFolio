@@ -19,14 +19,13 @@ Theme - Blog Index
 			<!--<span class="meta-cat sans"><?php comments_popup_link('', '1 Comment &#187;', '% Comments &#187;'); ?>  <?php the_tags('| Tags: ', ', ', ''); ?></span>
 			</span>-->
 		</div>
-		<?php the_content('Continue reading &raquo;'); ?>
-		<div class="clear"></div>
+		<?php the_content('Continue reading <i class="icon-angle-right"></i>'); ?>
 		<div class="clear"></div>
 	</div>
 	<?php endwhile; ?>
 	<div class="pagination-nav">
-		<div class="alignleft"><p><?php next_posts_link('<i class="icon-angle-left"></i> Past') ?></p></div>
-		<div class="alignright"><p><?php previous_posts_link('Future <i class="icon-angle-right"></i>') ?></p></div>
+		<div class="left"><p><?php next_posts_link('<i class="icon-angle-left"></i>') ?></p></div>
+		<div class="right"><p><?php previous_posts_link('<i class="icon-angle-right"></i>') ?></p></div>
 		<div class="clear"></div>
 	</div>
 <?php else : ?>

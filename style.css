@@ -517,17 +517,18 @@ div.aligncenter {
 
 .pagination-nav {
     margin: 0 auto;
-    max-width: 600px;
-    padding: 0 10px;
+    max-width: 1200px;
+    padding: 0;
 }
 
-.pagination-nav a {
+.pagination-nav a i {
     background-color: #EEEEEE;
     padding: 15px 20px;
 }
 
 .pagination-nav p {
 	margin: 0;
+	padding: 0;
 }
 
 /* Forms */
