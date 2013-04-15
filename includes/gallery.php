@@ -3,7 +3,6 @@
 SoloFolio
 Gallery shortcodes
 
-This probably needs to be trimmed/eliminated. 
 */
 
 add_shortcode('gallery', 'gallery_shortcode');
@@ -172,14 +171,14 @@ if ( empty($attachments) )
 	
 	$mobile = detect_mobile();
 	
-	if($mobile === true)
+	/*if($mobile === true)
 	{
 		$type = "side-scroll";
-	}
+	}*/
 	
-	if ( is_home() || is_single()) {
+	/*if ( is_home() || is_single()) {
 		$type = "vert-scroll";
-	}
+	}*/
 	
 	if ($type == "") { 
 		include("gallery/gallery-default.php");

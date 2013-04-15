@@ -74,7 +74,8 @@ $fixImageMargins = new fixImageMargins();
 
 // Filter image output in editor for blog posts
 // From http://wordpress.stackexchange.com/questions/78285/alter-image-output-in-content
-function solofolio_filter_images($html, $id) {
+// Currently deprecated out of fear.
+/*function solofolio_filter_images($html, $id) {
 
     //fetching attachment by post $id
     $attachment = get_post($id); 
@@ -90,15 +91,13 @@ function solofolio_filter_images($html, $id) {
         $large = wp_get_attachment_image_src( $id, 'large');
         $xlarge = wp_get_attachment_image_src( $id, 'xlarge');
 
-        $html = '<div class="solofolio-post-image"><img src="'. $large[0] .'" style="max-width:' . $large[1] . 'px" data-retina="'. $xlarge[0] . '"/></div>';
-        
-        $html .= '<p class="solofolio-image-caption">' . wptexturize($attachment->post_excerpt) . '</p>';
+        $html = '<div class="solofolio-post-image-asset"><div class="solofolio-post-image"><img src="'. $large[0] .'" style="max-width:' . $large[1] . 'px" data-retina="'. $xlarge[0] . '"/></div><p class="solofolio-image-caption">' . wptexturize($attachment->post_excerpt) . '</p></div>';
         
         return $html; // return new $html    
     }
         return $html;
 }
-add_filter('media_send_to_editor', 'solofolio_filter_images', 20, 2);
+add_filter('media_send_to_editor', 'solofolio_filter_images', 20, 2);*/
 
 
 // Load GPS data from EXIF before it is wiped

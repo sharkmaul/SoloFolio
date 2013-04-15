@@ -29,7 +29,7 @@ foreach ( $attachments as $id => $attachment ) {
 	$output .= "<div class=\"galleriabar\">";
 		$output .= "<div class=\"galleria-controls\">";
 						if ($shownav != "false"){$output.= "<a class=\"prev\" href=\"#\"> <i class=\"icon-angle-left\"></i> prev</a>";}
-						if ($showcounter != "false"){$output.= "<div class=\"galleria-counter\">
+						if ($showcounter != "false"){$output.= "<div class=\"counter\">
 							<span class=\"index\"></span> of 
 							<span class=\"total\"></span>
 						</div>";}
@@ -48,16 +48,11 @@ add_action('wp_footer', 'solofolio_slideshow_footer');
 function solofolio_slideshow_footer() {
     
     global $solofolio_autoplay;
-    global $solofolio_transition;
     
-    $output .="<script type=\"text/javascript\" src=\"" . get_bloginfo('template_url') . "/includes/gallery/js/galleria.solofolio.js\"></script>";
-    
-    $output .= " <script type=\"text/javascript\">$('.galleria').galleria({";
-		if ($solofolio_transition != ""){$output.= "transition: '" .  $solofolio_transition . "',";}
-		if ($solofolio_autoplay == "true"){$output.= "autoplay: true,";}
-		//if ($width != ""){$output.= "width: " .  $width . ",";} // Just going to force responsive for now
-		if ($height != ""){$output.= "height: " .  $height . ",";} else {$output.= "height: .667,";}
-		$output .= $transition;
+    $output .= "<script type=\"text/javascript\">";
+    $output .=" Galleria.run('.galleria', {";
+   		if ($solofolio_autoplay == "true"){$output.= "autoplay: true,";}
+		$output.="height: .667,";
 		$output.="swipe: true,";
 		$output.="responsive: true,";
 		$output.="maxScaleRatio: 1,";
@@ -122,8 +117,6 @@ function solofolio_slideshow_footer() {
 	
 	$output.="</style>\n";
 
-
-     
     echo $output;
  
 }

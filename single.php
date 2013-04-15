@@ -4,14 +4,14 @@
 	<?php while (have_posts()) : the_post(); ?>
 		<div class="entry">
 			<div class="post-meta">
-			<?php if (get_option('sl_show_category') != 'no') {?><span class="post-cat"><?php the_category(', ') ?></span><?php } ?>
+			<span class="post-cat"><?php the_category(', ') ?></span>
 			<h2 class="post-title">
 				<a href="<?php the_permalink() ?>" rel="bookmark" title="Permanent Link to <?php the_title(); ?>"><?php the_title(); ?></a>
 			</h2>
 			<span class="date sans"><?php the_time('l, F jS Y') ?> 
-			<?php if (get_option('sl_show_author') != 'no') {?>by <?php the_author() ?><?php } ?>
+			<!--<?php if (get_theme_mod('solofolio_blog_showauthor')) {?>by <?php the_author() ?><?php } ?>-->
 			</span>
-			<span class="meta-cat sans"><?php comments_popup_link('', '1 Comment &#187;', '% Comments &#187;'); ?><?php the_tags('| Tags: ', ', ', '<br />'); ?></span>
+			<!--<span class="meta-cat sans"><?php comments_popup_link('', '1 Comment &#187;', '% Comments &#187;'); ?><?php the_tags('| Tags: ', ', ', '<br />'); ?></span>-->
 		</div>
 			<?php the_content('Read the rest of this entry &raquo;'); ?>
 			<div class="clear"></div>

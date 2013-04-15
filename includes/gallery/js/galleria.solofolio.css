@@ -86,7 +86,7 @@ Galleria Theme - CSS
 .play {
 }
 
-.playing i {
+.playing {
 }
 
 .toggle {
@@ -154,7 +154,10 @@ Galleria Theme - CSS
 	display: inline;
 }
 .galleria-counter {
-    display: inline;
+    display: none;
+}
+.counter {
+	display: inline;
 }
 .galleria-loader {
     width: 48px;
@@ -228,8 +231,6 @@ Galleria Theme - CSS
     opacity: 1;
     background-color: #111;
 }
-.galleria-carousel .galleria-thumb-nav-left,
-.galleria-carousel .galleria-thumb-nav-right { display: block }
 
 .galleria-clear {
 	clear:both;

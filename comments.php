@@ -23,8 +23,8 @@ Theme - Comments
 	<ol class="commentlist">
 	<?php foreach ($comments as $comment) : ?>
 		<li <?php echo $oddcomment; ?>id="comment-<?php comment_ID() ?>">
-			<h6><?php comment_author_link() ?></h6>
-			<span class="date sans"><?php comment_date('F j, Y') ?> <?php comment_time() ?></span>
+			<h6><?php comment_author() ?></h6>
+			<span class="date"><?php comment_date('l, F jS Y') ?></span>
 			<?php if ($comment->comment_approved == '0') : ?>
 			Your comment is awaiting moderation.</em>
 			<?php endif; ?>
@@ -48,7 +48,6 @@ Theme - Comments
 <?php endif; ?>
 
 <?php if ('open' == $post->comment_status) : ?>
-	<h4 id="respond">Leave a Comment</h4>
 	
 <?php if ( get_option('comment_registration') && !$user_ID ) : ?>
 	<p>You must be <a href="<?php echo get_option('siteurl'); ?>/wp-login.php?redirect_to=<?php echo urlencode(get_permalink()); ?>">logged in</a> to post a comment.</p>
@@ -61,10 +60,10 @@ Theme - Comments
 <?php else : ?>
 
 	<p><input type="text" name="author" id="author" value="<?php echo $comment_author; ?>" size="22" tabindex="1" <?php if ($req) echo "aria-required='true'"; ?> />
-	<label for="author"><small>Name <?php if ($req) echo "(required)"; ?></small></label></p>	
+	<label for="author"><small>Name<?php if ($req) echo "*"; ?></small></label></p>	
 	
 	<p><input type="text" name="email" id="email" value="<?php echo $comment_author_email; ?>" size="22" tabindex="2" <?php if ($req) echo "aria-required='true'"; ?> />
-	<label for="email"><small>Email (will not be published) <?php if ($req) echo "(required)"; ?></small></label></p>
+	<label for="email"><small>Email<?php if ($req) echo "*"; ?></small></label></p>
 	
 	<p><input type="text" name="url" id="url" value="<?php echo $comment_author_url; ?>" size="22" tabindex="3" />
 	<label for="url"><small>Website</small></label></p>

@@ -77,7 +77,7 @@ body {
 	background-color: #282828;
 	color: #AAAAAA;
 	-webkit-text-size-adjust: 100%;
-	font-size: 12px;
+	font-size: 14px;
 	margin: 0;
 	padding: 0;
     text-align: left;
@@ -200,7 +200,7 @@ p {
 	line-height: 1.5em;
 	margin: 0 0 1em;
 	padding: 0;
-	max-width: 500px;
+	max-width: 600px;
 }
 
 /* Structure */
@@ -294,37 +294,10 @@ p {
     left: 270px;
 }
 
-#content-index {
-	float: left;
-}
-
-#content-single {
-	float: left;
-	text-align: left;
-}
-
-#content-search {
-	float: left;
-}
-
 .commentbox {
 	font-size: 11px;
 	margin-bottom: 10px;
 	padding: 2px 5px 2px 5px;
-}
-
-#comments {
-	padding: 0px;
-}
-
-#comments .comment {
-	padding: 10px;
-}
-	
-#comments .comment cite {
-	font-size: 14px;
-	font-style: normal;
-	font-weight: bold;
 }
 	
 /* Footer */
@@ -332,7 +305,7 @@ p {
 #sidebar-footer {
 	position: absolute;
 	bottom: 10px;
-	right: 20px;
+	left: 20px;
 	z-index: 9;
 }
 
@@ -443,9 +416,15 @@ input, textarea {
 	border: 1px solid #AAAAAA;
 }
 
+#comments .date {
+	display: block;
+	font-size: 12px;
+	margin-bottom: 5px;
+}
+
 #comments h6 {
 	font-weight: normal;
-	font-size: 12px;
+	font-size: 16px;
 	margin-bottom: 5px;
 }
 
@@ -477,20 +456,16 @@ input, textarea {
 	display: block;
 	margin: 0;
 }
-
-.commentlist li {
-	padding-bottom: 10px;	
-}
 	
 #commentform input, #commentform textarea {
-	color: #AAAAAA;
 	font-family: Helvetica,Verdana,Arial,Utkal,sans-serif;
 	padding: 3px;
 	font-size: 12px;
 }
 
 #commentform textarea {
-	max-width: 500px;
+	max-width: 600px;
+	width: 100%;
 }
 
 
@@ -531,15 +506,29 @@ div.aligncenter {
 .wp-caption img {
 	margin: 0;
 	padding: 0;
+	width: 100%;
+	height: auto;
 }
 
 .wp-caption-text {
 	font-family: arial,helvetica,sans-serif;
-	margin: 3px 0;
-	font-size: 10px;
 	padding-bottom: 5px;
 }
 
+.pagination-nav {
+    margin: 0 auto;
+    max-width: 600px;
+    padding: 0 10px;
+}
+
+.pagination-nav a {
+    background-color: #EEEEEE;
+    padding: 15px 20px;
+}
+
+.pagination-nav p {
+	margin: 0;
+}
 
 /* Forms */
 #searchform {
@@ -554,25 +543,16 @@ div.aligncenter {
 }
 
 /* Social Media Widget */
-
 #solofolio-social {
-    height: 24px;
-    position: relative;
+	margin-left: -10px;
 }
 
-#solofolio-social li {
-    margin: 0; 
-    padding: 0; 
-    list-style: none;
-    float: left;
-}
-
-#solofolio-social li, #solofolio-social a {
-    height: 24px; 
-    width: 24px; 
+#solofolio-social a {
+    padding: 10px 10px; 
+    font-size: 14px;
     margin-right: 5px;
     text-align: center;
-    display: block;
+    line-height: 30px;
 }
 
 /* Side scroll gallery */
@@ -596,7 +576,7 @@ div.aligncenter {
 	padding: 0;
 	position: absolute;
 	right: 0;
-	top: 5px;
+	top: 0;
 	cursor: pointer;
 	text-align: center;
 	display: none;
@@ -610,7 +590,7 @@ table tr {
 
 /* React gallery  */
 .sl-react img {
-	max-width: 100%;
+	max-width: 100% !important;
 }
 
 .sl-react-caption {
@@ -625,6 +605,15 @@ table tr {
 
 #solofolio-cyclereact-stage {
 	position: relative;
+}
+
+#solofolio-cyclereact-bar {
+	max-width: 600px;
+	margin: 0 auto;
+}
+
+#solofolio-cyclereact-controls {
+	text-align: center;
 }
 
 #solofolio-cyclereact-images {
@@ -658,6 +647,10 @@ table tr {
     bottom: 0;
     z-index: 5;
 }
+
+.solofolio-cycelereact-slide {
+	right: 0;
+;
 
 .solofolio-cyclereact-caption {
 	margin: 0 auto;

@@ -36,8 +36,6 @@ foreach ( $attachments as $id => $attachment ) {
 			<div data-src=\"" . $link6[0] . "\"></div>
 			<div data-src=\"" . $link4[0] . "\" data-media=\"(min-width: 320px)\"></div>
 			<div data-src=\"" . $link5[0] . "\" data-media=\"(min-width: 920px)\"></div>
-
-			<!-- Fallback content for non-JS browsers. Same img src as the initial, unqualified source element. -->
 			<noscript><img src=\"" . $link6[0] . "\" alt=\"" .  wptexturize($attachment->post_excerpt) . "\"></noscript>
 		</div>
 		</div>
@@ -92,9 +90,8 @@ function sl_cyclereact() {
 		  var barHeight = $(\"#solofolio-cyclereact-bar\").outerHeight();
 		  var wrapperWidth = $(\"#wrapper\").innerWidth();
 		  var imgWidth = $(\".cycle-slide-active div img\").outerWidth();
-		  $('img').css('max-height', pageHeight - barHeight - 0);
-		  $('img').css('max-width', wrapperWidth + 10);
-		  $('.solofolio-cycelereact-slide').css('marginLeft', (wrapperWidth - imgWidth - 20) / 2);  
+		  $('img').css('max-height', pageHeight - barHeight - 60 - 0);
+		  $('img').css('max-width', wrapperWidth);
 		}
 		$(window).resize(setResponsive);
 		setResponsive();

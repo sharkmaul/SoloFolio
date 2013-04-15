@@ -191,11 +191,6 @@ input:focus, textarea:focus {
 	#content-index .entry .wp-caption {
 		width: 100%;
 	}	
-			
-	.wp-caption img, .entry img {
-		height: auto;
-		width: 100%;
-	}
 
 #content-page p img {
 	height: auto;
@@ -246,7 +241,6 @@ input:focus, textarea:focus {
 		}
    			
 		#header div {
-			clear: both;
 			margin: 0;
 		}
 		
@@ -356,7 +350,7 @@ input:focus, textarea:focus {
 	}
 	
 		#logo {
-			padding: 5px 0 5px 10px;
+			/*padding: 5px 0 5px 10px;*/
 		}
 	
 	.galleria-info {
@@ -364,7 +358,8 @@ input:focus, textarea:focus {
 	}
 	
 	.entry {
-		padding: 0 0 5px 0;
+		padding-left: 0;
+		padding-right: 0;
 	}
 	
 		.post-meta, .wp-caption-text, .entry p {
@@ -378,15 +373,6 @@ input:focus, textarea:focus {
 	#post #outerWrap {
 		width: 100%;
 		}
-	
-	#solofolio-social {
-		 margin: 0 auto;
-		 width: 120px;
-	}
-	
-	#solofolio-social li {
-		overflow: hidden;
-	}
 	
 	/* Menu icon */
 	#menu-icon {

@@ -123,31 +123,16 @@ function sl_react() {
 		var setResponsive = function () {
 		  var pageHeight = jQuery(window).height();
 		  var blockHeight = $(\".sl-react-caption\").outerHeight();
-		  $('img').css('max-height', pageHeight - blockHeight - 40); 
+		  $('.sl-react img').css('max-height', pageHeight - blockHeight - 70); 
 		}
 		$(window).resize(setResponsive);
 		setResponsive();
 	});
 
 	</script>";
-	
-	/* Works for Mobile, not for desktop. Needs to be adapted.
-	$output.="<script type=\"text/javascript\"> 
-	$(window).load(function(){
-		var setResponsive = function () {
-		  var pageHeight = jQuery(window).height();
-		  var blockHeight = $(\".sl-react-caption\").outerHeight();
-		  var headerHeight = $(\"#header\").outerHeight();
-		  $('img').css('max-height', pageHeight - headerHeight - blockHeight - 20); 
-		}
-		$(window).resize(setResponsive);
-		setResponsive();
-	});
-
-	</script>";*/
 
 
-     
+
     echo $output;
  
 }
