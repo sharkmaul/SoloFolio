@@ -70,7 +70,7 @@ h2.post-title {
 	font-size: <?php echo get_theme_mod('solofolio_blog_entry_title_size'); ?>;
 }
 
-	h2.post-title a {
+	h2.post-title, h2.post-title a {
 		color: <?php echo get_theme_mod('solofolio_blog_entry_title_color'); ?>;
 	}
 	

@@ -1,10 +1,3 @@
-<?php
-/* 
-SoloFolio
-Header
-*/
-?>	
-
 <!DOCTYPE html>
 <!--[if IE 7]>
 <html class="ie ie7" <?php language_attributes(); ?>>
@@ -100,7 +93,7 @@ Header
 	<?php wp_head(); ?>
 </head>
 
-<body id="<?php echo get_post_type( $post ); ?>"   class="<?php echo get_option('sl_body_font'); ?>">
+<body id="<?php echo get_post_type( $post ); ?>">
 
 <div id="outerWrap">
 

@@ -15,8 +15,7 @@ data-cycle-auto-height=0
 data-cycle-fx=\"fade\"
 data-cycle-caption=\".solofolio-cyclereact-caption\"
 data-cycle-caption-template=\"{{cycleTitle}}\"
-data-cycle-timeout=0
->";
+data-cycle-timeout=0>";
 
 $i = 0;
 	
@@ -34,8 +33,8 @@ foreach ( $attachments as $id => $attachment ) {
 		<div class=\"solofolio-cycelereact-slide\" data-cycle-title=\"" .  wptexturize($attachment->post_excerpt) . "\">
 		<div class=\"solofolio-cycelereact-fill\" data-picture>
 			<div data-src=\"" . $link6[0] . "\"></div>
-			<div data-src=\"" . $link4[0] . "\" data-media=\"(min-width: 320px)\"></div>
-			<div data-src=\"" . $link5[0] . "\" data-media=\"(min-width: 920px)\"></div>
+			<div data-src=\"" . $link4[0] . "\" data-media=\"(min-width: 320px)\" style=\"max-width: 900px;\"></div>
+			<div data-src=\"" . $link5[0] . "\" data-media=\"(min-width: 920px)\" style=\"max-width: 1800px;\"></div>
 			<noscript><img src=\"" . $link6[0] . "\" alt=\"" .  wptexturize($attachment->post_excerpt) . "\"></noscript>
 		</div>
 		</div>
@@ -58,10 +57,8 @@ $output .="<div id=\"solofolio-cyclereact-bar\">
 <p class=\"solofolio-cyclereact-caption\"></p>
 <div id=\"solofolio-cyclereact-controls\">
 			<p id=\"solofolio-cyclereact-caption\"></p>
-			<p id=\"solofolio-cyclereact-counter\"></p>
-        	<a href=\"#\"><span class=\"prev\">< Prev</span></a> 
-        	<a href=\"#\"><span class=\"next\">Next ></span></a>
-        	<a href =\"#\" onclick=\"$(document).fullScreen(true)\">Fullscreen</a>
+        	<!--<a href=\"#\"><span class=\"prev\">< Prev</span></a> 
+        	<a href=\"#\"><span class=\"next\">Next ></span></a>-->
     	</div>
     	</div>";
 
@@ -78,8 +75,6 @@ function sl_cyclereact() {
 	$output .="<script type=\"text/javascript\" src=\"" . get_bloginfo('template_url') . "/includes/gallery/js/picturefill.js\"></script>";
 
 	$output .="<script type=\"text/javascript\" src=\"" . get_bloginfo('template_url') . "/includes/gallery/js/jquery.cycle2.min.js\"></script>";
-
-	$output .="<script type=\"text/javascript\" src=\"" . get_bloginfo('template_url') . "/includes/gallery/js/jquery.fullscreen-min.js\"></script>";
 	
 	// Make things fit nicely 
 	$output.="
@@ -90,7 +85,7 @@ function sl_cyclereact() {
 		  var barHeight = $(\"#solofolio-cyclereact-bar\").outerHeight();
 		  var wrapperWidth = $(\"#wrapper\").innerWidth();
 		  var imgWidth = $(\".cycle-slide-active div img\").outerWidth();
-		  $('img').css('max-height', pageHeight - barHeight - 60 - 0);
+		  $('img').css('max-height', pageHeight - barHeight - 70 - 0);
 		  $('img').css('max-width', wrapperWidth);
 		}
 		$(window).resize(setResponsive);
