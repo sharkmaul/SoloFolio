@@ -15,17 +15,15 @@
 			<?php the_content('Read the rest of this entry &raquo;'); ?>
 			<div class="clear"></div>
 		</div>
+		
+	<?php endwhile; ?>
+		<div class="pagination-nav">
+			<div class="left"><p><?php previous_post('<i class="icon-angle-left"></i> %', '', 'yes') ?></p></div>
+			<div class="right"><p><?php next_post('% <i class="icon-angle-right"></i>', '', 'yes') ?></p></div>
+			<div class="clear"></div>
+		</div>
 		<div id="comments">
 			<?php comments_template(); ?>
-		</div>
-	<?php endwhile; ?>
-		<div class="navigation">
-			<div class="alignleft">
-				<?php next_posts_link('&laquo; Older Entries') ?>
-			</div>
-			<div class="alignright">
-				<?php previous_posts_link('Newer Entries &raquo;') ?>
-			</div>
 		</div>
 	<?php else : ?>
 		<h2>Not Found</h2>

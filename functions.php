@@ -15,10 +15,6 @@ if(function_exists('register_sidebar')){
 	));
 }
 
-// Load default theme options
-
-
-
 /* Disable Admin Bar from frontend - More trouble than it's worth */
 function hide_admin_bar_from_front_end(){
   if (is_blog_admin()) {
@@ -33,9 +29,6 @@ function solo_jpg_quality_callback($arg)
 {
 return (int)90;
 }
-
-
-
 add_filter('jpeg_quality', 'solo_jpg_quality_callback');
 
 // Additional image size for huge res
@@ -72,50 +65,13 @@ class fixImageMargins{
 }
 $fixImageMargins = new fixImageMargins();
 
-// Filter image output in editor for blog posts
-// From http://wordpress.stackexchange.com/questions/78285/alter-image-output-in-content
-// Currently deprecated out of fear.
-/*function solofolio_filter_images($html, $id) {
 
-    //fetching attachment by post $id
-    $attachment = get_post($id); 
-    $mime_type = $attachment->post_mime_type;
 
-    //get an valid array of images types   
-    $image_exts = array( 'image/jpg', 'image/jpeg', 'image/jpe', 'image/gif', 'image/png' );
-
-    //checking the above mime-type
-    if (in_array($mime_type, $image_exts)) { 
-
-        // the image link would be great
-        $large = wp_get_attachment_image_src( $id, 'large');
-        $xlarge = wp_get_attachment_image_src( $id, 'xlarge');
-
-        $html = '<div class="solofolio-post-image-asset"><div class="solofolio-post-image"><img src="'. $large[0] .'" style="max-width:' . $large[1] . 'px" data-retina="'. $xlarge[0] . '"/></div><p class="solofolio-image-caption">' . wptexturize($attachment->post_excerpt) . '</p></div>';
-        
-        return $html; // return new $html    
-    }
-        return $html;
+function filter_ptags_on_images($content){
+   return preg_replace('/<p>\s*(<a .*>)?\s*(<img .* \/>)\s*(<\/a>)?\s*<\/p>/iU', '\1\2\3', $content);
 }
-add_filter('media_send_to_editor', 'solofolio_filter_images', 20, 2);*/
 
-
-// Load GPS data from EXIF before it is wiped
-function add_geo_exif($meta,$file,$sourceImageType) {
-		$exif = @exif_read_data( $file );
-			if (!empty($exif['GPSLatitude']))
-				$meta['latitude'] = $exif['GPSLatitude'] ;
-			if (!empty($exif['GPSLatitudeRef']))
-				$meta['latitude_ref'] = trim( $exif['GPSLatitudeRef'] );
-			if (!empty($exif['GPSLongitude']))
-				$meta['longitude'] = $exif['GPSLongitude'] ;
-			if (!empty($exif['GPSLongitudeRef']))
-				$meta['longitude_ref'] = trim( $exif['GPSLongitudeRef'] );
-	return $meta;
-}
-add_filter('wp_read_image_metadata', 'add_geo_exif','',3); 
-
-
+add_filter('the_content', 'filter_ptags_on_images');
 
 include_once("includes/gallery.php");			// Include gallery shortcode replacement
 include_once("includes/social-widget.php");		// Include social media widget

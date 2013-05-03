@@ -67,7 +67,9 @@
 			// Get accurate measurements from that.
 			var imageWidth = theImage.width;
 			var imageHeight = theImage.height;
-			$(this).attr('style', 'max-width:' + imageWidth + 'px');
+			if (theImage.width > 0) {
+				$(this).attr('style', 'max-width:' + imageWidth + 'px');
+			}
 		});
 		$('img').each(function(){ 
         	$(this).removeAttr('width')

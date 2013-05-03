@@ -13,6 +13,7 @@ data-cycle-prev=\".prev\"
 data-cycle-next=\".next\"
 data-cycle-auto-height=0
 data-cycle-fx=\"fade\"
+data-cycle-auto-height=false
 data-cycle-caption=\".solofolio-cyclereact-caption\"
 data-cycle-caption-template=\"{{cycleTitle}}\"
 data-cycle-timeout=0>";
