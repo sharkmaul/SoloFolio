@@ -31,9 +31,6 @@
 	<link rel="stylesheet" type="text/css" media="all" href="<?php bloginfo( 'stylesheet_url' ); ?>" />
 	<link rel="stylesheet" href="<?php echo (bloginfo('template_url').'/styles.php'); ?>" type="text/css" media="screen" />
 	
-	<script type="text/javascript" src="<?php echo bloginfo('template_url'); ?>/includes/gallery/js/galleria.solofolio.js"></script>
-	<link rel="stylesheet" href="<?php echo (bloginfo('template_url').'/includes/gallery/js/galleria.solofolio.css'); ?>" type="text/css" media="screen" /> 
-	
 	<link rel="stylesheet" type="text/css" media="all" href="<?php echo (bloginfo('template_url').'/fonts/font-awesome.min.css'); ?>" />
 	<link rel="stylesheet" type="text/css" media="all" href="<?php echo (bloginfo('template_url').'/fonts/font-awesome-social.css'); ?>" />
 	

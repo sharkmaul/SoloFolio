@@ -4,7 +4,10 @@ SoloFolio
 Gallery Template: Default (Galleria Slideshow)
 */
 
-$output .="<div class=\"galleria-wrap\"><div class=\"galleria galleria-container notouch\">";
+$output .= "<script type=\"text/javascript\" src=\"" . get_template_directory_uri() . "/includes/gallery/js/galleria.solofolio.js\"></script>";
+$output .= "<link rel=\"stylesheet\" href=\"" . get_template_directory_uri() . "/includes/gallery/js/galleria.solofolio.css\"/>"; 
+
+$output .= "<div class=\"galleria-wrap\"><div class=\"galleria galleria-container notouch\">";
 $i = 0;
 
 foreach ( $attachments as $id => $attachment ) {
@@ -40,8 +43,6 @@ foreach ( $attachments as $id => $attachment ) {
 					$output .= "</div>";
 					if ($captions != "false"){$output.= "<div class=\"galleria-info\"></div>";}
 	$output .= "</div></div>";
-
-
 
 add_action('wp_footer', 'solofolio_slideshow_footer');
  

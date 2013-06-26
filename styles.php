@@ -283,12 +283,11 @@ input:focus, textarea:focus {
 		
 		.entry {
 			border-bottom: medium none;
-			border-bottom: medium none;
 			padding: 10px;
 			margin-bottom: 0;
 		}
 		
-		p, h2, h4, h6, .commentlist .date, #wrapper li {
+		p, h1, h2, h4, h6, .commentlist .date, #wrapper li {
 			padding: 0 10px;
 		}
 			
